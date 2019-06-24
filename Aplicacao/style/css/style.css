@@ -1,0 +1,65 @@
+.scrollspySite {
+  position: relative;
+  overflow: auto;
+  height: 345px; }
+
+  #rodape{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  #util{
+    font-size: 160%;
+  }
+
+  footer a{
+    color: #ffc107;
+}
+
+#primera{
+  background-color: white; 
+		height: 50px;
+		position: relative;
+		padding: 0; 
+		margin: 0; 
+		clear: both;
+}
+
+footer a:hover{
+  color: black;
+}
+
+#cima{
+  height: 50%;
+  position: relative;
+  padding: 0; 
+  margin: 0; 
+  clear: both
+}
+
+#baixo-left{
+  width: 40%; 
+	float: left;
+  position: absolute; 
+}
+
+#baixo-right{
+  width: 40%; 
+  float: right;
+  position: absolute;
+}
+
+#navbarVertical a{
+  color: black;
+}
+
+big{
+  font-size: 160%;
+}
+
+.fonte{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body{
+  background-color:;
+}
+/*# sourceMappingURL=style.css.map */

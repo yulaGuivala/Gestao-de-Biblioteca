@@ -1,0 +1,47 @@
+User estudante
+slider na home page
+requisitar books, levantamento pessoalmente
+catalogo de livros (autor, titulo, edicao, ano, etc...)
+catalogos de revistas universitarias
+status de livro: disponivel, requisitado
+formulario de requisicao: nome do estudante, id, faculdade e curso
+
+
+User funcionario
+armazenar funcionario de certo expediente
+actualizar status de livro
+id
+
+about form
+nome 30 char
+
+categorizar por faculdade
+
+Lista de faculdades:
+economia e informatica
+agronomia
+direito
+admnistracao publica gestao
+
+livro:
+categoria (faculdade)
+autor
+titulo
+edicao
+editora
+ano
+co-autor
+pais
+
+estudante:
+nome do estudante
+id
+faculdade
+curso
+
+administrador
+username
+senha
+id
+
+prazo de devolucao: 3 dias
