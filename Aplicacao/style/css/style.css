@@ -24,32 +24,15 @@
 		clear: both;
 }
 
+.cor-vermelho{
+  background-color:rgb(170,3, 13);
+}
 footer a:hover{
   color: black;
 }
 
-#cima{
-  height: 50%;
-  position: relative;
-  padding: 0; 
-  margin: 0; 
-  clear: both
-}
-
-#baixo-left{
-  width: 40%; 
-	float: left;
-  position: absolute; 
-}
-
-#baixo-right{
-  width: 40%; 
-  float: right;
-  position: absolute;
-}
-
 #navbarVertical a{
-  color: black;
+  color:black;
 }
 
 big{
@@ -59,7 +42,5 @@ big{
 .fonte{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-body{
-  background-color:;
-}
+
 /*# sourceMappingURL=style.css.map */
