@@ -162,8 +162,11 @@ function sidebar() {
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="lista-funcionario.php">Funcionários</a></li>
-                <li class="nav-item"> <a class="nav-link" href="lista-de-utentes.html">Utentes</a></li>
+                <li class="nav-item"> 
+                  <a class="nav-link" href="lista-funcionario.php">Funcionários</a>
+                  <a class="nav-link d-none" href="adicionar-funcionario.php">Adicionar Funcionário</a>
+                </li>
+                <li class="nav-item"> <a class="nav-link" href="#">Utentes</a></li>
               </ul>
             </div>
           </li>

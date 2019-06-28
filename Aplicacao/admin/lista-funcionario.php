@@ -46,7 +46,7 @@
                                     <h4 class="font-weight-bold mb-0">Funcionários</h4>
                                 </div>
                                 <div>
-                                    <a href="cadastro-funcionario.php" class="btn btn-primary btn-icon-text btn-rounded">
+                                    <a href="adicionar-funcionario.php" class="btn btn-primary btn-icon-text btn-rounded">
                                         <i class="ti-plus btn-icon-prepend"></i>Adicionar
                                     </a>
                                     <button type="button" class="btn btn-danger btn-icon-text btn-rounded">
