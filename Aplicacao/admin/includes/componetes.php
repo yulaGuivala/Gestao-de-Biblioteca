@@ -186,9 +186,9 @@ function sidebar() {
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="lista-requisicoes.php">
               <i class="ti-write menu-icon"></i>
-              <span class="menu-title">Documentation</span>
+              <span class="menu-title">Requisicoes</span>
             </a>
           </li>
         </ul>
