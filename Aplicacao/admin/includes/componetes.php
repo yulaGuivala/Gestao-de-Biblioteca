@@ -171,6 +171,21 @@ function sidebar() {
             </div>
           </li>
           <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="ti-user menu-icon"></i>
+              <span class="menu-title">Livros</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> 
+                  <a class="nav-link" href="lista-livro.php">Livros</a>
+                  <a class="nav-link d-none" href="adicionar-livro.php">Adicionar Livro</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="ti-write menu-icon"></i>
               <span class="menu-title">Documentation</span>
