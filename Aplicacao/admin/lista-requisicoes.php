@@ -46,9 +46,6 @@
                                     <h4 class="font-weight-bold mb-0">Livros</h4>
                                 </div>
                                 <div>
-                                    <a href="#" class="btn btn-primary btn-icon-text btn-rounded">
-                                        <i class="ti-plus btn-icon-prepend"></i>Adicionar
-                                    </a>
                                     <button type="button" class="btn btn-danger btn-icon-text btn-rounded">
                                         <i class="ti-trash btn-icon-prepend"></i>Apagar
                                     </button>
@@ -69,7 +66,7 @@
                                             <a class="nav-link active active1 texto-verde" id="" data-toggle="pill" href="#tipo1">Pendentes</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link texto-verde" id="" data-toggle="pill" href="#tipo2">Pubicados</a>
+                                            <a class="nav-link texto-verde" id="" data-toggle="pill" href="#tipo2">Levantados</a>
                                         </li>
                                     
                                         </li>
@@ -89,7 +86,7 @@
                                                             <td class="titulo-tabela" colspan="5"><i class="fa fa-list mr-2"></i>Pendentes</td>
                                                         </tr>
                                                         <tr>
-                                                        <th class="texto-verde text-center" style="width:2px;">
+                                                        <th class="texto-verde text-center" style="width:4px;">
                                                             <input type="checkbox" onclick="selecionar()">
                                                         </th>
                                                         <th>Titulo</th>
