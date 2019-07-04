@@ -3,6 +3,11 @@
   overflow: auto;
   height: 345px; }
 
+  #dir, #dir a {
+    color: rgb(212, 209, 209);
+    font-size: 13px;
+  }
+
   #rodape{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
@@ -10,6 +15,9 @@
   #util{
     font-size: 160%;
   }
+ .nav-pills .nav-link.active {
+    background-color: rgb(170,3, 13) !important;
+}
 
   footer a{
     color: #ffc107;
@@ -26,6 +34,21 @@
 
 .cor-vermelho{
   background-color:rgb(170,3, 13);
+}
+
+.cor-borda {
+    border: 1px solid #c2c2c2;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.cor-borda2 {
+    border: 1px solid #c2c2c2;
+    border-radius: 10px;
+}
+
+.cor-creme {
+    background: #f6f6f6;
 }
 footer a:hover{
   color: black;
