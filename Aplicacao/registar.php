@@ -63,7 +63,7 @@
                     <div class="form-group col-sm-6">
                 
                         <label for="inputNome">Nome</label>
-                        <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+                        <input type="text" class="form-control" id="inputNome" placeholder="Nome" max-lenght="30">
                         
                     </div>
                     
@@ -233,11 +233,10 @@
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/validate/jquery.validate.min.js"></script>
+    <script src="lib/validate/jquery.validate.pt-br.js"></script>
+    <script src="js/script.js"></script>
 
-    <!-- Inclusão do jQuery-->
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <!-- Inclusão do Plugin jQuery Validation-->
-    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
   </body>
 
 </html>
