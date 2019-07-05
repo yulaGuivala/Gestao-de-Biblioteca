@@ -69,7 +69,7 @@
 
                         <div class="form-group col-sm-10">
                             <label for="Messagem">Messagem:</label>
-                            <textarea class="form-control" name="mensagem" id="Messagem" cols="70" rows="7" minlength="4" required></textarea>
+                            <textarea class="form-control" name="mensagem" id="Messagem" cols="70" rows="7" minlength="10" required></textarea>
                         </div>
 
                     </div>
@@ -173,11 +173,6 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="lib/validate/jquery.validate.min.js"></script>
     <script src="lib/validate/jquery.validate.pt-br.js"></script>
-      
-    <script>
-       $("#formulario").validate();
-      
-    </script>
-
+    <script src="js/script.js"></script>
   </body>
 </html>

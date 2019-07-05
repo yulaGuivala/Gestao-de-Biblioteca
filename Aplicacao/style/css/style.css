@@ -67,3 +67,11 @@ big{
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/*css do validate jquery*/
+.my-error-class {
+    color:red;
+}
+.my-valid-class {
+    color:green;
+}
