@@ -47,7 +47,7 @@
 
     <div class="row justify-content-center">
 
-            <form class="col-md-6" method="post" action="autenticacao.php">
+            <form class="col-md-6" method="post" action="autenticacao.php" id="formulario">
             
                 <div class="col-sm-12 border cor-creme cor-borda justify-content-center mb-10" id="geral">
             
@@ -233,6 +233,11 @@
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <!-- Inclusão do jQuery-->
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <!-- Inclusão do Plugin jQuery Validation-->
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
   </body>
 
 </html>
