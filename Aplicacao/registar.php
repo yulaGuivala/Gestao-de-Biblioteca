@@ -1,8 +1,8 @@
 <?php include_once("includes/componetes.php"); ?>
 <!doctype html>
 <html lang="pt-br">
- <head>
-    <title>Inicio</title>
+  <head>
+    <title>Cadastro de Estudante</title>
       
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,84 +14,139 @@
       
     <link rel="stylesheet" href="style/css/style.css">
       
-    <link rel="stylesheet" href="lib/fontawesome/css/all.css">
-
+     <link rel="stylesheet" href="lib/fontawesome/css/all.css">
     <?php favicon(); ?>
-      
-</head>
- <body>
-      
-    <header class="container-fluid navbar-expand-md mb-5">
+  </head>
+
+  <body>
+        <header class="container-fluid navbar-expand-md mb-5">
         <?php cabecalho(); ?>
         <div class="container">
     
             <div class="row mt-3">
                 <div class="col-sm-12">
                     <p id="dir"><a href="index.php"><i class="fas fa-home mr-1"></i>Inicio</a> > Minha Conta > <span
-                            class="text-danger">Entrar</span></p>
+                            class="text-danger">Registar</span></p>
                     <hr class="bg-danger">
                 </div>
             </div>
     
             <div class="row">   
                 <div class="col-12">
-                    <h1>Entrar</h1>
+                    <h1>Registar</h1>
                 </div>
             </div>
     
         </div>
     </header>
+    <div class="row mb-3 justify-content-center">
+        <div class="col-md-6 mr-4">
+            <h5>Formulário de Cadastro</h5>
+        </div>
+    </div>
 
-    <!-- Acerca -->
-    <div class="container">
-        
-        <div class="row justify-content-center">
-            <form class="col-sm-10 col-md-8 col-lg-6" method="post" action="autenticacao.php">
+    <div class="row justify-content-center">
+
+            <form class="col-md-6" method="post" action="autenticacao.php">
             
-                <div class="col-sm-12 border cor-creme cor-borda justify-content-center mb-5" id="geral">
+                <div class="col-sm-12 border cor-creme cor-borda justify-content-center mb-10" id="geral">
             
                     <div class="form-row justify-content-center">
                         <div class="col-sm-10 mt-2 row justify-content-center">
-                            <i class="fa fa-user-circle fa-4x " aria-hidden="true"></i>
+                            <i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
                         </div>
                     </div>
             
-                    <div class="form-row justify-content-center">
-                        <div class="form-group col-sm-10 mt-2">
-                            <label for="User">Nome de Usuario Ou Email</label>
-                            <input type="text" class="form-control" name="nome" id="User" placeholder="Nome de Usuario ou Email" required>
-                        </div>
+                
+                <div class="form-row">
+                    
+                    <div class="form-group col-sm-6">
+                
+                        <label for="inputNome">Nome</label>
+                        <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+                        
                     </div>
-            
-            
-                    <div class="form-row justify-content-center">
-                        <div class="form-group col-sm-10">
-                            <label for="senha">Senha</label>
-                            <input type="Password" class="form-control" name="senha" id="senha" placeholder="Senha" required>
-                            <label>Esqueceu a senha? <a class="my-1" href="recuperar-senha.php">clique aqui</a> para recuperar<label>
-                        </div>
+                    
+                    <div class="form-group col-sm-6">
+                    
+                        <label for="inputSobrenome">Sobrenome</label>
+                        <input type="text" class="form-control" id="inputSobrenome" placeholder="Sobrenome">
+                    
                     </div>
-            
-            
-                    <div class="form-row justify-content-center my-2">
-                        <div class="col-sm-10">
-                            <button class="btn  btn-primary" name="entrar" type="Submit">Entrar</button>
-                        </div>
+                    
+                </div>
+                
+                <div class="form-row">
+                    
+                    <div class="form-group col-sm-12">
+                    
+                        <label for="inputEnd">Endereço</label>
+                        <input type="text" class="form-control" id="inputEnd" placeholder="Endereço completo">
+                    
                     </div>
+                    
+                </div>
+                
+                <div class="form-row">
+                    
+                    <div class="form-group col-sm-6">
+                    
+                        <label for="inputCidade">E-mail</label>
+                        <input type="email" class="form-control" id="inputMail" placeholder="xxxxx@xx.com">
+                    
+                    </div>
+                    
+                    <div class="form-group col-sm-6">
+                    
+                        <label for="inputEst">Faculdade</label>
+                        <select id="inputEst" class="form-control">
+                            <option selected>Escolha...</option>
+                            <option>...</option>
+                            <option>...</option>
+                            <option>...</option>
+                        </select>
+                    
+                    </div>
+                    
+                    <div class="form-group col-sm-4">
+                    
+                        <label for="inputID">Nr. de Estudante</label>
+                        <input type="number" id="inputID" class="form-control">
+                    
+                    </div>
+                
+                </div>
+                
+                <div class="form-row">
+                
+                    <div class="form-group col-sm-12">
+                    
+                        <div class="form-check">
+                        
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox"> Desejo receber novidades por e-mail
+                            </label>
+                        
+                        </div>
+                    
+                    </div>
+                
+                </div>
+                
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-12 text-center">
+                        <button type="submit" class="btn btn-primary text-light" data-dismiss="modal">Confirmar</button>
+                        <button type="button" class="btn btn-danger text-light ml-3" data-dismiss="modal">Voltar</button>
+</div>
+                
+                </div>
+            
+            
             
                 </div>
             
             </form>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-sm-10 col-md-8 col-lg-6">
-                <p>Não tem uma conta? <a href="registar.php">Registe-se </a></p>
-            </div>
-        </div>
-        
     </div>
-      
     <!-- footer -->
     <?php rodape(); ?>
 
@@ -172,22 +227,12 @@
             </div>
         </div>
     </div>
-           
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-      
-    <script>
-        
-        $(function () {
-        
-            $('[data-toggle="popover"]').popover()
-        
-        })
-      
-    </script>
-
   </body>
+
 </html>

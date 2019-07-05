@@ -27,15 +27,15 @@
     
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <p id="dir"><a href="index.php"><i class="fas fa-home mr-1"></i>Inicio</a> > Minha Conta > <span
-                            class="text-danger">Entrar</span></p>
+                    <p id="dir"><a href="index.php"><i class="fas fa-home mr-1"></i>Inicio</a> > Minha Conta > Entrar<span
+                            class="text-danger">Recuperar Senha</span></p>
                     <hr class="bg-danger">
                 </div>
             </div>
     
             <div class="row">   
                 <div class="col-12">
-                    <h1>Entrar</h1>
+                    <h1>Recuperar Senha</h1>
                 </div>
             </div>
     
@@ -46,48 +46,31 @@
     <div class="container">
         
         <div class="row justify-content-center">
-            <form class="col-sm-10 col-md-8 col-lg-6" method="post" action="autenticacao.php">
+            <form class="col-md-10" method="post" action="">
             
                 <div class="col-sm-12 border cor-creme cor-borda justify-content-center mb-5" id="geral">
-            
-                    <div class="form-row justify-content-center">
-                        <div class="col-sm-10 mt-2 row justify-content-center">
-                            <i class="fa fa-user-circle fa-4x " aria-hidden="true"></i>
-                        </div>
-                    </div>
-            
+                       
                     <div class="form-row justify-content-center">
                         <div class="form-group col-sm-10 mt-2">
-                            <label for="User">Nome de Usuario Ou Email</label>
-                            <input type="text" class="form-control" name="nome" id="User" placeholder="Nome de Usuario ou Email" required>
+                            <label class="my-5" for="email" style="font-size:25px">Informe seu e-mail e aguarde o link para refazer sua senha.</label>
                         </div>
                     </div>
-            
-            
+
                     <div class="form-row justify-content-center">
-                        <div class="form-group col-sm-10">
-                            <label for="senha">Senha</label>
-                            <input type="Password" class="form-control" name="senha" id="senha" placeholder="Senha" required>
-                            <label>Esqueceu a senha? <a class="my-1" href="recuperar-senha.php">clique aqui</a> para recuperar<label>
+                        <div class="form-group col-sm-8 mt-2">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="seu email" required>
                         </div>
                     </div>
             
-            
-                    <div class="form-row justify-content-center my-2">
-                        <div class="col-sm-10">
-                            <button class="btn  btn-primary" name="entrar" type="Submit">Entrar</button>
+                    <div class="form-row justify-content-center my-2 mb-4">
+                        <div class="col-sm-8">
+                            <button class="btn  btn-primary col-sm-12" name="entrar" type="Submit">Enviar</button>
                         </div>
                     </div>
             
                 </div>
             
             </form>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-sm-10 col-md-8 col-lg-6">
-                <p>Não tem uma conta? <a href="registar.php">Registe-se </a></p>
-            </div>
         </div>
         
     </div>
@@ -172,7 +155,7 @@
             </div>
         </div>
     </div>
-           
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="node_modules/jquery/dist/jquery.js"></script>

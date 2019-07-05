@@ -65,43 +65,43 @@
                     
                     <div class="form-row">
                       <div class="form-group col-sm-6">
-                        <label for="nome">Titulo</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Primeiro nome">
+                        <label for="Titulo">Titulo</label>
+                        <input type="text" class="form-control" id="titulo" placeholder="Titulo">
                       </div>
                       <div class="form-group col-sm-6">
-                        <label for="apelido">Autor</label>
-                        <input type="text" class="form-control" id="apelido" placeholder="Email">
-                      </div>
-                    </div>
-                    
-                    <div class="form-row">
-                      <div class="form-group col-sm-6">
-                        <label for="usuario">Nome de Usuário</label>
-                        <input type="text" class="form-control" id="usuario" placeholder="Nome de usuário">
-                      </div>
-                      <div class="form-group col-sm-6">
-                        <label for="mail">Endereço de Email</label>
-                        <input type="email" class="form-control" id="mail" placeholder="Email">
+                        <label for="Titulo">Autor</label>
+                        <input type="text" class="form-control" id="autor" placeholder="Autor">
                       </div>
                     </div>
                     
                     <div class="form-row">
                       <div class="form-group col-sm-6">
-                        <label for="senha">Senha</label>
-                        <input type="password" class="form-control" id="senha" placeholder="Senha">
+                        <label for="Editora">Editora</label>
+                        <input type="text" class="form-control" id="Editora" placeholder="Editora">
                       </div>
                       <div class="form-group col-sm-6">
-                        <label for="confirmar">Confirmar Senha</label>
-                        <input type="password" class="form-control" id="confirmar" placeholder="confirmar senha">
+                        <label for="Edicao">Edicao</label>
+                        <input type="number" class="form-control" id="Edicao" placeholder="Edicao">
+                      </div>
+                    </div>
+                    
+                    <div class="form-row">
+                      <div class="form-group col-sm-6">
+                        <label for="Pais">Pais</label>
+                        <input type="text" class="form-control" id="Pais" placeholder="Pais">
+                      </div>
+                      <div class="form-group col-sm-6">
+                        <label for="Ano">Ano</label>
+                        <input type="number" class="form-control" id="Ano" placeholder="Ano">
                       </div>
                     </div>
 
                     <div class="form-row">
                       <div class="form-group col-sm-12">
-                        <label>Foto de Perfil</label>
+                        <label>Foto do Livro</label>
                         <input type="file" name="img[]" class="file-upload-default">
                         <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info" disabled placeholder="Foto de perfil">
+                          <input type="text" class="form-control file-upload-info" disabled placeholder="Foto do Livro">
                           <span class="input-group-append">
                             <button class="file-upload-browse btn btn-primary" type="button">Carregar</button>
                           </span>

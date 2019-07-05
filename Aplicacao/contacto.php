@@ -27,15 +27,15 @@
     
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <p id="dir"><a href="index.php"><i class="fas fa-home mr-1"></i>Inicio</a> > Minha Conta > <span
-                            class="text-danger">Entrar</span></p>
+                    <p id="dir"><a href="index.php"><i class="fas fa-home mr-1"></i>Inicio</a> > <span
+                            class="text-danger">Contacte-nos</span></p>
                     <hr class="bg-danger">
                 </div>
             </div>
     
             <div class="row">   
                 <div class="col-12">
-                    <h1>Entrar</h1>
+                    <h1>Contacte-nos</h1>
                 </div>
             </div>
     
@@ -44,49 +44,42 @@
 
     <!-- Acerca -->
     <div class="container">
-        
-        <div class="row justify-content-center">
-            <form class="col-sm-10 col-md-8 col-lg-6" method="post" action="autenticacao.php">
-            
-                <div class="col-sm-12 border cor-creme cor-borda justify-content-center mb-5" id="geral">
-            
-                    <div class="form-row justify-content-center">
-                        <div class="col-sm-10 mt-2 row justify-content-center">
-                            <i class="fa fa-user-circle fa-4x " aria-hidden="true"></i>
+        <div class="row mb-3 justify-content-center">
+            <div class="col-sm-8 mr-4">
+                <h5>Formulário de Contacto</h5>
+            </div>
+        </div>
+        <div class="row mb-5 justify-content-center" id="row-altura">
+            <div class="col-sm-8  cor-borda2 cor-creme" id="cadastro">
+                <form action="model/contactoDAO.php" method="POST" class="px-2">
+                    <div class="form-row mt-3 justify-content-center">
+                        <div class="form-group col-sm-10 ">
+                            <label for="Assunto" >Assunto:</label>
+                            <input type="text" name="assunto" class="form-control"  placeholder="Assunto" required>
                         </div>
-                    </div>
-            
-                    <div class="form-row justify-content-center">
-                        <div class="form-group col-sm-10 mt-2">
-                            <label for="User">Nome de Usuario Ou Email</label>
-                            <input type="text" class="form-control" name="nome" id="User" placeholder="Nome de Usuario ou Email" required>
-                        </div>
-                    </div>
-            
-            
+                        
+                    </div> 
                     <div class="form-row justify-content-center">
                         <div class="form-group col-sm-10">
-                            <label for="senha">Senha</label>
-                            <input type="Password" class="form-control" name="senha" id="senha" placeholder="Senha" required>
-                            <label>Esqueceu a senha? <a class="my-1" href="recuperar-senha.php">clique aqui</a> para recuperar<label>
+                            <label for="Email" >Email:</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
                         </div>
                     </div>
-            
-            
-                    <div class="form-row justify-content-center my-2">
-                        <div class="col-sm-10">
-                            <button class="btn  btn-primary" name="entrar" type="Submit">Entrar</button>
-                        </div>
-                    </div>
-            
-                </div>
-            
-            </form>
-        </div>
+                    <div class="form-row justify-content-center">
 
-        <div class="row justify-content-center">
-            <div class="col-sm-10 col-md-8 col-lg-6">
-                <p>Não tem uma conta? <a href="registar.php">Registe-se </a></p>
+                        <div class="form-group col-sm-10">
+                            <label for="Messagem">Messagem:</label>
+                            <textarea class="form-control" name="mensagem" id="Messagem" cols="70" rows="7" required></textarea>
+                        </div>
+
+                    </div>
+        
+                    <p class="row justify-content-center">
+                        <button class="btn btn-danger botoes mr-3" type="reset">Apagar</button>
+                        <button class="btn btn-primary botoes" name="submeter" type="submit">Enviar</button>
+                    </p>
+                    
+                </form>
             </div>
         </div>
         
@@ -172,7 +165,7 @@
             </div>
         </div>
     </div>
-           
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="node_modules/jquery/dist/jquery.js"></script>
