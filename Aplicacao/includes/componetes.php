@@ -12,7 +12,7 @@ function cabecalho() {
                             
                             <img src="imgs/logo.jpg">
                             <a href="index.php" class="text-danger link" style="text-decoration:none">
-                                <b class="ml-4" style="font-size:30px;">SIB</b> <sub>Sistema Integrado da Biblioteca</sub>
+                                <b class="ml-4" style="font-size:30px;">SGB</b> <sub>Sistema Gestão da Biblioteca</sub>
                             </a>
                         </div>
                         
@@ -67,9 +67,9 @@ function cabecalho() {
                         <form class="form-inline">
                             
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="nome do livro">
+                                    <input type="text" class="form-control" placeholder="nome do livro"  required>
                                     <span class="input-group-btn">
-                                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
+                                        <button class="btn btn-warning" type="submit"><i class="fa fa-search"></i></button>
                                     </span>
                                 </div>
                             
