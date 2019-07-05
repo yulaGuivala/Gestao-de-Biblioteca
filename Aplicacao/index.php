@@ -21,7 +21,7 @@
 </head>
  <body>
       
-    <header class="container-fluid navbar-expand-md">
+    <header id="bigHead" class="container-fluid navbar-expand-md fixed-top">
         <?php cabecalho(); ?>
     </header>
     
