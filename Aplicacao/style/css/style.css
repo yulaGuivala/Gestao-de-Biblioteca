@@ -1,3 +1,10 @@
+#bigHead{
+  position: relative;
+  padding: 0; 
+  margin: 10%; 
+  clear: both;
+  }
+
 .scrollspySite {
   position: relative;
   overflow: auto;

@@ -6,8 +6,9 @@ function favicon() {
 
 function cabecalho() {
 ?>
-    <div class="row">   
-                    <div class="col-12">
+<div class="">
+    <div class="row ">   
+                    <div class="col-12 ">
                         <div class="collapse navbar-collapse float-left ml-3">
                             
                             <img src="imgs/logo.jpg">
@@ -80,6 +81,8 @@ function cabecalho() {
                 </div>
             
             </nav>
+    </div>
+</div>
 <?php
 }
 
