@@ -20,7 +20,7 @@ class CreateLivrosTables extends Migration
             $table->string('edicao');
             $table->string('editora');
             $table->string('pais')->nullable;
-            $table->integer('ano')->unsigned();
+            $table->integer('ano');
             $table->string('co-autor')->nullable();
             $table->unsignedBigInteger('funcionario_id');
             $table->foreign('funcionario_id')->references('id')->on('funcionario')->onDelete('NO ACTION')->onUpdate('CASCADE');
