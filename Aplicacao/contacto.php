@@ -51,7 +51,7 @@
         </div>
         <div class="row mb-5 justify-content-center" id="row-altura">
             <div class="col-sm-8  cor-borda2 cor-creme" id="cadastro">
-                <form action="model/contactoDAO.php" method="POST" class="px-2">
+                <form action="model/contactoDAO.php" method="POST" class="px-2" id="formulario">
                     <div class="form-row mt-3 justify-content-center">
                         <div class="form-group col-sm-10 ">
                             <label for="Assunto" >Assunto:</label>
@@ -69,7 +69,7 @@
 
                         <div class="form-group col-sm-10">
                             <label for="Messagem">Messagem:</label>
-                            <textarea class="form-control" name="mensagem" id="Messagem" cols="70" rows="7" required></textarea>
+                            <textarea class="form-control" name="mensagem" id="Messagem" cols="70" rows="7" minlength="4" required></textarea>
                         </div>
 
                     </div>
@@ -171,14 +171,11 @@
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/validate/jquery.validate.min.js"></script>
+    <script src="lib/validate/jquery.validate.pt-br.js"></script>
       
     <script>
-        
-        $(function () {
-        
-            $('[data-toggle="popover"]').popover()
-        
-        })
+       $("#formulario").validate();
       
     </script>
 
