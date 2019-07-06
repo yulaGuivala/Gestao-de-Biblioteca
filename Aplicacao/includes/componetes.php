@@ -1,12 +1,10 @@
 <?php
 
 function favicon() {
-    echo '  <link rel="stylesheet" href="style/css/fonts.css" />
-            <link rel="shortcut icon" href="imags/mini-logo.jpg" />
-        ';
+    echo ' <link rel="shortcut icon" href="imags/mini-logo.jpg" />';
 }
 
-function cabecalho() {
+function cabecalhoAutenticado() {
 ?>
     <div class="row ">   
             <div class="col-12 ">
@@ -29,6 +27,89 @@ function cabecalho() {
                         <li class="nav-item mt-2">
                             <a href="#" class="link text-danger" data-toggle="modal" data-target="#livros"><i class="fas fa-book mr-1"></i>Caixa de Livros <sup class="badge bg-warning" style="position:relative; right:5px;">3</sup></a>
                         </li>
+                        <li class="nav-item dropdown ml-3">
+                            <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo"><i
+                                    class="fas fa-user mr-1"></i>Jose Pedro</a>
+                            <div class="dropdown-menu bg-danger">
+                                <a class="dropdown-item" href="perfil.php">Perfil</a>
+                                <a class="dropdown-item" href="#">Sair</a>
+                            </div>
+                
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                
+        </div>
+
+        <!-- Navbar -->
+        <nav class="row navbar cor-vermelho navbar-dark navbar-expand-md">
+        
+            <div class="container">
+    
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSite">
+    
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php"><i class="fa fa-home"></i> Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown cor-vermelho dropdown-dark">
+                            <a class="nav-link" href="catalogo.php">Catálogo de Livros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php#about" data-target="">Sobre Nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.php">Conctate-nos</a>
+                        </li>
+    
+                    </ul>
+                                                
+                    <form class="form-inline">
+                        
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="nome do livro"  required>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-warning" type="submit"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        
+                    </form>
+    
+                </div>
+                
+            </div>
+        
+        </nav>
+
+    </div>
+<?php
+}
+
+function cabecalho() {
+?>
+    <div class="row ">   
+            <div class="col-12 ">
+
+                <div class="collapse navbar-collapse float-left ml-3"> 
+                    <img src="imgs/logo.jpg">
+                    <a href="index.php" class="text-danger link" style="text-decoration:none">
+                        <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
+                    </a>
+                </div>
+
+                <div class="navbar-toggler float-left mt-3 mr-3"> 
+                    <a href="index.php" class="text-danger link" style="text-decoration:none">
+                        <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
+                    </a>
+                </div>
+                
+                <div class="float-right mr-3">
+                    <ul class="navbar-nav list-group-horizontal float-right mt-2">
                         <li class="nav-item dropdown ml-3">
                             <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo"><i
                                     class="fas fa-user mr-1"></i>Minha conta</a>
@@ -186,7 +267,7 @@ function modalLivros() {
                                 <tr>
                                 <tr>
                                     <th class=" text-center" style="width:2px;">
-                                        <input type="checkbox" id="checkbox-livros">
+                                        <input type="checkbox" id="checklivros">
                                     </th>
                                     <th class="text-danger">Titulo</th>
                                     <th class="text-danger">Autor</th>

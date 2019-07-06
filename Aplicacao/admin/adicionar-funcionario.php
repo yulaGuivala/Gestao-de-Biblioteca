@@ -69,8 +69,8 @@
                         <input type="text" class="form-control" id="nome" placeholder="Primeiro nome">
                       </div>
                       <div class="form-group col-sm-6">
-                        <label for="apelido">Apelido</label>
-                        <input type="text" class="form-control" id="apelido" placeholder="Email">
+                        <label for="apelido">Sobrenome</label>
+                        <input type="text" class="form-control" id="apelido" placeholder="Sobrenome">
                       </div>
                     </div>
                     
