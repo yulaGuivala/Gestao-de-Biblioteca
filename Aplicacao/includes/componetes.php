@@ -1,7 +1,9 @@
 <?php
 
 function favicon() {
-    echo '<link rel="shortcut icon" href="imags/mini-logo.jpg" />';
+    echo '  <link rel="stylesheet" href="style/css/font.css" />
+            <link rel="shortcut icon" href="imags/mini-logo.jpg" />
+        ';
 }
 
 function cabecalho() {
@@ -13,7 +15,7 @@ function cabecalho() {
                             
                             <img src="imgs/logo.jpg">
                             <a href="index.php" class="text-danger link" style="text-decoration:none">
-                                <b class="ml-4" style="font-size:30px;">SGB</b> <sub>Sistema Gestão da Biblioteca</sub>
+                                <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
                             </a>
                         </div>
                         
@@ -138,7 +140,7 @@ function rodape() {
                             <li class="list-inline-item"><a href="contacto.php"><i class="fas fa-envelope"></i></a></li>
                         </ul>
                         <h4>Site da Universidade</h4>
-                        <a href="https://www.una.ac.mz" class="link" target="blank">www.una.ac.mz</a>
+                        <a href="http://www.una.ac.mz" class="link" target="blank">www.una.ac.mz</a>
                         
                     </div>
                 </div>
@@ -146,7 +148,7 @@ function rodape() {
         </div>
     
         <div class="row justify-content-center footer-copyright py-1 border-top-1 bg-dark" >
-            <div class="col-10 text-center"> Universidade Nachingwea &copy; <script>document.write(new Date().getFullYear());</script>- Todos Direitos Reservados </div>
+            <div class="col-10 text-center text-light"> Universidade Nachingwea &copy; <script>document.write(new Date().getFullYear());</script>- Todos Direitos Reservados </div>
         </div>
 
     </footer>
