@@ -63,14 +63,14 @@
                     <div class="form-group col-sm-6">
                 
                         <label for="inputNome">Nome</label>
-                        <input type="text" class="form-control" id="inputNome" placeholder="Nome" max-lenght="30">
+                        <input type="text" class="form-control" id="inputNome" name="nome" placeholder="Nome" max-lenght="30" required>
                         
                     </div>
                     
                     <div class="form-group col-sm-6">
                     
                         <label for="inputSobrenome">Sobrenome</label>
-                        <input type="text" class="form-control" id="inputSobrenome" placeholder="Sobrenome">
+                        <input type="text" class="form-control" id="inputSobrenome" name="sobrenome" placeholder="Sobrenome" max-lenght="30" required>
                     
                     </div>
                     
@@ -81,7 +81,7 @@
                     <div class="form-group col-sm-12">
                     
                         <label for="inputEnd">Endereço</label>
-                        <input type="text" class="form-control" id="inputEnd" placeholder="Endereço completo">
+                        <input type="text" class="form-control" id="inputEnd" name="adress" placeholder="Endereço completo" max-lenght="30" required>
                     
                     </div>
                     
@@ -92,14 +92,14 @@
                     <div class="form-group col-sm-6">
                     
                         <label for="inputCidade">E-mail</label>
-                        <input type="email" class="form-control" id="inputMail" placeholder="xxxxx@xx.com">
+                        <input type="email" class="form-control" id="inputMail" name="email" placeholder="xxxxx@xx.com" required>
                     
                     </div>
                     
                     <div class="form-group col-sm-6">
                     
                         <label for="inputEst">Faculdade</label>
-                        <select id="inputEst" class="form-control">
+                        <select id="inputEst" name="facul" class="form-control">
                             <option selected>Escolha...</option>
                             <option>...</option>
                             <option>...</option>
@@ -111,7 +111,7 @@
                     <div class="form-group col-sm-4">
                     
                         <label for="inputID">Nr. de Estudante</label>
-                        <input type="number" id="inputID" class="form-control">
+                        <input type="number" id="inputID" class="form-control" max-lenght="4" required>
                     
                     </div>
                 

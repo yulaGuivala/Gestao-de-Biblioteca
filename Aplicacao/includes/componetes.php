@@ -233,7 +233,7 @@ function rodape() {
         </div>
     
         <div class="row justify-content-center footer-copyright py-1 border-top-1 bg-dark" >
-            <div class="col-10 text-center text-light"> Universidade Nachingwea &copy; <script>document.write(new Date().getFullYear());</script>  - Todos Direitos Reservados </div>
+            <div class="col-10 text-center text-light"> Universidade Nachingwea &copy; <script>document.write(new Date().getFullYear());</script>- Todos Direitos Reservados </div>
         </div>
 
     </footer>
