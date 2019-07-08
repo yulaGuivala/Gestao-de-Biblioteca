@@ -20,5 +20,7 @@ class livroController extends Controller
             'editora'=>'ddd',
             'pais'=>'1212',
         ];
+
+        
     }
 }
