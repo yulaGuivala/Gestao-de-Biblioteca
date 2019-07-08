@@ -14,6 +14,7 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../lib/validate/jquery.validate.css">
   
   <!-- endinject -->
   <?php favicon(); ?>
@@ -49,66 +50,92 @@
               </div>
             </div>
         </div>
-
+        <div class="row">
+          <div class="col-12">
+            <div class="alert alert-warning alert-dismissable d-none" id="alerta-msg">    
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>    Modo edição activado!
+            </div>
+          </div>
+        </div>
+        
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Seus Dados de Perfil</h4>
-                  <p class="card-description">
-                    Habilite a edição para para alterar os seu dados.
+                  <p class="card-description" id="p-msg">
+                    Habilite a edição para alterar os seus dados.
                   </p>
                   
-                  <form class="forms-sample" method="POST">
+                  <form class="forms-sample" method="POST" id="formulario">
                     
                     <div class="form-row">
                       <div class="form-group col-sm-6">
                         <label for="nome">Primeiro Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Primeiro nome" value="Shanks" readonly>
+                        <input type="text" class="form-control" id="nome" placeholder="Primeiro nome" value="Shanks" readonly required>
                       </div>
                       <div class="form-group col-sm-6">
                         <label for="apelido">Sobrenome</label>
-                        <input type="text" class="form-control" id="apelido" placeholder="Sobrenome" value="O Ruivo" readonly>
+                        <input type="text" class="form-control" id="apelido" placeholder="Sobrenome" value="O Ruivo" readonly required>
                       </div>
                     </div>
                     
                     <div class="form-row">
                       <div class="form-group col-sm-6">
                         <label for="usuario">Nome de Usuário</label>
-                        <input type="text" class="form-control" id="usuario" placeholder="Nome de usuário" value="shanks" readonly>
+                        <input type="text" class="form-control" id="usuario" placeholder="Nome de usuário" value="shanks" readonly required minlength="3" maxlength="15">
                       </div>
                       <div class="form-group col-sm-6">
                         <label for="mail">Endereço de Email</label>
-                        <input type="email" class="form-control" id="mail" placeholder="Email" value="ruivo@gmail.com" readonly>
+                        <input type="email" class="form-control" id="mail" placeholder="Email" value="ruivo@gmail.com" readonly required>
                       </div>
                     </div>
                     
                     <div class="form-row">
+                      
                       <div class="form-group col-sm-6">
                         <label for="senha">Senha</label>
-                        <input type="password" class="form-control" id="senha" placeholder="Senha" value="younkou" readonly>
+                        <div class="input-group">
+                          <div class="input-group-append">
+                            <button class="btn btn-sm btn-secondary" type="button" id="btn-senha"><i class="ti-eye"></i></button>
+                          </div>
+                          <input type="password" class="form-control" id="senha" placeholder="Senha" value="younkou" readonly required minlength="4" maxlength="15">
+                          
+                        </div>
                       </div>
-                      <div class="form-group col-sm-6">
-                        <label for="confirmar">Confirmar Senha</label>
-                        <input type="password" class="form-control" id="confirmar" placeholder="confirmar senha">
+                      
+                      <div class="form-group col-sm-6 d-none" id="divcs">
+                        <label for="csenha">Confirmar Senha</label>
+                        <div class="input-group">
+                          <div class="input-group-append">
+                            <button class="btn btn-sm btn-secondary" type="button" id="btn-csenha"><i class="ti-eye"></i></button>
+                          </div>
+                          <input type="password" class="form-control" id="csenha" placeholder="Confirmar senha" value="younkou" readonly required equalTo="#senha" maxlength="15">
+                          
+                        </div>
                       </div>
+
                     </div>
 
                     <div class="form-row">
                       <div class="form-group col-sm-12">
                         <label>Foto de Perfil</label>
-                        <input type="file" name="img[]" class="file-upload-default">
+                        <input type="file" name="img[]" class="file-upload-default" accept="image/*">
                         <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info" disabled placeholder="Foto de perfil" value="foto.jpg">
+                          <input type="text"  class="form-control file-upload-info" disabled placeholder="Foto de perfil" value="foto.jpg" required>
                           <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button" disabled>Carregar</button>
+                            <button class="file-upload-browse btn btn-primary" id="btn-foto" type="button" disabled>Carregar</button>
                           </span>
                         </div>
                       </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary mr-2 d-none" id="confirmar2">Confirmar</button>
-                    <a href="index.php" class="btn btn-danger d-none" id="cancelar">Cancelar</a>
+                    <div class="form-row">
+                      <div class="form-group col-12">
+                        <button type="submit" class="btn btn-primary mr-2 mt-2 d-none" id="confirmar2">Confirmar</button>
+                        <a href="index.php" class="btn btn-danger mt-2 d-none" id="cancelar">Cancelar</a>
+                      </div>
+                    </div>
                   </form>
 
                 </div>
@@ -134,19 +161,18 @@
   <!-- plugins:js -->
   <script src="vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <script src="vendors/chart.js/Chart.min.js"></script>
-  <!-- End plugin js for this page-->
+   <!-- End plugin js for this page-->
   <!-- inject:js -->
   <script src="js/off-canvas.js"></script>
   <script src="js/hoverable-collapse.js"></script>
   <script src="js/template.js"></script>
   <script src="js/todolist.js"></script>
   <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="js/dashboard.js"></script>
+ 
   <!-- End custom js for this page-->
    <script src="js/file-upload.js"></script>
+   <script src="../lib/validate/jquery.validate.min.js"></script>
+    <script src="../lib/validate/jquery.validate.pt-br.js"></script>
    <script src="js/script-admin.js"></script>
 </body>
 
