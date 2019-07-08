@@ -1,15 +1,16 @@
 <?php
 
 function favicon() {
-    echo '<link rel="shortcut icon" href="images/favicon.png" />';
+    echo '<link rel="shortcut icon" href="../imgs/favicon.png" />';
 }
 
 function navbar() {
 ?>
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="../imgs/logo1.jpg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../imgs/mini-logo.jpg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="index.php"><b class="ml-4 text-danger" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b></a>
+        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="../imgs/favicon.png" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -28,7 +29,7 @@ function navbar() {
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item dropdown mr-1">
+          <li class="nav-item dropdown mr-3">
             <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
               <i class="ti-email mx-0"></i>
             </a>
@@ -72,64 +73,17 @@ function navbar() {
               </a>
             </div>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-              <i class="ti-bell mx-0"></i>
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Notificações</p>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                  <div class="item-icon bg-success">
-                    <i class="ti-info-alt mx-0"></i>
-                  </div>
-                </div>
-                <div class="item-content">
-                  <h6 class="font-weight-normal">Application Error</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Just now
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                  <div class="item-icon bg-warning">
-                    <i class="ti-settings mx-0"></i>
-                  </div>
-                </div>
-                <div class="item-content">
-                  <h6 class="font-weight-normal">Settings</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Private message
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                  <div class="item-icon bg-info">
-                    <i class="ti-user mx-0"></i>
-                  </div>
-                </div>
-                <div class="item-content">
-                  <h6 class="font-weight-normal">New user registration</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    2 days ago
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li>
+          
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face28.jpg" alt="profile"/>
+              <img src="../imgs/perfil.png" alt="perfil" />
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Definições
+              <a class="dropdown-item" href="perfil.php">
+                <i class="ti-user text-primary"></i>
+                Perfil
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="login.php">
                 <i class="ti-power-off text-primary"></i>
                 Sair
               </a>
@@ -148,35 +102,38 @@ function sidebar() {
 ?>
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+          
           <li class="nav-item">
             <a class="nav-link" href="index.php">
               <i class="ti-shield menu-icon"></i>
               <span class="menu-title">Painel de Controle</span>
             </a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" data-toggle="collapse" href="#usuarios" aria-expanded="false" aria-controls="auth">
               <i class="ti-user menu-icon"></i>
               <span class="menu-title">Usuários</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
+            <div class="collapse" id="usuarios">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> 
                   <a class="nav-link" href="lista-funcionario.php">Funcionários</a>
                   <a class="nav-link d-none" href="adicionar-funcionario.php">Adicionar Funcionário</a>
                 </li>
-                <li class="nav-item"> <a class="nav-link" href="#">Utentes</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Estudantes</a></li>
               </ul>
             </div>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" data-toggle="collapse" href="#livros" aria-expanded="false" aria-controls="livros">
               <i class="ti-user menu-icon"></i>
               <span class="menu-title">Livros</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
+            <div class="collapse" id="livros">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> 
                   <a class="nav-link" href="lista-livro.php">Livros</a>
@@ -185,12 +142,14 @@ function sidebar() {
               </ul>
             </div>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="lista-requisicoes.php">
               <i class="ti-write menu-icon"></i>
               <span class="menu-title">Requisicoes</span>
             </a>
           </li>
+
         </ul>
     </nav>
 <?php

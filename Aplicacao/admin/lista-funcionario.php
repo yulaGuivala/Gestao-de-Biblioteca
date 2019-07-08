@@ -69,7 +69,7 @@
                                         <th>
                                             <div class="form-check form-check-flat form-check-primary">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">                                           </label>
+                                                <input type="checkbox" class="form-check-input" id="selecionar">                                           </label>
                                             </div>
                                         </th>
                                         <th>Nome</th>
@@ -189,6 +189,11 @@
         $(document).ready( function () {
             $('#tabela-dados').DataTable();
         } );
+
+        //seleciona todos checkboxes da tabela 
+        $("#selecionar").click(function () {
+            $('input:checkbox').prop('checked', this.checked);
+        });
     </script>
 
 </body>

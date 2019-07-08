@@ -1,10 +1,17 @@
+#bigHead{
+  position: relative;
+  padding: 0; 
+  margin: 10%; 
+  clear: both;
+  }
+
 .scrollspySite {
   position: relative;
   overflow: auto;
   height: 345px; }
 
   #dir, #dir a {
-    color: rgb(212, 209, 209);
+    color: #d4d1d1;
     font-size: 13px;
   }
 
@@ -16,7 +23,7 @@
     font-size: 160%;
   }
  .nav-pills .nav-link.active {
-    background-color: rgb(170,3, 13) !important;
+    background-color: #aa030d !important;
 }
 
   footer a{
@@ -33,7 +40,7 @@
 }
 
 .cor-vermelho{
-  background-color:rgb(170,3, 13);
+  background-color:#aa030d;
 }
 
 .cor-borda {
@@ -47,15 +54,19 @@
     border-radius: 10px;
 }
 
+.cor-borda3 {
+    border: 0.1px solid #c2c2c2;
+}
+
 .cor-creme {
     background: #f6f6f6;
 }
 footer a:hover{
-  color: black;
+  color: #000000;
 }
 
 #navbarVertical a{
-  color:black;
+  color:#000000;
 }
 
 big{
@@ -67,3 +78,18 @@ big{
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/*css do validate jquery*/
+.my-error-class {
+    color:#ff0000;
+}
+
+.my-error-class:focus {
+    outline: none !important;
+    border: 1px solid #ff0000;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+.my-valid-class {
+    color:#008000;
+}

@@ -46,7 +46,7 @@
     <div class="container">
         
         <div class="row justify-content-center">
-            <form class="col-sm-10 col-md-8 col-lg-6" method="post" action="autenticacao.php">
+            <form class="col-sm-10 col-md-8 col-lg-6" method="post" action="autenticacao.php" id="formulario">
             
                 <div class="col-sm-12 border cor-creme cor-borda justify-content-center mb-5" id="geral">
             
@@ -178,16 +178,9 @@
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-      
-    <script>
-        
-        $(function () {
-        
-            $('[data-toggle="popover"]').popover()
-        
-        })
-      
-    </script>
+    <script src="lib/validate/jquery.validate.min.js"></script>
+    <script src="lib/validate/jquery.validate.pt-br.js"></script>
+    <script src="js/script.js"></script>
 
   </body>
 </html>
