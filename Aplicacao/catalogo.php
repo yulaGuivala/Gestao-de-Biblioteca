@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style/css/style.css">
       
     <link rel="stylesheet" href="lib/fontawesome/css/all.css">
-
+    <link rel="stylesheet" href="lib/buzina-pagination/buzina-pagination.min.css">
     <?php favicon(); ?>
       
 </head>
@@ -77,15 +77,126 @@
                     <div class="col-sm-12 tab-content" id="nav-pills-tipo">
                         
                         <div class="tab-pane fade show active" id="tipo1" role="tabpanel">
-                            <div class="container-fluid">
-                                <div class="row">
+                            <div class="container-fluid" id="grupo-1">
+                                
+                                <div class="row" >
+                                    <div class="col-sm-6 col-md-4">
+                                
+                                        <div class="card mb-5">
+                                            
+                                        <img class="card-img-top" src="imgs/book1.jpg">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Aprendendo HTML com Plain HTML 7 para iniciantes</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
+                                        </div>
+                                        <uL class="list-group list-group-flush">
+                                            <li class="list-group-item">Autor</li>
+                                            <li class="list-group-item">Edicao</li>
+                                            <li class="list-group-item">Estado: Ocupado</li>
+                                        </uL>
+                                        <div class="card-body">
+                                                <div class="row justify-content-center" >
+                                                    <a href="#" class="card-link">
+                                                        <button class="btn cor-vermelho text-light">
+                                                            Detalhes
+                                                        </button>
+                                                    </a>
+                                                    <a href="#" class="card-link">
+                                                            <button class="btn cor-vermelho text-light">
+                                                                Requisitar
+                                                            </button>
+                                                        </a>
+                                                </div>
+                                        </div>
+                                        <div class="card-footer text-muted">
+                                        
+                                        </div>
+                                    
+                                        </div>
+                                
+                                    </div>
+                                
+                                    <div class="col-sm-6 col-md-4">
+                                    
+                                            <div class="card mb-5">
+                                                    
+                                                <img class="card-img-top" src="imgs/capture.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Guia do SCRUM</h4>
+                                                    <h6 class="card-subtitle mb-2 text-muted">Um guia definitivo para o SCRUM: as regras do jogo</h6>
+                                                </div>
+                                                <uL class="list-group list-group-flush">
+                                                    <li class="list-group-item">Autor</li>
+                                                    <li class="list-group-item">Edicao</li>
+                                                    <li class="list-group-item">Estado: Disponivel</li>
+                                                </uL>
+                                                <div class="card-body">
+                                                        <div class="row justify-content-center" >
+                                                            <a href="#" class="card-link" data-toggle="modal" data-target="#siteModal">
+                                                                <button class="btn cor-vermelho text-light">
+                                                                    Detalhes
+                                                                </button>
+                                                            </a>
+                                                            <a href="#" class="card-link">
+                                                                <button class="btn cor-vermelho text-light">
+                                                                    Requisitar
+                                                                </button>
+                                                            </a>
+                                                        </div>
+                                                </div>
+                                                <div class="card-footer text-muted">
+                                                
+                                                </div>
+                                            
+                                            </div>
+                                        
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4" >
+                                    
+                                        <div class="card mb-5">
+                                            
+                                            <img class="card-img-top" src="imgs/capture2.jpg">
+                                            <div class="card-body">
+                                            <h4 class="card-title">Redes de computadores - uma abordagem de sistemas</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
+                                            </div>
+                                            <uL class="list-group list-group-flush">
+                                                <li class="list-group-item">Autor</li>
+                                                <li class="list-group-item">Edicao</li>
+                                                <li class="list-group-item">Estado: Disponivel</li>
+                                            </uL>
+                                            <div class="card-body">
+                                                <div class="row justify-content-center" >
+                                                    <a href="#" class="card-link" data-toggle="modal" data-target="#siteModal">
+                                                        <button class="btn cor-vermelho text-light">
+                                                            Detalhes
+                                                        </button>
+                                                    </a>
+                                                    <a href="#" class="card-link">
+                                                        <button class="btn cor-vermelho text-light">
+                                                            Requisitar
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer text-muted">
+                                            
+                                            </div>
+                                        
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+
+                                <div class="row" >
                                     <div class="col-sm-6 col-md-4">
                 
                                         <div class="card mb-5">
                                                 
                                             <img class="card-img-top" src="imgs/book1.jpg">
                                             <div class="card-body">
-                                                <h4 class="card-title">Aprendendo HTML com Plain HTML 7 para iniciantes</h4>
+                                                <h4 class="card-title">11212prendendo HTML com Plain HTML 7 para iniciantes</h4>
                                                 <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
                                             </div>
                                             <uL class="list-group list-group-flush">
@@ -187,12 +298,15 @@
                                     
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                 
                         <div class="tab-pane fade" id="tipo2" role="tabpanel">
-                            <div class="container-fluid">
+                            <div class="container-fluid" id="grupo-2">
+                                
                                 <div class="row">
+                                    
                                     <div class="col-sm-6 col-md-4">
                 
                                         <div class="card mb-5">
@@ -265,11 +379,161 @@
                                     
                                     </div>
                                 </div>
+
                             </div>
                         </div>
     
                         <div class="tab-pane fade" id="tipo3" role="tabpanel">
-                           <div class="col-sm-6 col-md-4">
+                           <div class="container-fluid" id="grupo-3">
+                                
+                                <div class="row" >
+                                    <div class="col-sm-6 col-md-4">
+                                
+                                        <div class="card mb-5">
+                                            
+                                        <img class="card-img-top" src="imgs/book1.jpg">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Aprendendo HTML com Plain HTML 7 para iniciantes</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
+                                        </div>
+                                        <uL class="list-group list-group-flush">
+                                            <li class="list-group-item">Autor</li>
+                                            <li class="list-group-item">Edicao</li>
+                                            <li class="list-group-item">Estado: Ocupado</li>
+                                        </uL>
+                                        <div class="card-body">
+                                                <div class="row justify-content-center" >
+                                                    <a href="#" class="card-link">
+                                                        <button class="btn cor-vermelho text-light">
+                                                            Detalhes
+                                                        </button>
+                                                    </a>
+                                                    <a href="#" class="card-link">
+                                                            <button class="btn cor-vermelho text-light">
+                                                                Requisitar
+                                                            </button>
+                                                        </a>
+                                                </div>
+                                        </div>
+                                        <div class="card-footer text-muted">
+                                        
+                                        </div>
+                                    
+                                        </div>
+                                
+                                    </div>
+                                
+                                    <div class="col-sm-6 col-md-4">
+                                    
+                                            <div class="card mb-5">
+                                                    
+                                                <img class="card-img-top" src="imgs/capture.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Guia do SCRUM</h4>
+                                                    <h6 class="card-subtitle mb-2 text-muted">Um guia definitivo para o SCRUM: as regras do jogo</h6>
+                                                </div>
+                                                <uL class="list-group list-group-flush">
+                                                    <li class="list-group-item">Autor</li>
+                                                    <li class="list-group-item">Edicao</li>
+                                                    <li class="list-group-item">Estado: Disponivel</li>
+                                                </uL>
+                                                <div class="card-body">
+                                                        <div class="row justify-content-center" >
+                                                            <a href="#" class="card-link" data-toggle="modal" data-target="#siteModal">
+                                                                <button class="btn cor-vermelho text-light">
+                                                                    Detalhes
+                                                                </button>
+                                                            </a>
+                                                            <a href="#" class="card-link">
+                                                                <button class="btn cor-vermelho text-light">
+                                                                    Requisitar
+                                                                </button>
+                                                            </a>
+                                                        </div>
+                                                </div>
+                                                <div class="card-footer text-muted">
+                                                
+                                                </div>
+                                            
+                                            </div>
+                                        
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4" >
+                                    
+                                        <div class="card mb-5">
+                                            
+                                            <img class="card-img-top" src="imgs/capture2.jpg">
+                                            <div class="card-body">
+                                            <h4 class="card-title">Redes de computadores - uma abordagem de sistemas</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
+                                            </div>
+                                            <uL class="list-group list-group-flush">
+                                                <li class="list-group-item">Autor</li>
+                                                <li class="list-group-item">Edicao</li>
+                                                <li class="list-group-item">Estado: Disponivel</li>
+                                            </uL>
+                                            <div class="card-body">
+                                                <div class="row justify-content-center" >
+                                                    <a href="#" class="card-link" data-toggle="modal" data-target="#siteModal">
+                                                        <button class="btn cor-vermelho text-light">
+                                                            Detalhes
+                                                        </button>
+                                                    </a>
+                                                    <a href="#" class="card-link">
+                                                        <button class="btn cor-vermelho text-light">
+                                                            Requisitar
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer text-muted">
+                                            
+                                            </div>
+                                        
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+
+                                <div class="row" >
+                                    <div class="col-sm-6 col-md-4">
+                
+                                        <div class="card mb-5">
+                                                
+                                            <img class="card-img-top" src="imgs/book1.jpg">
+                                            <div class="card-body">
+                                                <h4 class="card-title">11212prendendo HTML com Plain HTML 7 para iniciantes</h4>
+                                                <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
+                                            </div>
+                                            <uL class="list-group list-group-flush">
+                                                <li class="list-group-item">Autor</li>
+                                                <li class="list-group-item">Edicao</li>
+                                                <li class="list-group-item">Estado: Ocupado</li>
+                                            </uL>
+                                            <div class="card-body">
+                                                    <div class="row justify-content-center" >
+                                                        <a href="#" class="card-link">
+                                                            <button class="btn cor-vermelho text-light">
+                                                                Detalhes
+                                                            </button>
+                                                        </a>
+                                                        <a href="#" class="card-link">
+                                                                <button class="btn cor-vermelho text-light">
+                                                                    Requisitar
+                                                                </button>
+                                                            </a>
+                                                    </div>
+                                            </div>
+                                            <div class="card-footer text-muted">
+                                            
+                                            </div>
+                                        
+                                        </div>
+                                    
+                                    </div>
+                                    
+                                    <div class="col-sm-6 col-md-4">
                                     
                                         <div class="card mb-5">
                                                 
@@ -304,10 +568,271 @@
                                         </div>
                                     
                                     </div>
+
+                                    <div class="col-sm-6 col-md-4">
+                                    
+                                        <div class="card mb-5">
+                                                
+                                            <img class="card-img-top" src="imgs/book1.jpg">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Aprendendo HTML com Plain HTML 7 para iniciantes</h4>
+                                                <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
+                                            </div>
+                                            <uL class="list-group list-group-flush">
+                                                <li class="list-group-item">Autor</li>
+                                                <li class="list-group-item">Edicao</li>
+                                                <li class="list-group-item">Estado: Ocupado</li>
+                                            </uL>
+                                            <div class="card-body">
+                                                    <div class="row justify-content-center" >
+                                                        <a href="#" class="card-link">
+                                                            <button class="btn cor-vermelho text-light">
+                                                                Detalhes
+                                                            </button>
+                                                        </a>
+                                                        <a href="#" class="card-link">
+                                                                <button class="btn cor-vermelho text-light">
+                                                                    Requisitar
+                                                                </button>
+                                                            </a>
+                                                    </div>
+                                            </div>
+                                            <div class="card-footer text-muted">
+                                            
+                                            </div>
+                                        
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
 
                         <div class="tab-pane fade" id="tipo4" role="tabpanel">
-                           
+                           <div class="container-fluid" id="grupo-4">
+                                
+                                <div class="row" >
+                                    <div class="col-sm-6 col-md-4">
+                                
+                                        <div class="card mb-5">
+                                            
+                                        <img class="card-img-top" src="imgs/book1.jpg">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Aprendendo HTML com Plain HTML 7 para iniciantes</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
+                                        </div>
+                                        <uL class="list-group list-group-flush">
+                                            <li class="list-group-item">Autor</li>
+                                            <li class="list-group-item">Edicao</li>
+                                            <li class="list-group-item">Estado: Ocupado</li>
+                                        </uL>
+                                        <div class="card-body">
+                                                <div class="row justify-content-center" >
+                                                    <a href="#" class="card-link">
+                                                        <button class="btn cor-vermelho text-light">
+                                                            Detalhes
+                                                        </button>
+                                                    </a>
+                                                    <a href="#" class="card-link">
+                                                            <button class="btn cor-vermelho text-light">
+                                                                Requisitar
+                                                            </button>
+                                                        </a>
+                                                </div>
+                                        </div>
+                                        <div class="card-footer text-muted">
+                                        
+                                        </div>
+                                    
+                                        </div>
+                                
+                                    </div>
+                                
+                                    <div class="col-sm-6 col-md-4">
+                                    
+                                            <div class="card mb-5">
+                                                    
+                                                <img class="card-img-top" src="imgs/capture.jpg">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Guia do SCRUM</h4>
+                                                    <h6 class="card-subtitle mb-2 text-muted">Um guia definitivo para o SCRUM: as regras do jogo</h6>
+                                                </div>
+                                                <uL class="list-group list-group-flush">
+                                                    <li class="list-group-item">Autor</li>
+                                                    <li class="list-group-item">Edicao</li>
+                                                    <li class="list-group-item">Estado: Disponivel</li>
+                                                </uL>
+                                                <div class="card-body">
+                                                        <div class="row justify-content-center" >
+                                                            <a href="#" class="card-link" data-toggle="modal" data-target="#siteModal">
+                                                                <button class="btn cor-vermelho text-light">
+                                                                    Detalhes
+                                                                </button>
+                                                            </a>
+                                                            <a href="#" class="card-link">
+                                                                <button class="btn cor-vermelho text-light">
+                                                                    Requisitar
+                                                                </button>
+                                                            </a>
+                                                        </div>
+                                                </div>
+                                                <div class="card-footer text-muted">
+                                                
+                                                </div>
+                                            
+                                            </div>
+                                        
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4" >
+                                    
+                                        <div class="card mb-5">
+                                            
+                                            <img class="card-img-top" src="imgs/capture2.jpg">
+                                            <div class="card-body">
+                                            <h4 class="card-title">Redes de computadores - uma abordagem de sistemas</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
+                                            </div>
+                                            <uL class="list-group list-group-flush">
+                                                <li class="list-group-item">Autor</li>
+                                                <li class="list-group-item">Edicao</li>
+                                                <li class="list-group-item">Estado: Disponivel</li>
+                                            </uL>
+                                            <div class="card-body">
+                                                <div class="row justify-content-center" >
+                                                    <a href="#" class="card-link" data-toggle="modal" data-target="#siteModal">
+                                                        <button class="btn cor-vermelho text-light">
+                                                            Detalhes
+                                                        </button>
+                                                    </a>
+                                                    <a href="#" class="card-link">
+                                                        <button class="btn cor-vermelho text-light">
+                                                            Requisitar
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer text-muted">
+                                            
+                                            </div>
+                                        
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+
+                                <div class="row" >
+                                    <div class="col-sm-6 col-md-4">
+                
+                                        <div class="card mb-5">
+                                                
+                                            <img class="card-img-top" src="imgs/book1.jpg">
+                                            <div class="card-body">
+                                                <h4 class="card-title">11212prendendo HTML com Plain HTML 7 para iniciantes</h4>
+                                                <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
+                                            </div>
+                                            <uL class="list-group list-group-flush">
+                                                <li class="list-group-item">Autor</li>
+                                                <li class="list-group-item">Edicao</li>
+                                                <li class="list-group-item">Estado: Ocupado</li>
+                                            </uL>
+                                            <div class="card-body">
+                                                    <div class="row justify-content-center" >
+                                                        <a href="#" class="card-link">
+                                                            <button class="btn cor-vermelho text-light">
+                                                                Detalhes
+                                                            </button>
+                                                        </a>
+                                                        <a href="#" class="card-link">
+                                                                <button class="btn cor-vermelho text-light">
+                                                                    Requisitar
+                                                                </button>
+                                                            </a>
+                                                    </div>
+                                            </div>
+                                            <div class="card-footer text-muted">
+                                            
+                                            </div>
+                                        
+                                        </div>
+                                    
+                                    </div>
+                                    
+                                    <div class="col-sm-6 col-md-4">
+                                    
+                                        <div class="card mb-5">
+                                                
+                                            <img class="card-img-top" src="imgs/book1.jpg">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Aprendendo HTML com Plain HTML 7 para iniciantes</h4>
+                                                <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
+                                            </div>
+                                            <uL class="list-group list-group-flush">
+                                                <li class="list-group-item">Autor</li>
+                                                <li class="list-group-item">Edicao</li>
+                                                <li class="list-group-item">Estado: Ocupado</li>
+                                            </uL>
+                                            <div class="card-body">
+                                                    <div class="row justify-content-center" >
+                                                        <a href="#" class="card-link">
+                                                            <button class="btn cor-vermelho text-light">
+                                                                Detalhes
+                                                            </button>
+                                                        </a>
+                                                        <a href="#" class="card-link">
+                                                                <button class="btn cor-vermelho text-light">
+                                                                    Requisitar
+                                                                </button>
+                                                            </a>
+                                                    </div>
+                                            </div>
+                                            <div class="card-footer text-muted">
+                                            
+                                            </div>
+                                        
+                                        </div>
+                                    
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4">
+                                    
+                                        <div class="card mb-5">
+                                                
+                                            <img class="card-img-top" src="imgs/book1.jpg">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Aprendendo HTML com Plain HTML 7 para iniciantes</h4>
+                                                <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
+                                            </div>
+                                            <uL class="list-group list-group-flush">
+                                                <li class="list-group-item">Autor</li>
+                                                <li class="list-group-item">Edicao</li>
+                                                <li class="list-group-item">Estado: Ocupado</li>
+                                            </uL>
+                                            <div class="card-body">
+                                                    <div class="row justify-content-center" >
+                                                        <a href="#" class="card-link">
+                                                            <button class="btn cor-vermelho text-light">
+                                                                Detalhes
+                                                            </button>
+                                                        </a>
+                                                        <a href="#" class="card-link">
+                                                                <button class="btn cor-vermelho text-light">
+                                                                    Requisitar
+                                                                </button>
+                                                            </a>
+                                                    </div>
+                                            </div>
+                                            <div class="card-footer text-muted">
+                                            
+                                            </div>
+                                        
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -391,91 +916,44 @@
     </div>
 
     <!-- Modal caixa de livros-->
-    <div class="modal fade" id="livros" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-            
-                <div class="modal-header">
-                    <h5 class="modal-title">Caixa de Livros</h5>
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span>&times;</span>
-                    </button>
-                </div>
-                
-                <div class="modal-body">
-                    
-                    <div class="container-fluid">
-                    
-                        <div class="row">
-                        
-                            <div class="col-12">
-                                <table class="table table-bordered table-hover col-12 tabela mt-2" id="i2">
-                                    <thead >
-                                        <tr class="cor-creme">
-                                            <td class="titulo-tabela" colspan="5"><i class="fa fa-list mr-2"></i>Lista de livros selecionados</td>
-                                            
-                                        </tr>
-                                        <tr>
-                                        <tr>
-                                            <th class=" text-center" style="width:2px;">
-                                                <input type="checkbox" onclick="selecionar()">
-                                            </th>
-                                            <th class="text-danger">Titulo</th>
-                                            <th class="text-danger">Autor</th>
-                                            <th class="text-danger">Edição</th>
-                                            <th class="text-danger">Ano</th>
-                                        </tr>
-                                    </thead>
-                                            <tbody>
-                                            <tbody id="tabela-corpo"> 
-                                               <tr>
-                                                   <td><input type="checkbox"></td>
-                                                    <td>sfsfdfs</td>
-                                                    <td>sfsfdfs</td>
-                                                     <td>sfsfdfs</td>
-                                                    <td>sfsfdfs</td>
-                                                </tr>
-                                                <tr>
-                                                   <td><input type="checkbox"></td>
-                                                    <td>sfsfdfs</td>
-                                                    <td>sfsfdfs</td>
-                                                     <td>sfsfdfs</td>
-                                                    <td>sfsfdfs</td>
-                                                </tr>
-                                                <tr>
-                                                   <td><input type="checkbox"></td>
-                                                    <td>sfsfdfs</td>
-                                                    <td>sfsfdfs</td>
-                                                     <td>sfsfdfs</td>
-                                                    <td>sfsfdfs</td>
-                                                </tr>
-                                            </tbody>
-                                            </table>
-                            </div>
-                        
-                        </div>
-                    
-                    </div>
-                    
-                </div>
-                
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary text-light">Comfirmar Requisição</button>
-                    <button type="button" class="btn btn-danger text-light">Eliminar</button>
-                </div>
-                
-            </div>
-        </div>
-    </div>
+    <?php modalLivros(); ?>
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/buzina-pagination/buzina-pagination.min.js"></script>
       
     <script>
-        
+        $(document).ready(function(){
+            $('#grupo-1').buzinaPagination({
+                itemsOnPage: 3,
+                 prevnext:true, 
+                 prevText:"<<", 
+                 nextText:">>" 
+            });
+            $('#grupo-2').buzinaPagination({
+                itemsOnPage: 3,
+                 prevnext:true, 
+                 prevText:"<<", 
+                 nextText:">>" 
+            });
+            $('#grupo-3').buzinaPagination({
+                itemsOnPage: 3,
+                 prevnext:true, 
+                 prevText:"<<", 
+                 nextText:">>" 
+            });
+            $('#grupo-4').buzinaPagination({
+                itemsOnPage: 3,
+                 prevnext:true, 
+                 prevText:"<<", 
+                 nextText:">>" 
+            });
+
+        });
+
         $(function () {
         
             $('[data-toggle="popover"]').popover()
@@ -483,6 +961,7 @@
         })
       
     </script>
+    
 
   </body>
 </html>

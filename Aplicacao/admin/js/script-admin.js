@@ -3,7 +3,18 @@ $(document).ready(function () {
     //valida formularios
     $("#formulario").validate({
         errorClass: "my-error-class",
-        validClass: "my-valid-class"
+        validClass: "my-valid-class",
+        errorPlacement: function(error, element) {
+            if(element.attr("name") == "senha") {
+                error.appendTo($("#erro-senha").parent());
+            } else if (element.attr("name") == "csenha") {
+                error.appendTo($("#erro-csenha").parent());
+            } else if (element.attr("id") == "foto-livro") {
+                error.appendTo($("#erro-fotoLivro").parent());
+            } else {
+                error.insertAfter(element);
+            }
+        }  
     });
 });
 

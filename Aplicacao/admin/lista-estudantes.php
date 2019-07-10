@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>RoyalUI Admin</title>
+    <title>Lista de Estudantes|Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
@@ -43,12 +43,9 @@
                         <div class="col-md-12 grid-margin">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h4 class="font-weight-bold mb-0">Livros</h4>
+                                    <h4 class="font-weight-bold mb-0">Estudantes</h4>
                                 </div>
                                 <div>
-                                    <a href="adicionar-livro.php" class="btn btn-primary btn-icon-text btn-rounded">
-                                        <i class="ti-plus btn-icon-prepend"></i>Adicionar
-                                    </a>
                                     <button type="button" class="btn btn-danger btn-icon-text btn-rounded">
                                         <i class="ti-trash btn-icon-prepend"></i>Apagar
                                     </button>
@@ -61,7 +58,7 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                <h4 class="card-title mb-4">lista de livros</h4>
+                                <h4 class="card-title mb-4">lista de Estudantes</h4>
                                 <div class="table-responsive ">
                                     <table class="table table-hover " id="tabela-dados">
                                     <thead>
@@ -69,14 +66,13 @@
                                         <th>
                                             <div class="form-check form-check-flat form-check-primary">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">                                           </label>
+                                                <input type="checkbox" class="form-check-input" id="selecionar">                                           </label>
                                             </div>
                                         </th>
-                                        <th>Titulo</th>
-                                        <th>Autor</th>
-                                        <th>Editora</th>
+                                        <th>Nome</th>
+                                        <th>N<sup>o</sup> de Estudante</th>
+                                        <th>Email</th>
                                         <th>Faculdade</th>
-                                        <th>Ação</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -88,15 +84,10 @@
                                             </label>
                                             </div>
                                         </td>
-                                        <td>Artes da Vida Segundo Folege</td>
-                                        <td>Folege</td>
-                                        <td>Egelof Solutions</td>
-                                        <td>Faculdade de Engenharia</td>
-                                        <td>
-                                            <a href="#" class="btn btn-success btn-icon-text btn-rounded">
-                                                <i class="ti-pencil btn-icon-prepend"></i>Editar
-                                            </a>
-                                        </td>
+                                        <td>Jacob Pediton</td>
+                                        <td>847523618</td>
+                                        <td> jacob@gmail.com</i></td>
+                                        <td><label>jacob</label></td>
                                         </tr>
                                         <tr>
                                         <td>
@@ -106,15 +97,10 @@
                                             </label>
                                             </div>
                                         </td>
-                                        <td>Artes da Vida Segundo Folege</td>
-                                        <td>Folege</td>
-                                        <td>Egelof Solutions</i></td>
-                                        <td><label>Faculdade de Engenharia</label></td>
-                                        <td>
-                                            <a href="#" class="btn btn-success btn-icon-text btn-rounded">
-                                                <i class="ti-pencil btn-icon-prepend"></i>Editar
-                                            </a>
-                                        </td>
+                                        <td>Jacob Pediton</td>
+                                        <td>847523618</td>
+                                        <td> jacob@gmail.com</i></td>
+                                        <td><label>jacob</label></td>
                                         </tr>
                                         <tr>
                                         <td>
@@ -124,15 +110,10 @@
                                             </label>
                                             </div>
                                         </td>
-                                        <td>Artes da Vida Segundo Folege</td>
-                                        <td>Folege</td>
-                                        <td>Egelof Solutions</i></td>
-                                        <td><label>Faculdade de Engenharia</label></td>
-                                        <td>
-                                            <a href="#" class="btn btn-success btn-icon-text btn-rounded">
-                                                <i class="ti-pencil btn-icon-prepend"></i>Editar
-                                            </a>
-                                        </td>
+                                        <td>Jacob Pediton</td>
+                                        <td>847523618</td>
+                                        <td> jacob@gmail.com</i></td>
+                                        <td><label>jacob</label></td>
                                         </tr>
                                         <tr>
                                         <td>
@@ -142,15 +123,10 @@
                                             </label>
                                             </div>
                                         </td>
-                                        <td>Artes da Vida Segundo Folege</td>
-                                        <td>Folege</td>
-                                        <td>Egelof Solutions</i></td>
-                                        <td><label>Faculdade de Engenharia</label></td>
-                                        <td>
-                                            <a href="#" class="btn btn-success btn-icon-text btn-rounded">
-                                                <i class="ti-pencil btn-icon-prepend"></i>Editar
-                                            </a>
-                                        </td>
+                                        <td>Jacob Pediton</td>
+                                        <td>847523618</td>
+                                        <td> jacob@gmail.com</i></td>
+                                        <td><label>jacob</label></td>
                                         </tr>
                                         <tr>
                                         <td>
@@ -160,15 +136,10 @@
                                             </label>
                                             </div>
                                         </td>
-                                        <td>Artes da Vida Segundo Folege</td>
-                                        <td>Folege</td>
-                                        <td>Egelof Solutions</i></td>
-                                        <td><label>Faculdade de Engenharia</label></td>
-                                        <td>
-                                            <a href="#" class="btn btn-success btn-icon-text btn-rounded">
-                                                <i class="ti-pencil btn-icon-prepend"></i>Editar
-                                            </a>
-                                        </td>
+                                        <td>Edna Mendes</td>
+                                        <td>847523618</td>
+                                        <td> jacob@gmail.com</i></td>
+                                        <td><label>jacob</label></td>
                                         </tr>
                                     </tbody>
                                     </table>
@@ -215,6 +186,11 @@
         $(document).ready( function () {
             $('#tabela-dados').DataTable();
         } );
+
+        //seleciona todos checkboxes da tabela 
+        $("#selecionar").click(function () {
+            $('input:checkbox').prop('checked', this.checked);
+        });
     </script>
 
 </body>

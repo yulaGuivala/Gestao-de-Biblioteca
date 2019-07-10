@@ -14,6 +14,7 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../lib/validate/jquery.validate.css">
   
   <!-- endinject -->
   <?php favicon(); ?>
@@ -61,51 +62,52 @@
                     Introduza os dados do novo livro
                   </p>
                   
-                  <form class="forms-sample" method="POST">
+                  <form class="forms-sample" method="POST" id="formulario">
                     
                     <div class="form-row">
                       <div class="form-group col-sm-6">
                         <label for="Titulo">Titulo</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Titulo">
+                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" minlength="3" required>
                       </div>
                       <div class="form-group col-sm-6">
                         <label for="Titulo">Autor</label>
-                        <input type="text" class="form-control" id="autor" placeholder="Autor">
+                        <input type="text" class="form-control" id="autor" name="autor" placeholder="Autor" minlength="3" required>
                       </div>
                     </div>
                     
                     <div class="form-row">
                       <div class="form-group col-sm-6">
                         <label for="Editora">Editora</label>
-                        <input type="text" class="form-control" id="Editora" placeholder="Editora">
+                        <input type="text" class="form-control" id="Editora" name="editora" placeholder="Editora" minlength="3" required>
                       </div>
                       <div class="form-group col-sm-6">
                         <label for="Edicao">Edicao</label>
-                        <input type="number" class="form-control" id="Edicao" placeholder="Edicao">
+                        <input type="number" class="form-control" id="Edicao" id="edicao" placeholder="Edicao" min="1" max="1000" required>
                       </div>
                     </div>
                     
                     <div class="form-row">
                       <div class="form-group col-sm-6">
                         <label for="Pais">Pais</label>
-                        <input type="text" class="form-control" id="Pais" placeholder="Pais">
+                        <input type="text" class="form-control" id="Pais" name="pais" placeholder="Pais" minlength="3" required>
                       </div>
                       <div class="form-group col-sm-6">
                         <label for="Ano">Ano</label>
-                        <input type="number" class="form-control" id="Ano" placeholder="Ano">
+                        <input type="number" class="form-control" id="Ano" name="ano" placeholder="Ano" min="1000"  required>
                       </div>
                     </div>
 
                     <div class="form-row">
                       <div class="form-group col-sm-12">
                         <label>Foto do Livro</label>
-                        <input type="file" name="img[]" class="file-upload-default">
+                        <input type="file" id="foto-livro" name="img[]" accept="image/*" class="file-upload-default" required>
                         <div class="input-group col-xs-12">
                           <input type="text" class="form-control file-upload-info" disabled placeholder="Foto do Livro">
                           <span class="input-group-append">
                             <button class="file-upload-browse btn btn-primary" type="button">Carregar</button>
                           </span>
                         </div>
+                        <label id="erro-fotoLivro" class="my-error-class"></label>
                       </div>
                     </div>
 
@@ -149,7 +151,17 @@
   <script src="js/dashboard.js"></script>
   <!-- End custom js for this page-->
    <script src="js/file-upload.js"></script>
-</body>
+  <script src="../noe_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../lib/validate/jquery.validate.min.js"></script>
+  <script src="../lib/validate/jquery.validate.pt-br.js"></script>
+  <script src="js/script-admin.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#Ano").attr("max", new Date().getFullYear());
+    });
+    
+  </script>
+ </body>
 
 </html>
 

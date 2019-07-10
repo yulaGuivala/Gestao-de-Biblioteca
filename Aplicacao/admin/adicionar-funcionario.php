@@ -67,22 +67,22 @@
                     <div class="form-row">
                       <div class="form-group col-sm-6">
                         <label for="nome">Primeiro Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Primeiro nome" required>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Primeiro nome" maxlength="30" required>
                       </div>
                       <div class="form-group col-sm-6">
                         <label for="apelido">Sobrenome</label>
-                        <input type="text" class="form-control" id="apelido" placeholder="Sobrenome"  required>
+                        <input type="text" class="form-control" id="apelido" name="apelido" placeholder="Sobrenome" max-lenght="30" required>
                       </div>
                     </div>
                     
                     <div class="form-row">
                       <div class="form-group col-sm-6">
                         <label for="usuario">Nome de Usuário</label>
-                        <input type="text" class="form-control" id="usuario" placeholder="Nome de usuário" required minlength="3" maxlength="15">
+                        <input type="text" class="form-control" id="usuario" placeholder="Nome de usuário"  minlength="3" maxlength="15" required>
                       </div>
                       <div class="form-group col-sm-6">
                         <label for="mail">Endereço de Email</label>
-                        <input type="email" class="form-control" id="mail" placeholder="Email" required>
+                        <input type="email" class="form-control" id="mail" name="mail" placeholder="Email" required>
                       </div>
                     </div>
                     
@@ -91,23 +91,23 @@
                       <div class="form-group col-sm-6">
                         <label for="senha">Senha</label>
                         <div class="input-group">
+                          <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha"  minlength="4" maxlength="15" required>
                           <div class="input-group-append">
                             <button class="btn btn-sm btn-secondary" type="button" id="btn-senha"><i class="ti-eye"></i></button>
                           </div>
-                          <input type="password" class="form-control" id="senha" placeholder="Senha" required minlength="4" maxlength="15">
-                          
                         </div>
+                        <label id="erro-senha" class="my-error-class"></label>
                       </div>
                       
                       <div class="form-group col-sm-6" id="divcs">
                         <label for="csenha">Confirmar Senha</label>
                         <div class="input-group">
+                          <input type="password" class="form-control" id="csenha" name="csenha" placeholder="Confirmar senha"   equalTo="#senha" maxlength="15" required>
                           <div class="input-group-append">
                             <button class="btn btn-sm btn-secondary" type="button" id="btn-csenha"><i class="ti-eye"></i></button>
                           </div>
-                          <input type="password" class="form-control" id="csenha" placeholder="Confirmar senha"  required equalTo="#senha" maxlength="15">
-                          
                         </div>
+                        <label id="erro-csenha" class="my-error-class"></label>
                       </div>
 
                     </div>
@@ -115,13 +115,13 @@
                     <div class="form-row">
                       <div class="form-group col-sm-12">
                         <label>Foto de Perfil</label>
-                        <input type="file" name="img[]" class="file-upload-default" accept="image/*" reqired>
+                        <input type="file" name="img[]" class="file-upload-default" accept="image/*">
                         <div class="input-group col-xs-12">
                           <input type="text" class="form-control file-upload-info" disabled placeholder="Foto de perfil">
                           <span class="input-group-append">
                             <button class="file-upload-browse btn btn-primary" type="button">Carregar</button>
                           </span>
-                        </div>
+                        </div> 
                       </div>
                     </div>
 
@@ -162,18 +162,10 @@
   <!-- endinject -->
 
   <!-- End custom js for this page-->
-   <script src="js/file-upload.js"></script>
-   <script src="../lib/validate/jquery.validate.min.js"></script>
-    <script src="../lib/validate/jquery.validate.pt-br.js"></script>
-<script>
-    $(document).ready(function () {
-    //valida formularios
-    $("#formulario").validate({
-        errorClass: "my-error-class",
-        validClass: "my-valid-class"
-    });
-});
-</script>
+  <script src="js/file-upload.js"></script>
+  <script src="../lib/validate/jquery.validate.min.js"></script>
+  <script src="../lib/validate/jquery.validate.pt-br.js"></script>
+  <script src="js/script-admin.js"></script>
 
 </body>
 

@@ -17,19 +17,20 @@ function cabecalhoAutenticado() {
                 </div>
 
                 <div class="navbar-toggler float-left mt-3 mr-3"> 
-                    <a href="index.php" class="text-danger link" style="text-decoration:none">
-                        <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
+                    <a href="index.php" class="text-danger link text-center" style="text-decoration:none">
+                        <b style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
                     </a>
                 </div>
                 
                 <div class="float-right mr-3">
                     <ul class="navbar-nav list-group-horizontal float-right mt-2">
-                        <li class="nav-item mt-2">
+                        <li class="nav-item ">
                             <a href="#" class="link text-danger" data-toggle="modal" data-target="#livros"><i class="fas fa-book mr-1"></i>Caixa de Livros <sup class="badge bg-warning" style="position:relative; right:5px;">3</sup></a>
-                        </li>
-                        <li class="nav-item dropdown ml-3">
-                            <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo"><i
-                                    class="fas fa-user mr-1"></i>Jose Pedro</a>
+                        
+                            <a class="nav-link d-inline dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo">
+                                <img class="perfil-foto d-none d-md-inline" src="imgs/perfil.png">
+                                Jose Pedro
+                            </a>
                             <div class="dropdown-menu bg-danger">
                                 <a class="dropdown-item" href="perfil.php">Perfil</a>
                                 <a class="dropdown-item" href="#">Sair</a>

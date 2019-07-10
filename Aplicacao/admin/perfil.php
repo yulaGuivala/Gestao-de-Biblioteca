@@ -68,26 +68,25 @@
                   </p>
                   
                   <form class="forms-sample" method="POST" id="formulario">
-                    
                     <div class="form-row">
                       <div class="form-group col-sm-6">
                         <label for="nome">Primeiro Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Primeiro nome" value="Shanks" readonly required>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Primeiro nome" value="Shanks" readonly required>
                       </div>
                       <div class="form-group col-sm-6">
                         <label for="apelido">Sobrenome</label>
-                        <input type="text" class="form-control" id="apelido" placeholder="Sobrenome" value="O Ruivo" readonly required>
+                        <input type="text" class="form-control" id="apelido" name="apelido" placeholder="Sobrenome" value="O Ruivo" readonly required>
                       </div>
                     </div>
                     
                     <div class="form-row">
                       <div class="form-group col-sm-6">
                         <label for="usuario">Nome de Usuário</label>
-                        <input type="text" class="form-control" id="usuario" placeholder="Nome de usuário" value="shanks" readonly required minlength="3" maxlength="15">
+                        <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nome de usuário" value="shanks" readonly required minlength="3" maxlength="15">
                       </div>
                       <div class="form-group col-sm-6">
                         <label for="mail">Endereço de Email</label>
-                        <input type="email" class="form-control" id="mail" placeholder="Email" value="ruivo@gmail.com" readonly required>
+                        <input type="email" class="form-control" id="mail" name="mail" placeholder="Email" value="ruivo@gmail.com" readonly required>
                       </div>
                     </div>
                     
@@ -96,23 +95,24 @@
                       <div class="form-group col-sm-6">
                         <label for="senha">Senha</label>
                         <div class="input-group">
+                          <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" value="younkou" readonly required minlength="4" maxlength="15">
                           <div class="input-group-append">
                             <button class="btn btn-sm btn-secondary" type="button" id="btn-senha"><i class="ti-eye"></i></button>
                           </div>
-                          <input type="password" class="form-control" id="senha" placeholder="Senha" value="younkou" readonly required minlength="4" maxlength="15">
-                          
                         </div>
+                        <label id="erro-senha" class="my-error-class"></label>
                       </div>
                       
+
                       <div class="form-group col-sm-6 d-none" id="divcs">
                         <label for="csenha">Confirmar Senha</label>
                         <div class="input-group">
+                          <input type="password" class="form-control" id="csenha" name="csenha" placeholder="Confirmar senha" value="younkou" readonly required equalTo="#senha" maxlength="15">
                           <div class="input-group-append">
                             <button class="btn btn-sm btn-secondary" type="button" id="btn-csenha"><i class="ti-eye"></i></button>
                           </div>
-                          <input type="password" class="form-control" id="csenha" placeholder="Confirmar senha" value="younkou" readonly required equalTo="#senha" maxlength="15">
-                          
                         </div>
+                        <label id="erro-csenha" class="my-error-class"></label>
                       </div>
 
                     </div>
@@ -170,10 +170,10 @@
   <!-- endinject -->
  
   <!-- End custom js for this page-->
-   <script src="js/file-upload.js"></script>
-   <script src="../lib/validate/jquery.validate.min.js"></script>
-    <script src="../lib/validate/jquery.validate.pt-br.js"></script>
-   <script src="js/script-admin.js"></script>
+  <script src="js/file-upload.js"></script>
+  <script src="../lib/validate/jquery.validate.min.js"></script>
+  <script src="../lib/validate/jquery.validate.pt-br.js"></script>
+  <script src="js/script-admin.js"></script>
 </body>
 
 </html>
