@@ -62,7 +62,7 @@
                             <div class="card">
                                 <div class="card-body">
                                 <h4 class="card-title mb-4">lista de funcionários</h4>
-                                <div class="table-responsive ">
+                                <div class="table-responsive pb-0">
                                     <table class="table table-hover " id="tabela-dados">
                                     <thead>
                                         <tr>
@@ -76,6 +76,7 @@
                                         <th>Telefone</th>
                                         <th>Email</th>
                                         <th>Nome de Usuário</th>
+                                        <th>Registros de logs</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -90,7 +91,10 @@
                                         <td>Jacob Pediton</td>
                                         <td>847523618</td>
                                         <td> jacob@gmail.com</i></td>
-                                        <td><label>jacob</label></td>
+                                        <td>jacob</td>
+                                        <td>
+                                            <a href="registo-de-logs.php" class="btn btn-rounded btn-info"><i class="ti-eye"></i> Ver</a>
+                                        </td>
                                         </tr>
                                         <tr>
                                         <td>
@@ -104,6 +108,9 @@
                                         <td>847523618</td>
                                         <td> jacob@gmail.com</i></td>
                                         <td><label>jacob</label></td>
+                                        <td>
+                                            <a href="registo-de-logs.php" class="btn btn-rounded btn-info"><i class="ti-eye"></i> Ver</a>
+                                        </td>
                                         </tr>
                                         <tr>
                                         <td>
@@ -117,6 +124,9 @@
                                         <td>847523618</td>
                                         <td> jacob@gmail.com</i></td>
                                         <td><label>jacob</label></td>
+                                        <td>
+                                            <a href="registo-de-logs.php" class="btn btn-rounded btn-info"><i class="ti-eye"></i> Ver</a>
+                                        </td>
                                         </tr>
                                         <tr>
                                         <td>
@@ -130,6 +140,9 @@
                                         <td>847523618</td>
                                         <td> jacob@gmail.com</i></td>
                                         <td><label>jacob</label></td>
+                                        <td>
+                                            <a href="registo-de-logs.php" class="btn btn-rounded btn-info"><i class="ti-eye"></i> Ver</a>
+                                        </td>
                                         </tr>
                                         <tr>
                                         <td>
@@ -143,6 +156,9 @@
                                         <td>847523618</td>
                                         <td> jacob@gmail.com</i></td>
                                         <td><label>jacob</label></td>
+                                        <td>
+                                            <a href="registo-de-logs.php" class="btn btn-rounded btn-info"><i class="ti-eye"></i> Ver</a>
+                                        </td>
                                         </tr>
                                     </tbody>
                                     </table>
@@ -179,11 +195,12 @@
       <!-- End custom js for this page-->
     <script src="../lib/datatables/jquery.dataTables.min.js"></script>
     <script src="../lib/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../lib/datatables/datatable.pt-br.js"></script>
     
-    <script> 
-        $(document).ready( function () {
-            $('#tabela-dados').DataTable();
-        } );
+    <script>
+        //cria datatable em pt
+        dataTablePt('#tabela-dados');
+
 
         //seleciona todos checkboxes da tabela 
         $("#selecionar").click(function () {

@@ -43,291 +43,67 @@
                         <div class="col-md-12 grid-margin">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h4 class="font-weight-bold mb-0">Livros</h4>
+                                    <h4 class="font-weight-bold mb-0">Funcionários</h4>
+                                </div>
+                                <div>
+                                    <a href="lista-funcionario.php" class="btn btn-light btn-icon-text btn-rounded">
+                                    <i class="ti-back-right btn-icon-prepend"></i>Voltar
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row mb-5 "> 
-                        <div class="col-sm-12 border">
-                                <div class="row justify-content-center bg-white">
-                                    <div class="col-sm-12 borda-titulo border mb-2">
-                                        <label><i class=""></i>Registo de actividades</label>
-                                    </div>
-                                    <!--lista do tipo -->
-    
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                <h4 class="card-title mb-4">Registros de logs</h4>
+                                <p class="card-description">
+                                    Nome do Funcionário: <b class="text-danger">Jacob Pediton</b>
+                                </p>
+                                <div class="table-responsive ">
+                                    <table class="table table-hover " id="tabela-dados">
+                                    <thead>
+                                        <tr>
+                                         <th>Data</th>
+                                        <th>Inicio de Secção</th>
+                                        <th>Termino de  Secção</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td>12/08/2019</td>
+                                        <td>17:03</td>
+                                        <td> 18:45</i></td>
+                                        </tr>
+                                        <tr>
+                                        <td>12/08/2019</td>
+                                        <td>17:03</td>
+                                        <td> 18:45</i></td>
+                                        </tr>
+                                        <tr>
+                                         <td>12/08/2019</td>
+                                        <td>17:03</td>
+                                        <td> 18:45</i></td>
+                                        </tr>
+                                        <tr>
+                                        <td>12/08/2019</td>
+                                        <td>17:03</td>
+                                        <td> 18:45</i></td>
+                                        </tr>
+                                        <tr>
+                                        <td>12/08/2019</td>
+                                        <td>17:03</td>
+                                        <td> 18:45</i></td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
                                 </div>
-
-                                <!--conteudo da lista tipo -->
-                                <div class = "row justify-content-center bg-white">
-
-                                    <div class="col-sm-11 tab-content" id="nav-pills-tipo">
-                                        
-                                        <div class="tab-pane fade show active" id="tipo1" role="tabpanel">
-                                            <div class="">
-                                                <table class="table table-bordered table-hover col-12 tabela mt-2" id="i1">
-                                                    <thead>
-                                                        <tr class="cor-creme">
-                                                            <td class="titulo-tabela" colspan="5"><i class="fa fa-list mr-2"></i>Lista de logs</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <th class="texto-verde text-center" style="width:4px;">
-                                                            <input type="checkbox" onclick="selecionar()">
-                                                        </th>
-                                                        <th>Data</th>
-                                                        <th>Inicio de sessao</th>
-                                                        <th>Termino de sessao</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tbody id="tabela-corpo"> 
-                                                    <?php
-                                                        
-                                                    ?>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td><script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getFullYear());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></i></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td><script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getFullYear());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></i></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td><script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getFullYear());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></i></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td><script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getFullYear());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></i></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td><script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getFullYear());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></i></td>
-                                                    
-                                                    </tr>
-                                                
-                                                </tbody>
-                                                </table>   
-                                            </div>
-                                            
-                                            
-                                        </div>
-                                
-                                        <div class="tab-pane fade" id="tipo2" role="tabpanel">
-                                            <div class="">
-                                                <table class="table table-bordered table-hover col-12 tabela mt-2" id="i2">
-                                                    <thead >
-                                                        <tr class="cor-creme">
-                                                            <td class="titulo-tabela" colspan="5"><i class="fa fa-list mr-2"></i>Publicados</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                        <tr>
-                                                        <th class="texto-verde text-center" style="width:2px;">
-                                                            <input type="checkbox" onclick="selecionar()">
-                                                        </th>
-                                                        <th class="texto-verde">Benificiario</th>
-                                                        <th class="texto-verde">Pedido</th>
-                                                        <th class="texto-verde" >
-                                                            <a href="">Acção</a>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tbody id="tabela-corpo"> 
-                                                    <?php
-                                                    
-                                                    ?> 
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td><script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getFullYear());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></i></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td><script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getFullYear());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></i></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td><script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getFullYear());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></i></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td><script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getFullYear());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></i></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td><script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getDate());</script>
-                                                        <script>document.write(new Date().getFullYear());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></td>
-                                                    <td><script>document.write(new Date().getHours());</script>:
-  <script>document.write(new Date().getMinutes());</script></i></td>
-                                                    
-                                                    </tr>
-                                                
-                                                </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                    
-                                        <div class="tab-pane fade" id="tipo3" role="tabpanel">
-                                            <div class="">
-                                                <table class="table table-bordered table-hover col-12 tabela mt-2" id="i3">
-                                                    <thead >
-                                                        <tr class="cor-creme">
-                                                            <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Associacoes</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="texto-verde text-center" style="width:2px;">
-                                                                <input type="checkbox" onclick="selecionar()">
-                                                            </th>
-                                                            <th class="texto-verde">Nome</th>
-                                                            <th class="texto-verde">Localizacao</th>
-                                                            <th class="texto-verde">Tipo</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php
-                                                            //include_once("model/instituicaoDAO.php");
-                                                            //instituicao(2);
-                                                        ?>   
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
-
                             </div>
                         </div>
-                    
-
-                </div>
+                    </div>
                 <!-- content-wrapper ends -->
 
                 <!--footer: includes/componetes.php -->

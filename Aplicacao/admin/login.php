@@ -36,7 +36,7 @@
               </div>
               <h4>Ola! Bem vindo</h4>
               <h6 class="font-weight-light">Introduza os dados de autenticação para continuar.</h6>
-              <form class="pt-3" id="formulario">
+              <form class="pt-3" id="formulario" method="POST">
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg" id="nome" name="nome" placeholder="Nome de usuário" required>
                 </div>

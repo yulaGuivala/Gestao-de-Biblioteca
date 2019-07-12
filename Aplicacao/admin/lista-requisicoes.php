@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>RoyalUI Admin</title>
+    <title>Requisições|Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
@@ -43,24 +43,18 @@
                         <div class="col-md-12 grid-margin">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h4 class="font-weight-bold mb-0">Livros</h4>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-danger btn-icon-text btn-rounded">
-                                        <i class="ti-trash btn-icon-prepend"></i>Apagar
-                                    </button>
+                                    <h4 class="font-weight-bold mb-0">Requisições</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="row mb-5 "> 
-                        <div class="col-sm-12 border">
-                                <div class="row justify-content-center bg-white">
-                                    <div class="col-sm-12 borda-titulo border mb-2">
-                                        <label><i class=""></i>Gerir Pedidos</label>
-                                    </div>
-                                    <!--lista do tipo -->
+                    
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-4">Gerir Requisições</h4><hr>
+                                
                                     <ul class="col-sm-11 nav nav-tabs ml-2 mb-3 bg-white" id="tipo" role="tablist">
                                         <li class="nav-item">
                                             <a class="nav-link active active1 texto-verde" id="" data-toggle="pill" href="#tipo1">Pendentes</a>
@@ -68,239 +62,110 @@
                                         <li class="nav-item">
                                             <a class="nav-link texto-verde" id="" data-toggle="pill" href="#tipo2">Levantados</a>
                                         </li>
-                                    
-                                        </li>
                                     </ul>
-                                </div>
 
-                                <!--conteudo da lista tipo -->
-                                <div class = "row justify-content-center bg-white">
+                                    <div class = "row justify-content-center bg-white">
 
                                     <div class="col-sm-11 tab-content" id="nav-pills-tipo">
                                         
                                         <div class="tab-pane fade show active" id="tipo1" role="tabpanel">
-                                            <div class="">
-                                                <table class="table table-bordered table-hover col-12 tabela mt-2" id="i1">
+                                            <div class="table-responsive pb-0">
+                                                <table class="table table-hover col-12 mt-2" id="tb1">
                                                     <thead>
-                                                        <tr class="cor-creme">
-                                                            <td class="titulo-tabela" colspan="5"><i class="fa fa-list mr-2"></i>Pendentes</td>
-                                                        </tr>
                                                         <tr>
-                                                        <th class="texto-verde text-center" style="width:4px;">
-                                                            <input type="checkbox" onclick="selecionar()">
-                                                        </th>
-                                                        <th>Titulo</th>
-                                                        <th>Autor</th>
-                                                        <th>Editora</th>
-                                                        <th>Faculdade</th>
+                                                            <th>Nr. de Estudante</th>
+                                                            <th>Nome</th>
+                                                            <th>Titulo do Livro</th>
+                                                            <th>Acção</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="tabela-corpo1"> 
+                                                    <tr>
+                                                        <td>20161865</td>
+                                                        <td>Folege Ricardo</td>
+                                                        <td>Analise matetica, B. Demidovitch</td>
+                                                        <td>
+                                                            <input type="button" class="btn btn-rounded btn-outline-primary" id="conf" value="Confirmar">
+                                                            <input type="button" class="btn btn-rounded btn-outline-danger" id="canc" value="Cancelar">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20161865</td>
+                                                        <td>Folege Ricardo</td>
+                                                        <td>Analise matetica, B. Demidovitch</td>
+                                                        <td>
+                                                            <input type="button" class="btn btn-rounded btn-outline-primary" id="conf" value="Confirmar">
+                                                            <input type="button" class="btn btn-rounded btn-outline-danger" id="canc" value="Cancelar">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20161865</td>
+                                                        <td>Folege Ricardo</td>
+                                                        <td>Analise matetica, B. Demidovitch</td>
+                                                        <td>
+                                                            <input type="button" class="btn btn-rounded btn-outline-primary" id="conf" value="Confirmar">
+                                                            <input type="button" class="btn btn-rounded btn-outline-danger" id="canc" value="Cancelar">
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    </tbody>
+                                                </table>   
+                                            </div>    
+                                        </div>
+                                
+                                        <div class="tab-pane fade" id="tipo2" role="tabpanel">
+                                            <div class="table-responsive pb-0">
+                                                <table class="table table-hover col-12 mt-2" id="tb2">
+                                                    <thead>
+                                                        <tr>
+                                                        <th>Nr. de Estudante</th>
+                                                        <th>Nome</th>
+                                                        <th>Titulo do Livro</th>
+                                                        <th>Data</th>
+                                                        <th>Acção</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                <tbody id="tabela-corpo"> 
-                                                    <?php
+                                                <tbody id="tabela-corpo2"> 
+                                                <tr>
+                                                    <td>20161865</td>
+                                                    <td>Folege Ricardo</td>
+                                                    <td>Analise matetica, B. Demidovitch</td>
+                                                    <td>02/03/2019</td>
+                                                    <td>
+                                                        <input type="button" class="btn btn-rounded btn-outline-success" id="dev" value="Devolver">
                                                         
-                                                    ?>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
                                                     </td>
-                                                    <td>Artes da Vida Segundo Folege</td>
-                                                    <td>Folege</td>
-                                                    <td>Egelof Solutions</i></td>
-                                                    <td><label>Faculdade de Engenharia</label></td>
-                                                    </tr>
-                                                    <tr>
+                                                </tr>
+                                                <tr>
+                                                    <td>20161865</td>
+                                                    <td>Folege Ricardo</td>
+                                                    <td>Analise matetica, B. Demidovitch</i></td>
+                                                     <td>02/03/2019</td>
                                                     <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
+                                                        <input type="button" class="btn btn-rounded btn-outline-success" id="dev" value="Devolver">
                                                     </td>
-                                                    <td>Artes da Vida Segundo Folege</td>
-                                                    <td>Folege</td>
-                                                    <td>Egelof Solutions</i></td>
-                                                    <td><label>Faculdade de Engenharia</label></td>
-                                                    </tr>
-                                                    <tr>
+                                                </tr>
+                                                <tr>
+                                                    <td>20161865</td>
+                                                    <td>Folege Ricardo</td>
+                                                    <td>Analise matetica, B. Demidovitch</i></td>
+                                                     <td>02/03/2019</td>
                                                     <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
+                                                        <input type="button" class="btn btn-rounded btn-outline-success" id="dev" value="Devolver">
                                                     </td>
-                                                    <td>Artes da Vida Segundo Folege</td>
-                                                    <td>Folege</td>
-                                                    <td>Egelof Solutions</i></td>
-                                                    <td><label>Faculdade de Engenharia</label></td>
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Artes da Vida Segundo Folege</td>
-                                                    <td>Folege</td>
-                                                    <td>Egelof Solutions</i></td>
-                                                    <td><label>Faculdade de Engenharia</label></td>
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Artes da Vida Segundo Folege</td>
-                                                    <td>Folege</td>
-                                                    <td>Egelof Solutions</i></td>
-                                                    <td><label>Faculdade de Engenharia</label></td>
-                                                    </tr>
+                                                </tr>
                                                 
                                                 </tbody>
                                                 </table>   
                                             </div>
-                                            
-                                            
                                         </div>
-                                
-                                        <div class="tab-pane fade" id="tipo2" role="tabpanel">
-                                            <div class="">
-                                                <table class="table table-bordered table-hover col-12 tabela mt-2" id="i2">
-                                                    <thead >
-                                                        <tr class="cor-creme">
-                                                            <td class="titulo-tabela" colspan="5"><i class="fa fa-list mr-2"></i>Publicados</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                        <tr>
-                                                        <th class="texto-verde text-center" style="width:2px;">
-                                                            <input type="checkbox" onclick="selecionar()">
-                                                        </th>
-                                                        <th class="texto-verde">Benificiario</th>
-                                                        <th class="texto-verde">Pedido</th>
-                                                        <th class="texto-verde" >
-                                                            <a href="">Acção</a>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tbody id="tabela-corpo"> 
-                                                    <?php
-                                                    
-                                                    ?> 
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Artes da Vida Segundo Folege</td>
-                                                    <td>Folege</td>
-                                                    <td>Egelof Solutions</i></td>
-                                                    <td><label>Faculdade de Engenharia</label></td>
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Artes da Vida Segundo Folege</td>
-                                                    <td>Folege</td>
-                                                    <td>Egelof Solutions</i></td>
-                                                    <td><label>Faculdade de Engenharia</label></td>
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Artes da Vida Segundo Folege</td>
-                                                    <td>Folege</td>
-                                                    <td>Egelof Solutions</i></td>
-                                                    <td><label>Faculdade de Engenharia</label></td>
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Artes da Vida Segundo Folege</td>
-                                                    <td>Folege</td>
-                                                    <td>Egelof Solutions</i></td>
-                                                    <td><label>Faculdade de Engenharia</label></td>
-                                                    </tr>
-                                                    <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-flat form-check-primary">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input">
-                                                        </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Artes da Vida Segundo Folege</td>
-                                                    <td>Folege</td>
-                                                    <td>Egelof Solutions</i></td>
-                                                    <td><label>Faculdade de Engenharia</label></td>
-                                                    </tr>
-                                                
-                                                </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                    
-                                        <div class="tab-pane fade" id="tipo3" role="tabpanel">
-                                            <div class="">
-                                                <table class="table table-bordered table-hover col-12 tabela mt-2" id="i3">
-                                                    <thead >
-                                                        <tr class="cor-creme">
-                                                            <td class="titulo-tabela" colspan="4"><i class="fa fa-list mr-2"></i>Associacoes</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="texto-verde text-center" style="width:2px;">
-                                                                <input type="checkbox" onclick="selecionar()">
-                                                            </th>
-                                                            <th class="texto-verde">Nome</th>
-                                                            <th class="texto-verde">Localizacao</th>
-                                                            <th class="texto-verde">Tipo</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php
-                                                            //include_once("model/instituicaoDAO.php");
-                                                            //instituicao(2);
-                                                        ?>   
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
-
+                               <div>
                             </div>
                         </div>
-                    
+                    </div>                   
 
                 </div>
                 <!-- content-wrapper ends -->
@@ -333,11 +198,12 @@
     <!-- End custom js for this page-->
     <script src="../lib/datatables/jquery.dataTables.min.js"></script>
     <script src="../lib/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../lib/datatables/datatable.pt-br.js"></script>
     
-    <script> 
-        $(document).ready( function () {
-            $('#tabela-dados').DataTable();
-        } );
+    <script>
+        //cria datatable em pt
+        dataTablePt('#tb1');
+        dataTablePt('#tb2');
     </script>
 
 </body>

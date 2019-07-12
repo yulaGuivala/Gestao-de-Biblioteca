@@ -96,10 +96,11 @@
                     
                         <label for="inputEst">Faculdade</label>
                         <select id="inputEst" name="facul" class="form-control" required>
-                            <option>Faculdade de Políticas de Administração</option>
-                            <option>Faculdade de Direito</option>
-                            <option>Faculdade de Ciências Agrárias</option>
-                            <option>Faculdade de Economia e Informática</option>
+                            <option value=""> Selecione...</option>
+                            <option value="Faculdade de Políticas de Administração">Faculdade de Políticas de Administração</option>
+                            <option value="Faculdade de Direito">Faculdade de Direito</option>
+                            <option value="Faculdade de Ciências Agrárias">Faculdade de Ciências Agrárias</option>
+                            <option value="Faculdade de Economia e Informática">Faculdade de Economia e Informática</option>
                         </select>
                     
                     </div>
@@ -107,24 +108,25 @@
                     <div class="form-group col-sm-6">
                     
                         <label for="inputID">Nr. de Estudante</label>
-                        <input type="number" id="inputID" class="form-control" min="1" max="99999999" required>
+                        <input type="number" id="inputID" class="form-control" min="1" max="99999999" placeholder="Nr. de Estudante" required>
                     
                     </div>
                 
                 </div>
 
-                <!--<div class="form-row mt-3">
+                <div class="form-row mt-3">
                     <div class="col-12">
                         <label for="inputEnd">Endereço</label>
                         <hr>
                     </div>
                 </div>
-                <div class="form-row">
+                <div class="form-row mb-4">
                     
                     <div class="form-group col-sm-3">
 
                         <label for="distrito">Distrito</label>
                         <select id="distrito" class="form-control" name="distrito" required="">
+                            <option value=""> Selecione...</option>
                             <option value="Nlhamankulu">Nlhamankulu</option>
                             <option value="KaMpfumo ">KaMpfumo </option>
                             <option value="KaMaxaquene">KaMaxaquene</option>
@@ -149,12 +151,12 @@
                     </div>
                     <div class="form-group col-sm-3">
 
-                        <label for="rua">No da Casa</label>
-                        <input type="number" class="form-control" id="rua" name="rua" placeholder="No da Casa" min="1" max="1000" required>
+                        <label for="rua">Nr. da Casa</label>
+                        <input type="number" class="form-control" id="rua" name="rua" placeholder="Nr. da Casa" min="1" max="1000" required>
                     
                     </div>
                     
-                </div>-->
+                </div>
 
                 <div class="form-row">
                       
@@ -201,8 +203,8 @@
                 <div class="form-row justify-content-center">
                     <div class="form-group col-12 text-center">
                         <button type="submit" class="btn btn-primary text-light" data-dismiss="modal">Confirmar</button>
-                        <button type="button" class="btn btn-danger text-light ml-3" data-dismiss="modal">Voltar</button>
-    </div>
+                        <button type="reset" class="btn btn-danger text-light ml-3" data-dismiss="modal">Limpar</button>
+                    </div>
                 
                 </div>
             

@@ -69,7 +69,7 @@
                                         <th>
                                             <div class="form-check form-check-flat form-check-primary">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">                                           </label>
+                                                <input type="checkbox" id="selecionar" class="form-check-input">                                           </label>
                                             </div>
                                         </th>
                                         <th>Titulo</th>
@@ -93,7 +93,7 @@
                                         <td>Egelof Solutions</td>
                                         <td>Faculdade de Engenharia</td>
                                         <td>
-                                            <a href="#" class="btn btn-success btn-icon-text btn-rounded">
+                                            <a href="#" class="btn btn-outline-success btn-icon-text btn-rounded">
                                                 <i class="ti-pencil btn-icon-prepend"></i>Editar
                                             </a>
                                         </td>
@@ -111,7 +111,7 @@
                                         <td>Egelof Solutions</i></td>
                                         <td><label>Faculdade de Engenharia</label></td>
                                         <td>
-                                            <a href="#" class="btn btn-success btn-icon-text btn-rounded">
+                                            <a href="#" class="btn btn-outline-success btn-icon-text btn-rounded">
                                                 <i class="ti-pencil btn-icon-prepend"></i>Editar
                                             </a>
                                         </td>
@@ -129,7 +129,7 @@
                                         <td>Egelof Solutions</i></td>
                                         <td><label>Faculdade de Engenharia</label></td>
                                         <td>
-                                            <a href="#" class="btn btn-success btn-icon-text btn-rounded">
+                                            <a href="#" class="btn btn-outline-success btn-icon-text btn-rounded">
                                                 <i class="ti-pencil btn-icon-prepend"></i>Editar
                                             </a>
                                         </td>
@@ -147,7 +147,7 @@
                                         <td>Egelof Solutions</i></td>
                                         <td><label>Faculdade de Engenharia</label></td>
                                         <td>
-                                            <a href="#" class="btn btn-success btn-icon-text btn-rounded">
+                                            <a href="#" class="btn btn-outline-success btn-icon-text btn-rounded">
                                                 <i class="ti-pencil btn-icon-prepend"></i>Editar
                                             </a>
                                         </td>
@@ -165,7 +165,7 @@
                                         <td>Egelof Solutions</i></td>
                                         <td><label>Faculdade de Engenharia</label></td>
                                         <td>
-                                            <a href="#" class="btn btn-success btn-icon-text btn-rounded">
+                                            <a href="#" class="btn btn-outline-success btn-icon-text btn-rounded">
                                                 <i class="ti-pencil btn-icon-prepend"></i>Editar
                                             </a>
                                         </td>
@@ -210,11 +210,16 @@
     <!-- End custom js for this page-->
     <script src="../lib/datatables/jquery.dataTables.min.js"></script>
     <script src="../lib/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../lib/datatables/datatable.pt-br.js"></script>
     
-    <script> 
-        $(document).ready( function () {
-            $('#tabela-dados').DataTable();
-        } );
+    <script>
+        //cria datatable em pt
+        dataTablePt('#tabela-dados');
+
+        //seleciona todos checkboxes da tabela 
+        $("#selecionar").click(function () {
+            $('input:checkbox').prop('checked', this.checked);
+        });
     </script>
 
 </body>

@@ -36,7 +36,7 @@
               </div>
               <h4>Esqueceu a Senha?</h4>
               <h6 class="font-weight-light">Informe seu e-mail e aguarde o link para refazer sua senha.</h6>
-              <form class="pt-3" id="formulario">
+              <form class="pt-3" id="formulario" method="POST">
                 <div class="form-group">
                   <input type="email" class="form-control form-control-lg" id="mail" name="mail" placeholder="Email" required>
                 </div>

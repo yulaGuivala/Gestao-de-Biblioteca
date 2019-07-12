@@ -100,11 +100,12 @@
                     <div class="form-group col-sm-6">
                     
                         <label for="inputEst">Faculdade</label>
-                        <select id="inputEst" class="form-control" disabled>
-                            <option selected>Faculdade de Políticas de Administração</option>
-                            <option>Faculdade de Direito</option>
-                            <option>Faculdade de Ciências Agrárias</option>
-                            <option>Faculdade de Economia e Informática</option>
+                        <select id="inputEst" name="facul" class="form-control" required disabled>
+                            <option value=""> Selecione...</option>
+                            <option value="Faculdade de Políticas de Administração">Faculdade de Políticas de Administração</option>
+                            <option value="Faculdade de Direito">Faculdade de Direito</option>
+                            <option value="Faculdade de Ciências Agrárias">Faculdade de Ciências Agrárias</option>
+                            <option value="Faculdade de Economia e Informática">Faculdade de Economia e Informática</option>
                         </select>
                     
                     </div>
@@ -118,18 +119,19 @@
                 
                 </div>
                 
-                <!--<div class="form-row mt-3">
+                <div class="form-row mt-3">
                     <div class="col-12">
                         <label for="inputEnd">Endereço</label>
                         <hr>
                     </div>
                 </div>
-                <div class="form-row">
+                <div class="form-row mb-4">
                     
                     <div class="form-group col-sm-3">
 
                         <label for="distrito">Distrito</label>
-                        <select id="distrito" class="form-control" name="distrito" required="">
+                        <select id="distrito" class="form-control" name="distrito" required disabled>
+                            <option value=""> Selecione...</option>
                             <option value="Nlhamankulu">Nlhamankulu</option>
                             <option value="KaMpfumo ">KaMpfumo </option>
                             <option value="KaMaxaquene">KaMaxaquene</option>
@@ -143,23 +145,23 @@
                     <div class="form-group col-sm-3">
 
                         <label for="bairro">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" max-lenght="100" required>
+                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" max-lenght="100" required readonly>
                     
                     </div>
                     <div class="form-group col-sm-3">
 
                         <label for="rua">Rua</label>
-                        <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" max-lenght="100" required>
+                        <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" max-lenght="100" required readonly>
                     
                     </div>
                     <div class="form-group col-sm-3">
 
-                        <label for="rua">No da Casa</label>
-                        <input type="number" class="form-control" id="rua" name="rua" placeholder="No da Casa" min="1" max="1000" required>
+                        <label for="rua">Nr. da Casa</label>
+                        <input type="number" class="form-control" id="rua" name="rua" placeholder="Nr. da Casa" min="1" max="1000" required readonly>
                     
                     </div>
                     
-                </div>-->
+                </div>
                 <div class="form-row">
                       
                     <div class="form-group col-sm-6">

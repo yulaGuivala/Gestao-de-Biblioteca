@@ -35,6 +35,15 @@ function navbar() {
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
               <p class="mb-0 font-weight-normal float-left dropdown-header">Mensagens</p>
+              <a class="dropdown-item" href="lista-msg.php">
+                <div class="item-thumbnail">
+                   <i class="ti-list display-4"></i> 
+                </div>
+                <div class="item-content flex-grow">
+                  <h6 class="ellipsis font-weight-normal">Ver todas Mensagens
+                  </h6>
+                </div>
+              </a>
               <a class="dropdown-item">
                 <div class="item-thumbnail">
                     <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
@@ -121,6 +130,7 @@ function sidebar() {
                 <li class="nav-item"> 
                   <a class="nav-link" href="lista-funcionario.php">Funcionários</a>
                   <a class="nav-link d-none" href="adicionar-funcionario.php">Adicionar Funcionário</a>
+                  <a class="nav-link d-none" href="registo-de-logs.php">Adicionar Funcionário</a>
                 </li>
                 <li class="nav-item"> <a class="nav-link" href="lista-estudantes.php">Estudantes</a></li>
               </ul>
@@ -136,8 +146,10 @@ function sidebar() {
             <div class="collapse" id="livros">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> 
-                  <a class="nav-link" href="lista-livro.php">Livros</a>
-                  <a class="nav-link d-none" href="adicionar-livro.php">Adicionar Livro</a>
+                  <a class="nav-link" href="lista-livro.php">Catalogo de Livros</a>
+                </li>
+                <li class="nav-item"> 
+                  <a class="nav-link" href="adicionar-livro.php">Adicionar Livro</a>
                 </li>
               </ul>
             </div>
@@ -146,7 +158,7 @@ function sidebar() {
           <li class="nav-item">
             <a class="nav-link" href="lista-requisicoes.php">
               <i class="ti-write menu-icon"></i>
-              <span class="menu-title">Requisicoes</span>
+              <span class="menu-title">Requisições</span>
             </a>
           </li>
 

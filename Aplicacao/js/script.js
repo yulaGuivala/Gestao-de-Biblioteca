@@ -21,7 +21,7 @@ $(document).ready(function () {
 //habilita edicao de perfil
 $("#habilitar").click(function () {
     $('input').prop('readonly', false);
-    $('#inputEst').prop('disabled', false);
+    $('select').prop('disabled', false);
     $('#confirmar').removeClass('d-none');
     $('#cancelar').removeClass('d-none');
     $('#divcs').removeClass('d-none');
