@@ -1,0 +1,34 @@
+.profile-pic {
+    max-width: 200px;
+    max-height: 200px;
+    display: block;
+}
+
+.circle {
+    border-radius: 1000px !important;
+    overflow: hidden;
+    width: 128px;
+    height: 128px;
+    border: 8px solid rgb(255, 255, 255);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+
+}
+
+.p-image {
+    position: relative;
+    left: -33px;
+    bottom: -68px;
+    color: #666666;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    font-size: 44px;
+    z-index: 2;
+}
+
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #999;
+}
