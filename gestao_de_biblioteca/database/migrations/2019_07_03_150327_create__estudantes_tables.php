@@ -25,6 +25,7 @@ class CreateEstudantesTables extends Migration
             $table->foreign('endereco_id')->references('id')->on('enderecos')->onDelete('NO ACTION')->onUpdate('CASCADE');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('NO ACTION')->onUpdate('CASCADE');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

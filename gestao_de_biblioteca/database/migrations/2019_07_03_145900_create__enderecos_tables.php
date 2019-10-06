@@ -19,6 +19,7 @@ class CreateEnderecosTables extends Migration
             $table->string('bairro');
             $table->string('rua');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
