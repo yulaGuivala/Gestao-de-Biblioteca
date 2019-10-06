@@ -16,6 +16,7 @@ class EnderecoTableSeeder extends Seeder
             'distrito' => Str::random(10),
             'bairro' => Str::random(10),
             'rua' => Str::random(10),
+            'casa' => rand(100,5000),
             'created_at' => $data,
             'updated_at' => $data
         ]);
