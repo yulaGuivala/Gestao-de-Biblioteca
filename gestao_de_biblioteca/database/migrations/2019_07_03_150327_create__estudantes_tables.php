@@ -16,8 +16,9 @@ class CreateEstudantesTables extends Migration
         Schema::create('estudantes', funCTION (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
+            $table->integer('numero');
             $table->enum('faculdade',['Faculdade de Ciências politicas e Administração',
-                                       'Faculdade de direicto',
+                                       'Faculdade de Direito',
                                        'Faculdade de Ciências Agrarias',
                                        'Faculdade de Economia e Informatica']);
             $table->unsignedBigInteger('endereco_id');

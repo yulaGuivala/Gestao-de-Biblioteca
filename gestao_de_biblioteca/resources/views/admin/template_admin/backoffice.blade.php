@@ -1,16 +1,26 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Lista de Estudantes|Admin</title>
 
-function favicon() {
-    echo '<link rel="shortcut icon" href="../imgs/favicon.png" />';
-}
+    <link rel="stylesheet" href="{{ asset('admin/vendors/ti-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/vendors/base/vendor.bundle.base.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('user/lib/datatables/dataTables.bootstrap4.min.css')}}">
+    <link rel="shortcut icon" href="{{ asset('user/imgs/favicon.png')}}"/>
+</head>
+<body>
+    <div class="container-scroller">
 
-function navbar() {
-?>
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      
+        <!-- Navbar: includes/componetes.php -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo mr-5" href="index.php"><b class="ml-4 text-danger" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b></a>
-        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="../imgs/favicon.png" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="{{ asset('user/imgs/favicon.png')}}" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -37,7 +47,7 @@ function navbar() {
               <p class="mb-0 font-weight-normal float-left dropdown-header">Mensagens</p>
               <a class="dropdown-item" href="lista-msg.php">
                 <div class="item-thumbnail">
-                   <i class="ti-list display-4"></i> 
+                   <i class="ti-list display-4"></i>
                 </div>
                 <div class="item-content flex-grow">
                   <h6 class="ellipsis font-weight-normal">Ver todas Mensagens
@@ -82,10 +92,10 @@ function navbar() {
               </a>
             </div>
           </li>
-          
+
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../imgs/perfil.png" alt="perfil" />
+              <img src="{{asset('user/imgs/perfil.png" alt="perfil')}}" />
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="perfil.php">
@@ -104,21 +114,21 @@ function navbar() {
         </button>
       </div>
     </nav>
-<?php
-}
 
-function sidebar() {
-?>
-    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <!-- page-body-wrapper (corpo) -->
+        <div class="container-fluid page-body-wrapper">
+
+            <!-- Sidebar: includes/componetes.php-->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          
+
           <li class="nav-item">
             <a class="nav-link" href="index.php">
               <i class="ti-shield menu-icon"></i>
               <span class="menu-title">Painel de Controle</span>
             </a>
           </li>
-          
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#usuarios" aria-expanded="false" aria-controls="auth">
               <i class="ti-user menu-icon"></i>
@@ -127,7 +137,7 @@ function sidebar() {
             </a>
             <div class="collapse" id="usuarios">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> 
+                <li class="nav-item">
                   <a class="nav-link" href="lista-funcionario.php">Funcionários</a>
                   <a class="nav-link d-none" href="adicionar-funcionario.php">Adicionar Funcionário</a>
                   <a class="nav-link d-none" href="registo-de-logs.php">Adicionar Funcionário</a>
@@ -136,7 +146,7 @@ function sidebar() {
               </ul>
             </div>
           </li>
-          
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#livros" aria-expanded="false" aria-controls="livros">
               <i class="ti-book menu-icon"></i>
@@ -145,10 +155,10 @@ function sidebar() {
             </a>
             <div class="collapse" id="livros">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> 
+                <li class="nav-item">
                   <a class="nav-link" href="lista-livro.php">Catalogo de Livros</a>
                 </li>
-                <li class="nav-item"> 
+                <li class="nav-item">
                   <a class="nav-link" href="adicionar-livro.php">Adicionar Livro</a>
                 </li>
               </ul>
@@ -164,17 +174,61 @@ function sidebar() {
 
         </ul>
     </nav>
-<?php
-}
 
-function footer() {
-?>
-    <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <script>document.write(new Date().getFullYear());</script> <a href="#" target="_blank">DeadLock</a>. Todos direitos reservados.</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Feito à mão & com <i class="ti-heart text-danger ml-1"></i></span>
+            <!-- main-panel (conteudo)-->
+            <div class="main-panel">
+
+                <!-- content-wrapper  -->
+                <div class="content-wrapper">
+                    @yield('conteudo')
+                </div>
+                <!-- content-wrapper ends -->
+
+                <!--footer: includes/componetes.php -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <script>document.write(new Date().getFullYear());</script> <a href="#" target="_blank">DeadLock</a>. Todos direitos reservados.</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Feito à mão & com <i class="ti-heart text-danger ml-1"></i></span>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- main-panel ends -->
+
         </div>
-    </footer>
-<?php
-}
-?>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="{{ asset('admin/vendors/base/vendor.bundle.base.js') }}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <script src="{{ asset('admin/vendors/chart.js/Chart.min.js') }}"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="{{ asset('admin/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('admin/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('admin/js/template.js') }}"></script>
+    <script src="{{ asset('admin/js/todolist.js') }}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="{{ asset('admin/js/dashboard.js') }}"></script>
+    <!-- End custom js for this page-->
+    <script src="{{ asset('user/lib/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('user/lib/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('user/lib/datatables/datatable.pt-br.js') }}"></script>
+
+    <script>
+        //cria datatable em pt
+        dataTablePt('#tabela-dados');
+
+        //seleciona todos checkboxes da tabela
+        $("#selecionar").click(function () {
+            $('input:checkbox').prop('checked', this.checked);
+        });
+    </script>
+
+</body>
+
+</html>

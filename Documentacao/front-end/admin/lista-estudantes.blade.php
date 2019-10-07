@@ -73,7 +73,8 @@
                                         <th>N<sup>o</sup> de Estudante</th>
                                         <th>Email</th>
                                         <th>Faculdade</th>
-                                        </tr>
+                                        <th>Endereço</th>    
+                                    </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
@@ -87,7 +88,14 @@
                                         <td>Jacob Pediton</td>
                                         <td>847523618</td>
                                         <td> jacob@gmail.com</i></td>
-                                        <td><label>jacob</label></td>
+                                        <td>jacob</td>
+                                        <td Class="text-secondary">
+                                            Provincia: Maputo<br>
+                                            Distrito: Maputo<br>
+                                            Bairro: Mafalala<br>
+                                            Rua: Lixeira<br>
+                                            N. da casa: 4548
+                                        </td>
                                         </tr>
                                         <tr>
                                         <td>

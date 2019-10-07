@@ -24,7 +24,8 @@ class EstudanteTableSeeder extends Seeder
 
         DB::table('estudantes')->insert([
             'nome' => Str::random(30),
-            'faculdade' => 'Faculdade de direicto',
+            'numero' => rand(20150000,20199999),
+            'faculdade' => 'Faculdade de Direito',
             'endereco_id' => $idEnd,
             'user_id' => $idUser,
             'created_at' => $data,
