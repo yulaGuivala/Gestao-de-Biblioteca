@@ -19,11 +19,13 @@ class CreateLivrosTables extends Migration
             $table->string('autor');
             $table->string('edicao');
             $table->string('editora');
-            $table->string('pais')->nullable;
+            $table->string('pais')->nullable();
             $table->integer('ano');
             $table->string('co-autor')->nullable();
             $table->unsignedBigInteger('funcionario_id');
+            $table->unsignedBigInteger('categoria_id');
             $table->foreign('funcionario_id')->references('id')->on('funcionario')->onDelete('NO ACTION')->onUpdate('CASCADE');
+            $table->foreign('categoria_id')->references('id')->on('categoria')->onDelete('NO ACTION')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

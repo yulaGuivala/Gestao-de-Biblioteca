@@ -7,9 +7,17 @@ use App\Models\livro;
 
 class livroController extends Controller
 {
-    public function buscarLivros(livro $livros){
-       
-       echo $livros->all();
+    public function buscarLivros(){
+       $livros = livro::with('funcionario')->get();
+       foreach($livros as $livro){
+        echo $livro;//teste
+
+        $funcionario=$livro->funcionario;
+        echo"{$funcionario}",'<br><br>';//teste
+
+    }
+
+
     }
 
     public function inseriLivro(){
@@ -21,6 +29,7 @@ class livroController extends Controller
             'pais'=>'1212',
         ];
 
-        
+
     }
+
 }
