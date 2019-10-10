@@ -24,3 +24,4 @@ Route::group(['prefix' => 'sgb-admin'], function () {
         //Route::get('/adicionar-estudantes', 'EstudanteController@adicionar');
     });
 });
+
