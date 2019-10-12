@@ -8,7 +8,7 @@ use App\Models\livro;
 class livroController extends Controller
 {
     public function buscarLivros(livro $livros){
-       
+
        echo $livros->all();
     }
 
@@ -21,6 +21,6 @@ class livroController extends Controller
             'pais'=>'1212',
         ];
 
-        
+
     }
 }

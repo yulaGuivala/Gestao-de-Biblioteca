@@ -23,13 +23,21 @@ class EstudanteTableSeeder extends Seeder
         $data = date('Y-m-d H:i:s');
 
         DB::table('estudantes')->insert([
-            'nome' => Str::random(30),
+           // 'nome' => Str::random(30),
             'numero' => rand(20150000,20199999),
-            'faculdade' => 'Faculdade de Direito',
+            'faculdade' =>$this->faculdade(),
             'endereco_id' => $idEnd,
             'user_id' => $idUser,
             'created_at' => $data,
             'updated_at' => $data
         ]);
+    }
+
+   private function faculdade() {
+        $faculdade = ['Faculdade de Ciências politicas e Administração',
+            'Faculdade de Direito',
+            'Faculdade de Ciências Agrarias',
+            'Faculdade de Economia e Informatica'];
+        return $faculdade[rand(0,3)];
     }
 }

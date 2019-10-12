@@ -1,24 +1,12 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <title>Cadastro de Estudante</title>
+<?php
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+function favicon() {
+    echo ' <link rel="shortcut icon" href="imags/mini-logo.jpg" />';
+}
 
-    <!-- Bootstrap CSS -->
-
-    <link rel="stylesheet" href="{{asset('user/node_modules/bootstrap/compiler/bootstrap.css')}}">
-    <link rel="stylesheet" href="{{asset('user/style/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('user/lib/fontawesome/css/all.css')}}">
-    <link rel="stylesheet" href="{{asset('user/lib/profile-image/style.css')}}">
-    <link rel="shortcut icon" href="{{asset('user/imags/mini-logo.jpg')}}" />
-  </head>
-
-  <body>
-        <header class="container-fluid navbar-expand-md mb-5">
-        <div class="row ">
+function cabecalhoAutenticado() {
+?>
+    <div class="row ">
             <div class="col-12 ">
 
                 <div class="collapse navbar-collapse float-left ml-3">
@@ -100,202 +88,123 @@
         </nav>
 
     </div>
-        <div class="container">
+<?php
+}
+function cabecalho() {
+?>
+    <div class="row ">
+        <div class="col-12 ">
 
-            <div class="row mt-3">
-                <div class="col-sm-12">
-                    <p id="dir"><a href="index.php"><i class="fas fa-home mr-1"></i>Inicio</a> > Minha Conta > <span
-                            class="text-danger">Registar</span></p>
-                    <hr class="bg-danger">
+            <div class="collapse navbar-collapse float-left ml-3">
+                <img src="imgs/logo.jpg">
+                <a href="index.php" class="text-danger link" style="text-decoration:none">
+                    <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
+                </a>
+            </div>
+
+            <div class="navbar-toggler float-left mt-3 mr-3">
+                <a href="index.php" class="text-danger link" style="text-decoration:none">
+                    <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
+                </a>
+            </div>
+
+            <div class="float-right mr-3">
+                <ul class="navbar-nav list-group-horizontal float-right mt-2">
+                    <li class="nav-item dropdown ml-3">
+                        <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo"><i
+                                class="fas fa-user mr-1"></i>Minha conta</a>
+                        <div class="dropdown-menu bg-danger">
+                            <a class="dropdown-item" href="login.php">Entrar</a>
+                            <a class="dropdown-item" href="registar.php">Registar</a>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 ">
+
+                <div class="collapse navbar-collapse float-left ml-3">
+                    <img src="imgs/logo.jpg">
+                    <a href="index.php" class="text-danger link" style="text-decoration:none">
+                        <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
+                    </a>
+                </div>
+
+                <div class="navbar-toggler float-left mt-3 mr-3">
+                    <a href="index.php" class="text-danger link" style="text-decoration:none">
+                        <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
+                    </a>
+                </div>
+
+                <div class="float-right mr-3">
+                    <ul class="navbar-nav list-group-horizontal float-right mt-2">
+                        <li class="nav-item dropdown ml-3">
+                            <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo"><i
+                                    class="fas fa-user mr-1"></i>Minha conta</a>
+                            <div class="dropdown-menu bg-danger">
+                                <a class="dropdown-item" href="login.php">Entrar</a>
+                                <a class="dropdown-item" href="registar.php">Registar</a>
+                            </div>
+
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-12">
-                    <h1>Registar</h1>
+
+        </div>
+
+        <!-- Navbar -->
+        <nav class="row navbar cor-vermelho navbar-dark navbar-expand-md">
+
+            <div class="container">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSite">
+
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php"><i class="fa fa-home"></i> Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown cor-vermelho dropdown-dark">
+                            <a class="nav-link" href="catalogo.php">Catálogo de Livros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php#about" data-target="">Sobre Nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.php">Conctate-nos</a>
+                        </li>
+
+                    </ul>
+
+                    <form class="form-inline">
+
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="nome do livro"  required>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-warning" type="submit"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+
+                    </form>
+
                 </div>
+
             </div>
 
-        </div>
-    </header>
-    <div class="row mb-3 justify-content-center">
-        <div class="col-md-8 mr-4">
-            <h5>Formulário de Cadastro</h5>
-        </div>
+        </nav>
+
     </div>
+<?php
+}
 
-    <div class="row justify-content-center">
-
-            <form class="col-md-8" action="{{url('inicio/minha-conta/store')}}" method="post"  id="formulario">
-                {{ csrf_field() }}
-                <div class="col-sm-12 border cor-creme cor-borda justify-content-center mb-10" id="geral">
-                    <div class="form-row mt-3">
-                        <label for="foto-perfil">Foto de Perfil</label>
-                    </div>
-                    <div class="form-row my-4 justify-content-center">
-
-                            <div class="circle" id="foto-perfil">
-                                <img class=" profile-pic" src="imgs/perfil.png">
-                            </div>
-                            <div class="p-image">
-                                <i class="fa fa-camera upload-button"></i>
-                                <input class="file-upload d-none" name="foto" type="file" accept="image/*"/>
-                            </div>
-
-                    </div>
-
-
-                <div class="form-row">
-
-                    <div class="form-group col-sm-6">
-
-                        <label for="inputNome">Nome</label>
-                        <input type="text" class="form-control" id="inputNome" name="nome" placeholder="Nome" max-lenght="30" required>
-
-                    </div>
-
-                    <div class="form-group col-sm-6">
-
-                        <label for="inputSobrenome">Sobrenome</label>
-                        <input type="text" class="form-control" id="inputSobrenome" name="sobrenome" placeholder="Sobrenome" max-lenght="30" required>
-
-                    </div>
-
-                </div>
-
-                <div class="form-row">
-
-                    <div class="form-group col-sm-6">
-
-                        <label for="inputCidade">E-mail</label>
-                        <input type="email" class="form-control" id="inputMail" name="email" placeholder="xxxxx@xx.com" required>
-
-                    </div>
-
-                    <div class="form-group col-sm-6">
-
-                        <label for="inputEst">Faculdade</label>
-                        <select id="inputEst" name="facul" class="form-control" required>
-                            <option value=""> Selecione...</option>
-                            <option value="Faculdade de Ciências politicas e Administração">Faculdade de Ciências politicas e Administração</option>
-                            <option value="Faculdade de Direito">Faculdade de Direito</option>
-                            <option value="Faculdade de Ciências Agrárias">Faculdade de Ciências Agrárias</option>
-                            <option value="Faculdade de Economia e Informática">Faculdade de Economia e Informática</option>
-                        </select>
-
-                    </div>
-
-                    <div class="form-group col-sm-6">
-
-                        <label for="inputID">Nr. de Estudante</label>
-                        <input type="number" id="inputID" name="numero" class="form-control" min="1" max="99999999" placeholder="Nr. de Estudante" required>
-
-                    </div>
-
-                </div>
-
-                <div class="form-row mt-3">
-                    <div class="col-12">
-                        <label for="inputEnd">Endereço</label>
-                        <hr>
-                    </div>
-                </div>
-                <div class="form-row mb-4">
-
-                    <div class="form-group col-sm-3">
-
-                        <label for="distrito">Distrito</label>
-                        <select id="distrito" class="form-control" name="distrito" required="">
-                            <option value=""> Selecione...</option>
-                            <option value="Nlhamankulu">Nlhamankulu</option>
-                            <option value="KaMpfumo ">KaMpfumo </option>
-                            <option value="KaMaxaquene">KaMaxaquene</option>
-                            <option value="KaMavota">KaMavota</option>
-                            <option value="KaMubukwana">KaMubukwana</option>
-                            <option value="KaTembe">KaTembe</option>
-                            <option value="KaNyaka">KaNyaka</option>
-                        </select>
-
-                    </div>
-                    <div class="form-group col-sm-3">
-
-                        <label for="bairro">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" max-lenght="100" required>
-
-                    </div>
-                    <div class="form-group col-sm-3">
-
-                        <label for="rua">Rua</label>
-                        <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" max-lenght="100" required>
-
-                    </div>
-                    <div class="form-group col-sm-3">
-
-                        <label for="rua">Nr. da Casa</label>
-                        <input type="number" class="form-control" id="casa" name="casa" placeholder="Nr. da Casa" min="1" max="1000" required>
-
-                    </div>
-
-                </div>
-
-                <div class="form-row">
-
-                    <div class="form-group col-sm-6">
-                        <label for="senha">Senha</label>
-                        <div class="input-group">
-                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha"  minlength="4" maxlength="15" required>
-                            <span class="input-group-btn">
-                                <button class="btn btn-sm btn-secondary" type="button" id="btn-senha"><i class="fa fa-eye"></i></button>
-                            </span>
-                        </div>
-                        <label id="erro-senha" class="my-error-class"></label>
-                    </div>
-
-                      <div class="form-group col-sm-6" id="divcs">
-                        <label for="csenha">Confirmar Senha</label>
-                        <div class="input-group">
-                            <input type="password" class="form-control" id="csenha" name="csenha" placeholder="Senha"  equalTo="#senha" minlength="4" maxlength="15" required>
-                            <span class="input-group-btn">
-                                <button class="btn btn-sm btn-secondary" type="button" id="btn-csenha"><i class="fa fa-eye"></i></button>
-                            </span>
-                        </div>
-                        <label id="erro-csenha" class="my-error-class"></label>
-                      </div>
-
-                </div>
-
-                <div class="form-row">
-
-                    <div class="form-group col-sm-12">
-
-                        <div class="form-check">
-
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox"> Desejo receber novidades por e-mail
-                            </label>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="form-row justify-content-center">
-                    <div class="form-group col-12 text-center">
-                        <button type="submit" class="btn btn-primary text-light" data-dismiss="modal">Confirmar</button>
-                        <button type="reset" class="btn btn-danger text-light ml-3" data-dismiss="modal">Limpar</button>
-                    </div>
-
-                </div>
-
-
-
-                </div>
-
-            </form>
-    </div>
-    <!-- footer -->
-     <footer class="container-fluid page-footer mt-5">
+function rodape() {
+?>
+    <footer class="container-fluid page-footer mt-5">
 
         <div class="row">
             <div class="col-12">
@@ -357,8 +266,11 @@
         </div>
 
     </footer>
+<?php
+}
 
-    <!-- Modal caixa de livros-->
+function modalLivros() {
+?>
     <div class="modal fade" id="livros" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -431,17 +343,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{asset('user/node_modules/jquery/dist/jquery.js')}}"></script>
-    <script src="{{asset('user/node_modules/popper.js/dist/umd/popper.js')}}"></script>
-    <script src="{{asset('user/node_modules/bootstrap/dist/js/bootstrap.js')}}"></script>
-    <script src="{{asset('user/lib/validate/jquery.validate.min.js')}}"></script>
-    <script src="{{asset('user/lib/validate/jquery.validate.pt-br.js')}}"></script>
-    <script src="{{asset('user/js/script.js')}}"></script>
-    <script src="{{asset('user/lib/profile-image/script.js')}}"></script>
-
-  </body>
-
-</html>
+<?php
+}
+?>
