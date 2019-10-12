@@ -41,6 +41,8 @@ function cabecalhoAutenticado() {
                 </div>
             </div>
 
+        </div>
+
         <!-- Navbar -->
         <nav class="row navbar cor-vermelho navbar-dark navbar-expand-md">
 
@@ -119,6 +121,37 @@ function cabecalho() {
                     </li>
                 </ul>
             </div>
+            <div class="col-12 ">
+
+                <div class="collapse navbar-collapse float-left ml-3">
+                    <img src="imgs/logo.jpg">
+                    <a href="index.php" class="text-danger link" style="text-decoration:none">
+                        <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
+                    </a>
+                </div>
+
+                <div class="navbar-toggler float-left mt-3 mr-3">
+                    <a href="index.php" class="text-danger link" style="text-decoration:none">
+                        <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
+                    </a>
+                </div>
+
+                <div class="float-right mr-3">
+                    <ul class="navbar-nav list-group-horizontal float-right mt-2">
+                        <li class="nav-item dropdown ml-3">
+                            <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo"><i
+                                    class="fas fa-user mr-1"></i>Minha conta</a>
+                            <div class="dropdown-menu bg-danger">
+                                <a class="dropdown-item" href="login.php">Entrar</a>
+                                <a class="dropdown-item" href="registar.php">Registar</a>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
         </div>
 
         <!-- Navbar -->
