@@ -23,7 +23,7 @@ class EstudanteTableSeeder extends Seeder
         $data = date('Y-m-d H:i:s');
 
         DB::table('estudantes')->insert([
-           // 'nome' => Str::random(30),
+            'nome' => Str::random(30),
             'numero' => rand(20150000,20199999),
             'faculdade' =>$this->faculdade(),
             'endereco_id' => $idEnd,

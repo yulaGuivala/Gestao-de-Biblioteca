@@ -28,17 +28,33 @@ class estudanteController extends Controller
     }
 
     public function store(Request $req) {
-        /*$this->validate([
-            'name' => 'required',
-            'email' => 'email|unique:users|max:255',
-            'password' => 'required|min:4'
+       /* $val = \Validator::make( $req->all(), [
+            'nome.*' => 'required',
+            'sobrenome.*' => 'required',
+            'facul.*' => 'required',
+            'numero.*' => 'numero|unique:estudantes',
+            'email.*' => 'email|unique:users|max:255',
+            /*'password' => 'required|min:4',
+            'distrito' => 'required',
+            'bairro' => 'required',
+            'rua' => 'required',
+            'casa' => 'required'
+        ]);
+        if ($val->fails()) {
+            return back()->withInput()->withErrors($val->errors());
+        }
+
+        [
+            'numero.unique' => 'Numero de estudante esta sendo usado por outro estudante!',
+            'email.unique' => 'Email ja cadastrado na base de dados, introduza outro!',
+            'email.max' => 'Quantidade maxima de caracteres 255!'
         ]);*/
 
         if($req->email && $req->numero && $req->casa) {
             $user = new User();
             $end = new Endereco();
 
-            $user->name = $req->nome." ".$req->sobrenome;
+            $user->name = $req->nome;
             $user->foto = $req->foto;
             $user->email = $req->email;
             $user->password = $req->senha;
@@ -51,13 +67,14 @@ class estudanteController extends Controller
             $end_id = $this->endereco_controller->store($end);
 
             Estudante::create([
+                'nome' => $req->nome." ".$req->sobrenome,
                 'numero'=> $req->numero,
-                "faculdade" => $req->facul,
-                "endereco_id" => $end_id,
-                "user_id" => $user_id
+                'faculdade' => $req->facul,
+                'endereco_id' => $end_id,
+                'user_id' => $user_id
             ]);
         }
-        return redirect('/inicio/minha-conta/registar')->with('message', 'Pessoa cadastrada com sucesso!');
+    return redirect('/inicio/minha-conta/registar')->with('message', 'Pessoa cadastrada com sucesso!');
     }
 
 }

@@ -15,7 +15,7 @@ class CreateEstudantesTables extends Migration
     {
         Schema::create('estudantes', funCTION (Blueprint $table) {
             $table->bigIncrements('id');
-            //$table->string('nome'); ja tem no user
+            $table->string('nome');
             $table->integer('numero')->unique();
             $table->enum('faculdade',['Faculdade de Ciências politicas e Administração',
                                        'Faculdade de Direito',
