@@ -14,9 +14,9 @@ class LivroTableSeeder extends Seeder
 
 
         DB::table('livros')->insert([
-            'titulo' => Str::ramdom(10),
-            'autor' => Str::ramdom(10),
-            'titulo' => Str::ramdom(10),
+            'titulo' => Str::random(10),
+            'autor' => Str::random(10),
+            'titulo' => Str::random(10),
 
         ]);
     }
