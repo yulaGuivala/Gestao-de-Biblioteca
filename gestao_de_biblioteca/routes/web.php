@@ -16,11 +16,12 @@ Route::get('/', function () {
 
 Route::get('/', 'livroController@buscarLivros');
 Route::get('/livro','livroController@buscarLivros');
+Route::get('/estudantes', 'estudanteController@listar');
 
 //Rotas para views do admin
 Route::group(['prefix' => 'sgb-admin'], function () {
-    Route::group(['prefix' => 'usuarios'], function () {
+    Route::group(['prefix' => '/usuarios'], function () {
         Route::get('/estudantes', 'EstudanteController@listar');
-        //Route::get('/adicionar-estudantes', 'EstudanteController@adicionar');
+        Route::get('/adicionar-estudantes', 'EstudanteController@adicionar');
     });
 });
