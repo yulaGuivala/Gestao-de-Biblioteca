@@ -38,8 +38,6 @@ class funcionarioController extends Controller
             $end = new Endereco();
 
             $user->name = $req->nome." ".$req->sobrenome;
-            $user->foto = $req->foto;
-            $user->email = $req->email;
             $user->password = $req->senha;
             $user_id = $this->user_controller->store($user);
 
@@ -50,8 +48,7 @@ class funcionarioController extends Controller
             $end_id = $this->endereco_controller->store($end);
 
             Funcionario::create([
-                'numero'=> $req->numero,
-                "faculdade" => $req->facul,
+                'nome'=> $req->nome,
                 "endereco_id" => $end_id,
                 "user_id" => $user_id
             ]);
