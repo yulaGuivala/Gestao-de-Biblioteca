@@ -33,8 +33,8 @@ Route::group(['prefix' => 'sgb-admin'], function () {
         Route::get('/estudantes', 'EstudanteController@listar');
         Route::get('/adicionar-estudantes', 'EstudanteController@adicionar');
    		Route::group(['prefix' => 'usuarios'], function () {
-        Route::get('/estudantes', 'EstudanteController@listar'); //redireciona para lists de estudasntes no admin
-        //Route::get('/adicionar-estudantes', 'EstudanteController@adicionar');
+            Route::get('/estudantes', 'EstudanteController@listar'); //redireciona para lists de estudasntes no admin
+            //Route::get('/adicionar-estudantes', 'EstudanteController@adicionar');
+        });
     });
 });
-
