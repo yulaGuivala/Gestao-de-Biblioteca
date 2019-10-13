@@ -8,6 +8,7 @@ use App\Models\user;
 use App\Models\endereco;
 use FuncionarioTableSeeder;
 
+
 class funcionarioController extends Controller
 {
     private $user_controller;
@@ -22,7 +23,7 @@ class funcionarioController extends Controller
 
     public function create() {
 
-        return view('user.registar');
+        return view('admin.adicionar-funcionario');
 
     }
 
@@ -56,10 +57,10 @@ class funcionarioController extends Controller
         return redirect('/inicio/minha-conta/registar')->with('message', 'Pessoa cadastrada com sucesso!');
     }
 
-    public function listaFunc() {
+    public function listar() {
 
-        $listaFunc = estudante::all();
-        return view('admin.lista-funcionarios',['funcionarios' => $listaFunc]);
+        $listaFunc = funcionario::all();
+        return view('admin.lista-funcionario',['funcionario' => $listaFunc]);
 
     }
 }

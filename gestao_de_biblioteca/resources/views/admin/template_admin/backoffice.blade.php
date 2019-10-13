@@ -138,11 +138,11 @@
             <div class="collapse" id="usuarios">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="lista-funcionario.php">Funcionários</a>
+                  <a class="nav-link" href="/Gestao-de-Biblioteca/gestao_de_biblioteca/public/funcionario">Funcionários</a>
                   <a class="nav-link d-none" href="adicionar-funcionario.php">Adicionar Funcionário</a>
                   <a class="nav-link d-none" href="registo-de-logs.php">Adicionar Funcionário</a>
                 </li>
-                <li class="nav-item"> <a class="nav-link" href="lista-estudantes.php">Estudantes</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Gestao-de-Biblioteca/gestao_de_biblioteca/public/estudantes">Estudantes</a></li>
               </ul>
             </div>
           </li>
