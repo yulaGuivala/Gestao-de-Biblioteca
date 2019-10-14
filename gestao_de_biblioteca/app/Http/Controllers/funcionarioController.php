@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 Use App\Models\funcionario;
 use App\Models\user;
 use App\Models\endereco;
-use FuncionarioTableSeeder;
 
 
 class funcionarioController extends Controller
@@ -28,33 +27,38 @@ class funcionarioController extends Controller
     }
 
 
-    public function store(Request $request){
-
+    public function store(Request $req){
         // $dataForm = $request->all();
 
         // $insert = $this->funcionario->create($dataForm);
 
-        if($req->email && $req->numero && $req->casa) {
+       if($req->mail && $req->usuario) {
             $user = new User();
             $end = new Endereco();
+            //var_dump($request->all());
 
-            $user->name = $req->nome." ".$req->sobrenome;
+            $user->name = $req->usuario;
+            $user->foto = $req->img;
+            $user->email = $req->mail;
             $user->password = $req->senha;
             $user_id = $this->user_controller->store($user);
+            //echo $user_id;
 
-            $end->distrito = $req->distrito;
-            $end->bairro = $req->bairro;
-            $end->rua = $req->rua;
-            $end->casa = $req->casa;
+            $end->distrito = 'Kamubukhana';//$req->distrito;
+            $end->bairro = 'Bagamoyo';//$req->bairro;
+            $end->rua ='5538'; //$req->rua;
+            $end->casa = '38';//$req->casa;
             $end_id = $this->endereco_controller->store($end);
+            //echo $end_id;
 
-            Funcionario::create([
-                'nome'=> $req->nome,
+            funcionario::create([
+                'nome'=> $req->nome." ".$req->apelido,
                 "endereco_id" => $end_id,
                 "user_id" => $user_id
             ]);
-        }
-        return redirect('/inicio/minha-conta/registar')->with('message', 'Pessoa cadastrada com sucesso!');
+
+       }
+       return redirect('/funcionario')->with('message', 'Pessoa cadastrada com sucesso!');
     }
 
     public function listar() {

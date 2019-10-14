@@ -7,6 +7,10 @@
                     <h4 class="font-weight-bold mb-0">Funcionarios</h4>
                 </div>
                 <div>
+                    <button type="button"  class="btn btn-primary btn-icon-text btn-rounded" >
+                        <i class=" btn-icon-prepend" ></i>
+                        <a href="addfuncionario">Adicionar</a>
+                    </button>
                     <button type="button" class="btn btn-danger btn-icon-text btn-rounded">
                         <i class="ti-trash btn-icon-prepend"></i>Apagar
                     </button>

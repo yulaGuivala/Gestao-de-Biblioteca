@@ -8,7 +8,7 @@ class funcionario extends Model
 {
     protected $filable = [];
     protected $table="funcionario";
-    protected $fillable = ['id', /*'nome',*/ 'endereco_id','user_id'];
+    protected $fillable = ['id','nome','endereco_id','user_id'];
 
     public function user(){
         return $this->belongsTo(User::class, 'user_id');

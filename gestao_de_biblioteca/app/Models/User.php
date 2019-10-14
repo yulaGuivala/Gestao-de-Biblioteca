@@ -17,8 +17,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','name', 'foto','email', 'password'
+        'id','name','foto','email', 'password'
     ];
+    protected $table = 'users';
 
     /**
      * The attributes that should be hidden for arrays.
@@ -40,5 +41,9 @@ class User extends Authenticatable
 
     public function estudante() {
         return $this->hasOne(estudante::class,'user_id');
+    }
+
+    public function funcionario() {
+        return $this->hasOne(funcionario::class,'user_id');
     }
 }

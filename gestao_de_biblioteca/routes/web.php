@@ -19,6 +19,8 @@ Route::get('/livro','livroController@buscarLivros');
 Route::get('/estudantes', 'estudanteController@listar');
 Route::get('/funcionario', 'funcionarioController@listar');
 Route::get('/addfuncionario', 'funcionarioController@create');
+Route::post('/stfuncionario', 'funcionarioController@store');
+
 
 //Rotas para viesws dos users
 Route::group(['prefix' => 'inicio'], function () {
