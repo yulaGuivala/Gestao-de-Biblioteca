@@ -1,4 +1,3 @@
-<?php include_once("includes/componetes.php"); ?>
 <!doctype html>
 <html lang="pt-br">
  <head>
@@ -11,96 +10,118 @@
     <!-- Bootstrap CSS -->
 
     <link rel="stylesheet" href="{{asset('user/node_modules/bootstrap/compiler/bootstrap.css')}}">
-
     <link rel="stylesheet" href="{{asset('user/style/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('user/lib/fontawesome/css/all.css')}}">
+    <link rel="shortcut icon" href="{{asset('user/imags/mini-logo.jpg')}}" />
+    @stack('registar-css')
 
-    <link rel="stylesheet" href="{{asset('userlib/fontawesome/css/all.css')}}">
 
-    <link rel="shortcut icon" href="{{asset('user/imags/mini-logo.jpg')}}" />;
 
 </head>
  <body>
 
-    <header class="container-fluid navbar-expand-md">
-        <div class="row ">
-            <div class="col-12 ">
+    <header class="container-fluid navbar-expand-md mb-2">
+    <div class="row ">
+        <!-- Cavecalho -->
+        <div class="col-12 ">
 
-                <div class="collapse navbar-collapse float-left ml-3">
-                    <img src="imgs/logo.jpg">
-                    <a href="index.php" class="text-danger link" style="text-decoration:none">
-                        <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
-                    </a>
-                </div>
+            <div class="collapse navbar-collapse float-left ml-3">
+                <img src="imgs/logo.jpg">
+                <a href="index.php" class="text-danger link" style="text-decoration:none">
+                    <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
+                </a>
+            </div>
 
-                <div class="navbar-toggler float-left mt-3 mr-3">
-                    <a href="index.php" class="text-danger link" style="text-decoration:none">
-                        <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
-                    </a>
-                </div>
+            <div class="navbar-toggler float-left mt-3 mr-3">
+                <a href="index.php" class="text-danger link text-center" style="text-decoration:none">
+                    <b style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
+                </a>
+            </div>
 
-                <div class="float-right mr-3">
-                    <ul class="navbar-nav list-group-horizontal float-right mt-2">
-                        <li class="nav-item dropdown ml-3">
-                            <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo"><i
-                                    class="fas fa-user mr-1"></i>Minha conta</a>
-                            <div class="dropdown-menu bg-danger">
-                                <a class="dropdown-item" href="login.php">Entrar</a>
-                                <a class="dropdown-item" href="registar.php">Registar</a>
+            <div class="float-right mr-3">
+                <ul class="navbar-nav list-group-horizontal float-right mt-2">
+                    <li class="nav-item ">
+                        <a href="#" class="link text-danger" data-toggle="modal" data-target="#livros"><i class="fas fa-book mr-1"></i>Caixa de Livros <sup class="badge bg-warning" style="position:relative; right:5px;">3</sup></a>
+
+                        <a class="nav-link d-inline dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo">
+                            <img class="perfil-foto d-none d-md-inline" src="imgs/perfil.png">
+                            Jose Pedro
+                        </a>
+                        <div class="dropdown-menu bg-danger">
+                            <a class="dropdown-item" href="perfil.php">Perfil</a>
+                            <a class="dropdown-item" href="#">Sair</a>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <!-- Navbar -->
+        <nav class="row navbar cor-vermelho navbar-dark navbar-expand-md">
+
+            <div class="container">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSite">
+
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php"><i class="fa fa-home"></i> Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown cor-vermelho dropdown-dark">
+                            <a class="nav-link" href="catalogo.php">Catálogo de Livros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php#about" data-target="">Sobre Nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.php">Conctate-nos</a>
+                        </li>
+
+                    </ul>
+
+                    <form class="form-inline">
+
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="nome do livro"  required>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-warning" type="submit"><i class="fa fa-search"></i></button>
+                                </span>
                             </div>
 
-                        </li>
-                    </ul>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-sm-12">
+                    <p id="dir">
+                        @yield('directorio')
+                    </p>
+                    <hr class="bg-danger">
                 </div>
             </div>
 
-            <!-- Navbar -->
-            <nav class="row navbar cor-vermelho navbar-dark navbar-expand-md">
-
-                <div class="container">
-
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSite">
-
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php"><i class="fa fa-home"></i> Inicio</a>
-                            </li>
-                            <li class="nav-item dropdown cor-vermelho dropdown-dark">
-                                <a class="nav-link" href="catalogo.php">Catálogo de Livros</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php#about" data-target="">Sobre Nós</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contacto.php">Conctate-nos</a>
-                            </li>
-
-                        </ul>
-
-                        <form class="form-inline">
-
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="nome do livro"  required>
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-warning" type="submit"><i class="fa fa-search"></i></button>
-                                    </span>
-                                </div>
-
-                        </form>
-
-                    </div>
-
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h1>@yield('titulo')</h1>
                 </div>
-
-            </nav>
-
+            </div>
         </div>
+    </div>
     </header>
 
-        @yield('conteudo')
+    @yield('conteudo')
 
     <footer class="container-fluid page-footer mt-5">
 
@@ -165,10 +186,9 @@
 
     </footer>
 
-
-
     <!-- Modal Detalhes-->
-   <!-- <div class="modal fade" id="siteModal" tabindex="-1" role="dialog">
+   <!--
+    <div class="modal fade" id="siteModal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
 
@@ -233,15 +253,15 @@
             </div>
         </div>
     </div>
-
-    <-- Modal caixa de livros-->
+-->
+    <!-- Modal caixa de livros-->
     <?php// modalLivros(); ?>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="asset{{'usernode_modules/jquery/dist/jquery.js'}}"></script>
-    <script src="asset{{'user/node_modules/popper.js/dist/umd/popper.js'}}"></script>
-    <script src="asset{{'user/node_modules/bootstrap/dist/js/bootstrap.js'}}"></script>
+    <script src="{{asset('user/node_modules/jquery/dist/jquery.js')}}"></script>
+    <script src="{{asset('user/node_modules/popper.js/dist/umd/popper.js')}}"></script>
+    <script src="{{asset('user/node_modules/bootstrap/dist/js/bootstrap.js')}}"></script>
+    <script src="{{asset('user/js/script.js')}}"></script>
+    @stack('registar-js')
 
   </body>
 </html>

@@ -74,7 +74,7 @@ class estudanteController extends Controller
                 'user_id' => $user_id
             ]);
         }
-    return redirect('/inicio/minha-conta/registar')->with('message', 'Pessoa cadastrada com sucesso!');
+    return redirect('/inicio/minha-conta/registar')->with('mensagem', 'Cadastrado efectuado com sucesso!');
     }
 
 }
