@@ -8,4 +8,12 @@ class livro extends Model
 {
     protected $filable=['titulo','autor','edicao','editora','pais','ano'];
     protected $table="livros";
+
+    public function funcionario(){
+        return $this->belongsTo(funcionario::class,'funcionario_id');
+    }
+
+    public function categoria(){
+        return $this->belongsTo(categoria::class,'categoria_id');
+    }
 }

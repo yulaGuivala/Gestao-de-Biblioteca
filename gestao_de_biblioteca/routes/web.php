@@ -14,8 +14,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', 'livroController@buscarLivros');
-Route::get('/livro','livroController@buscarLivros');
+Route::get('/', function () {
+    return view('user.catalogo');
+});
+
+//Route::get('/', 'livroController@buscarLivros');
+Route::get('/livro','livroController@listar');
 Route::get('/estudantes', 'estudanteController@listar');
 Route::get('/funcionario', 'funcionarioController@listar');
 Route::get('/addfuncionario', 'funcionarioController@create');
@@ -28,6 +32,7 @@ Route::group(['prefix' => 'inicio'], function () {
         Route::get('/registar', 'EstudanteController@registar'); //redireciona para formulario de cadastro
         Route::post('/store', 'EstudanteController@store');
     });
+    Route::get('/catalogo', 'LivroController@listar');
 });
 
 
