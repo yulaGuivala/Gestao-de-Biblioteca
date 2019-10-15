@@ -19,6 +19,9 @@ Route::get('/', function () {
 
 /*Route::get('/', function () {
     return view('admin.lista-livro');
+/*
+Route::get('/', function () {
+    return view('user.catalogo');
 });*/
 
 //Route::get('/', 'livroController@buscarLivros');
