@@ -14,9 +14,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
 Route::get('/', function () {
     return view('user.catalogo');
-});
+});*/
 
 //Route::get('/', 'livroController@buscarLivros');
 Route::get('/livro','livroController@listar');
