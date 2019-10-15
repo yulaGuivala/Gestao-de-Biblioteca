@@ -10,6 +10,6 @@ class ficheiro extends Model
     protected $table = 'ficheiro';
 
     public function user() {
-        return $this->belongsTo(User::class,'ficheiro_id');
+        return $this->hasOne(User::class,'ficheiro_id');
     }
 }

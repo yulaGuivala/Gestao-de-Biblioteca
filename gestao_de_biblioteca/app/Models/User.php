@@ -48,6 +48,6 @@ class User extends Authenticatable
     }
 
     public function ficheiro() {
-        return $this->hasOne(ficheiro::class,'user_id');
+        return $this->belongsTo(ficheiro::class,'ficheiro_id');
     }
 }

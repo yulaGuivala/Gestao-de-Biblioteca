@@ -117,4 +117,10 @@ class estudanteController extends Controller
     private function getEstudante($id) {
         return $this->estudante->find($id);
     }
+
+    public function update(Request $req) {
+        $this->estudante = $this->getEstudante($req->id);
+        $this->estudante->update($req->all());
+        return redirect('/')->with('mensagem', 'Dados Salvos!');
+    }
 }

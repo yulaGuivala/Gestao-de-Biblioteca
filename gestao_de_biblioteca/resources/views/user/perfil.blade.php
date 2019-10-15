@@ -27,7 +27,7 @@
 
     <div class="row justify-content-center">
 
-            <form class="col-md-8" method="post" action="#" id="formulario">
+            <form class="col-md-8" method="post" action="{{url("inicio/minha-conta/update")}}" id="formulario" enctype="multipart/form-data">
 
                 <div class="col-sm-12 border cor-creme cor-borda justify-content-center mb-10" id="geral">
 
@@ -42,6 +42,8 @@
                             <div class="p-image">
                                 <i class="fa fa-camera upload-button"></i>
                                 <input class="file-upload d-none" type="file" accept="image/*"/>
+                                <input type="hidden" name="id" value="{{$estudante->id}}">
+                                @csrf
                             </div>
 
                     </div>
@@ -72,7 +74,7 @@
                         <label for="inputEst">Faculdade</label>
                         <select id="inputEst" name="facul" class="form-control" required disabled>
                             <option value=""> Selecione...</option>
-                            <option @if ($estudante->faculdade == 'Faculdade de Políticas de Administração') {{"selected"}} @endif value="Faculdade de Políticas de Administração">Faculdade de Políticas de Administração</option>
+                            <option @if ($estudante->faculdade == 'Faculdade de Ciências politicas e Administração') {{"selected"}} @endif value="Faculdade de Ciências politicas e Administração">Faculdade de Ciências politicas e Administração</option>
                             <option @if ($estudante->faculdade == 'Faculdade de Direito') {{"selected"}} @endif value="Faculdade de Direito">Faculdade de Direito</option>
                             <option @if ($estudante->faculdade == 'Faculdade de Ciências Agrárias') {{"selected"}} @endif value="Faculdade de Ciências Agrárias">Faculdade de Ciências Agrárias</option>
                             <option @if ($estudante->faculdade == 'Faculdade de Economia e Informática') {{"selected"}} @endif value="Faculdade de Economia e Informática">Faculdade de Economia e Informática</option>
@@ -164,7 +166,7 @@
                         <div class="form-check">
 
                             <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" checked> Desejo receber novidades por e-mail
+                                <input class="form-check-input" type="checkbox" @if ($estudante->notificar == '1') {{"checked"}} @endif> Desejo receber novidades por e-mail
                             </label>
 
                         </div>

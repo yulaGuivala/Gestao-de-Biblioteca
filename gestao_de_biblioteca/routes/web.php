@@ -33,6 +33,7 @@ Route::group(['prefix' => 'inicio'], function () {
         Route::get('/registar', 'EstudanteController@registar'); //redireciona para formulario de cadastro
         Route::get('/{id}/perfil', 'EstudanteController@showPerfil'); //Vizualiza perfil de umestudante
         Route::post('/store', 'EstudanteController@store'); //Armazena dados de Estudanteu
+        Route::post('/update', 'EstudanteController@update'); //Armazena dados de Estudanteu
     });
     Route::get('/catalogo', 'LivroController@listar');
 });
