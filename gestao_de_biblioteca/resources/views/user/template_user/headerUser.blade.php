@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
  <head>
-    <title>Inicio</title>
+    <title>@yield('title')|SGB</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{asset('user/node_modules/bootstrap/compiler/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('user/style/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('user/lib/fontawesome/css/all.css')}}">
-    <link rel="shortcut icon" href="{{asset('user/imags/mini-logo.jpg')}}" />
+    <link rel="shortcut icon" href="{{asset('user/imags/favicon.png')}}" />
     @stack('registar-css')
 
 

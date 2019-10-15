@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','name','foto','email', 'password'
+        'id','name','email', 'password', 'ficheiro_id'
     ];
     protected $table = 'users';
 
@@ -45,5 +45,9 @@ class User extends Authenticatable
 
     public function funcionario() {
         return $this->hasOne(funcionario::class,'user_id');
+    }
+
+    public function ficheiro() {
+        return $this->hasOne(ficheiro::class,'user_id');
     }
 }

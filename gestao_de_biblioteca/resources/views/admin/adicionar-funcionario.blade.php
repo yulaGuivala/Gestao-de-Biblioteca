@@ -28,7 +28,7 @@
                     Introduza os dados do novo funcionário
                   </p>
 
-                  <form class="forms-sample" method="POST" action= "/Gestao-de-Biblioteca/gestao_de_biblioteca/public/stfuncionario" id="formulario">
+                  <form class="forms-sample" method="POST" action= "{{url('/stfuncionario')}}" id="formulario">
 
                     <div class="form-row">
                     <input type="hidden" name="_token" value={{csrf_token()}}>

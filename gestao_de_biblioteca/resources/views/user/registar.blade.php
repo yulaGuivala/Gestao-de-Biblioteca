@@ -1,5 +1,9 @@
 @extends('user.template_user.headerUser')
 
+@section('title')
+    Cadastro
+@endsection
+
 @section('directorio')
     <a href="index.php"><i class="fas fa-home mr-1"></i>Inicio</a> > Minha Conta >
     <span class="text-danger">Registar</span>
@@ -23,7 +27,7 @@
 
     <div class="row justify-content-center">
 
-            <form class="col-md-8" action="{{url('inicio/minha-conta/store')}}" method="post"  id="formulario">
+            <form class="col-md-8" action="{{url('inicio/minha-conta/store')}}" method="post"  id="formulario" enctype="multipart/form-data">
                 @csrf
                 <div class="col-sm-12 border cor-creme cor-borda justify-content-center mb-10" id="geral">
                     <div class="form-row mt-3">
@@ -32,7 +36,7 @@
                     <div class="form-row my-4 justify-content-center">
 
                             <div class="circle" id="foto-perfil">
-                                <img class=" profile-pic" src="imgs/perfil.png">
+                                <img class=" profile-pic" src="{{asset('user/imgs/perfil.png')}}">
                             </div>
                             <div class="p-image">
                                 <i class="fa fa-camera upload-button"></i>
@@ -85,7 +89,7 @@
                     <div class="form-group col-sm-6">
 
                         <label for="inputID">Nr. de Estudante</label>
-                        <input type="number" id="inputID" name="numero" class="form-control" min="1" max="99999999" placeholder="Nr. de Estudante" required>
+                        <input type="number" id="inputID" name="numero" class="form-control" min="20100000" max="99999999" placeholder="Nr. de Estudante" required>
 
                     </div>
 
@@ -122,14 +126,14 @@
                     </div>
                     <div class="form-group col-sm-3">
 
-                        <label for="rua">Rua</label>
-                        <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" max-lenght="100" required>
+                        <label for="rua">Rua/Quarteirao</label>
+                        <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua/Quarteirao" max-lenght="100" required>
 
                     </div>
                     <div class="form-group col-sm-3">
 
                         <label for="rua">Nr. da Casa</label>
-                        <input type="number" class="form-control" id="casa" name="casa" placeholder="Nr. da Casa" min="1" max="1000" required>
+                        <input type="number" class="form-control" id="casa" name="casa" placeholder="Nr. da Casa" min="1" max="10000" required>
 
                     </div>
 
@@ -140,7 +144,7 @@
                     <div class="form-group col-sm-6">
                         <label for="senha">Senha</label>
                         <div class="input-group">
-                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha"  minlength="4" maxlength="15" required>
+                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha"  minlength="6" maxlength="15" required>
                             <span class="input-group-btn">
                                 <button class="btn btn-sm btn-secondary" type="button" id="btn-senha"><i class="fa fa-eye"></i></button>
                             </span>
@@ -151,7 +155,7 @@
                       <div class="form-group col-sm-6" id="divcs">
                         <label for="csenha">Confirmar Senha</label>
                         <div class="input-group">
-                            <input type="password" class="form-control" id="csenha" name="csenha" placeholder="Senha"  equalTo="#senha" minlength="4" maxlength="15" required>
+                            <input type="password" class="form-control" id="csenha" name="csenha" placeholder="Senha"  equalTo="#senha" minlength="6" maxlength="15" required>
                             <span class="input-group-btn">
                                 <button class="btn btn-sm btn-secondary" type="button" id="btn-csenha"><i class="fa fa-eye"></i></button>
                             </span>
@@ -168,7 +172,7 @@
                         <div class="form-check">
 
                             <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox"> Desejo receber novidades por e-mail
+                                <input class="form-check-input" name="notificar" type="checkbox"> Desejo receber novidades por e-mail
                             </label>
 
                         </div>

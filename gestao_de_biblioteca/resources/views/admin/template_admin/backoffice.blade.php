@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Lista de Estudantes|Admin</title>
+    <title>@yield('title')|Admin</title>
 
     <link rel="stylesheet" href="{{ asset('admin/vendors/ti-icons/css/themify-icons.css')}}">
     <link rel="stylesheet" href="{{ asset('admin/vendors/base/vendor.bundle.base.css')}}">
@@ -218,17 +218,8 @@
     <script src="{{ asset('user/lib/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('user/lib/datatables/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('user/lib/datatables/datatable.pt-br.js') }}"></script>
-
-    <script>
-        //cria datatable em pt
-        dataTablePt('#tabela-dados');
-
-        //seleciona todos checkboxes da tabela
-        $("#selecionar").click(function () {
-            $('input:checkbox').prop('checked', this.checked);
-        });
-    </script>
-
+    <script src="{{ asset('admin/js/script-admin.js') }}"></script>
+    @stack('apagar-js')
 </body>
 
 </html>

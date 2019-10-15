@@ -14,7 +14,7 @@ $(document).ready(function () {
             } else {
                 error.insertAfter(element);
             }
-        }  
+        }
     });
 });
 
@@ -51,4 +51,11 @@ $("#btn-csenha").mouseout(function () {
     $('#csenha').prop('type', 'password');
 });
 
+//cria datatable em pt
+dataTablePt('#tabela-dados');
+
+//seleciona todos checkboxes da tabela
+$("#selecionar").click(function () {
+    $('input:checkbox').prop('checked', this.checked);
+});
 

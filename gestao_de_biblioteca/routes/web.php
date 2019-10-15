@@ -31,7 +31,8 @@ Route::post('/stfuncionario', 'funcionarioController@store');
 Route::group(['prefix' => 'inicio'], function () {
     Route::group(['prefix' => 'minha-conta'], function () {
         Route::get('/registar', 'EstudanteController@registar'); //redireciona para formulario de cadastro
-        Route::post('/store', 'EstudanteController@store');
+        Route::get('/{id}/perfil', 'EstudanteController@showPerfil'); //Vizualiza perfil de umestudante
+        Route::post('/store', 'EstudanteController@store'); //Armazena dados de Estudanteu
     });
     Route::get('/catalogo', 'LivroController@listar');
 });
@@ -40,12 +41,8 @@ Route::group(['prefix' => 'inicio'], function () {
 //Rotas para views do admin
 Route::group(['prefix' => 'sgb-admin'], function () {
     Route::group(['prefix' => '/usuarios'], function () {
-        Route::get('/estudantes', 'EstudanteController@listar');
-        Route::get('/adicionar-estudantes', 'EstudanteController@adicionar');
-   		Route::group(['prefix' => 'usuarios'], function () {
-            Route::get('/estudantes', 'EstudanteController@listar'); //redireciona para lists de estudasntes no admin
-            //Route::get('/adicionar-estudantes', 'EstudanteController@adicionar');
-        });
+        Route::get('/estudantes', 'EstudanteController@show'); //lista estudasntes no admin
+        //Route::post('/apagar', 'EstudanteController@destroy'); //exclui um estudante na BD
     });
 });
 
