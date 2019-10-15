@@ -123,7 +123,11 @@
         <ul class="nav">
 
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link" href="/Gestao-de-Biblioteca/gestao_de_biblioteca/public/index">
+=======
+            <a class="nav-link" href="index.php">
+>>>>>>> master
               <i class="ti-shield menu-icon"></i>
               <span class="menu-title">Painel de Controle</span>
             </a>

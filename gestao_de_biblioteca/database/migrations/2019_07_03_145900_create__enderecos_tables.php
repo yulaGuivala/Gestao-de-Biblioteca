@@ -18,7 +18,9 @@ class CreateEnderecosTables extends Migration
             $table->string('distrito');
             $table->string('bairro');
             $table->string('rua');
+            $table->integer('casa');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

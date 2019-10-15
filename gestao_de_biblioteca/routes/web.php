@@ -10,17 +10,32 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
 
+<<<<<<< HEAD
 Route::get('/', 'livroController@buscarLivros');
 <<<<<<< Updated upstream
 =======
 Route::get('/livro','livroController@buscarLivros');
+=======
+Route::get('/', function () {
+    return view('user.catalogo');
+});
+
+//Route::get('/', 'livroController@buscarLivros');
+Route::get('/livro','livroController@listar');
+>>>>>>> master
 Route::get('/estudantes', 'estudanteController@listar');
 Route::get('/funcionario', 'funcionarioController@listar');
 Route::get('/addfuncionario', 'funcionarioController@create');
 Route::post('/stfuncionario', 'funcionarioController@store');
+<<<<<<< HEAD
 Route::get('/index', 'Controller@inicio');
 
+=======
+>>>>>>> master
 
 
 //Rotas para viesws dos users
@@ -29,6 +44,10 @@ Route::group(['prefix' => 'inicio'], function () {
         Route::get('/registar', 'EstudanteController@registar'); //redireciona para formulario de cadastro
         Route::post('/store', 'EstudanteController@store');
     });
+<<<<<<< HEAD
+=======
+    Route::get('/catalogo', 'LivroController@listar');
+>>>>>>> master
 });
 
 
@@ -55,6 +74,8 @@ Route::group(['prefix' => 'sgb-admin'], function () {
         });
     });
 });
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> master
 
-Route::get('/livro','livroController@buscarLivros');

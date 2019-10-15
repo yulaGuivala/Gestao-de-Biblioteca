@@ -1,6 +1,45 @@
+<<<<<<< HEAD
 
       @extends('admin.template_admin.backoffice')
     @section('conteudo')
+=======
+<?php include_once("includes/componetes.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Painel de Controle|SGB</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- endinject -->
+  <?php favicon(); ?>
+</head>
+
+<body>
+  <div class="container-scroller">
+    
+    <!-- Navbar: includes/componetes.php -->
+    <?php navbar(); ?>
+    
+    <!-- page-body-wrapper (corpo) -->
+    <div class="container-fluid page-body-wrapper">
+       
+      <!-- Sidebar: includes/componetes.php-->
+      <?php sidebar(); ?>
+
+      <!-- main-panel (conteudo)-->
+      <div class="main-panel">
+        
+>>>>>>> master
         <!-- content-wrapper  -->
         <div class="content-wrapper">
           <div class="row">
@@ -28,7 +67,11 @@
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">34040</h3>
                     <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+<<<<<<< HEAD
                   </div>
+=======
+                  </div>  
+>>>>>>> master
                   <p class="mb-0 mt-2 text-danger">0.12% <span class="text-black ml-1"><small>(30 days)</small></span></p>
                 </div>
               </div>
@@ -40,7 +83,11 @@
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">47033</h3>
                     <i class="ti-user icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+<<<<<<< HEAD
                   </div>
+=======
+                  </div>  
+>>>>>>> master
                   <p class="mb-0 mt-2 text-danger">0.47% <span class="text-black ml-1"><small>(30 days)</small></span></p>
                 </div>
               </div>
@@ -52,7 +99,11 @@
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">40016</h3>
                     <i class="ti-agenda icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+<<<<<<< HEAD
                   </div>
+=======
+                  </div>  
+>>>>>>> master
                   <p class="mb-0 mt-2 text-success">64.00%<span class="text-black ml-1"><small>(30 days)</small></span></p>
                 </div>
               </div>
@@ -64,7 +115,11 @@
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">61344</h3>
                     <i class="ti-layers-alt icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+<<<<<<< HEAD
                   </div>
+=======
+                  </div>  
+>>>>>>> master
                   <p class="mb-0 mt-2 text-success">23.00%<span class="text-black ml-1"><small>(30 days)</small></span></p>
                 </div>
               </div>
@@ -118,7 +173,11 @@
                     <div class="mt-3">
                       <p class="text-muted">Feedbacks</p>
                       <h3>509</h3>
+<<<<<<< HEAD
                     </div>
+=======
+                    </div> 
+>>>>>>> master
                   </div>
                 </div>
                 <canvas id="order-chart" class="w-100"></canvas>
@@ -255,7 +314,11 @@
                         <h1>33500</h1>
                         <h3 class="font-weight-light mb-xl-4">Sales</h3>
                         <p class="text-muted mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+<<<<<<< HEAD
                       </div>
+=======
+                      </div>  
+>>>>>>> master
                     </div>
                     <div class="col-md-12 col-xl-9">
                       <div class="row">
@@ -332,4 +395,38 @@
           </div>
         </div>
         <!-- content-wrapper ends -->
+<<<<<<< HEAD
         @endsection
+=======
+        
+        <!--footer: includes/componetes.php -->
+        <?php footer(); ?>
+
+      </div>
+      <!-- main-panel ends -->
+
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="vendors/base/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/dashboard.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
+
+>>>>>>> master

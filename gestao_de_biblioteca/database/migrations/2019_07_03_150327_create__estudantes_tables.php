@@ -16,15 +16,17 @@ class CreateEstudantesTables extends Migration
         Schema::create('estudantes', funCTION (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
+            $table->integer('numero')->unique();
             $table->enum('faculdade',['Faculdade de Ciências politicas e Administração',
-                                       'Faculdade de direicto',
-                                       'Faculdade de Ciências Agrarias',
+                                       'Faculdade de Direito',
+                                        'Faculdade de Ciências Agrárias',
                                        'Faculdade de Economia e Informatica']);
             $table->unsignedBigInteger('endereco_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('endereco_id')->references('id')->on('enderecos')->onDelete('NO ACTION')->onUpdate('CASCADE');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('NO ACTION')->onUpdate('CASCADE');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

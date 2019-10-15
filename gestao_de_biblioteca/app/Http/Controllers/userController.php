@@ -16,9 +16,12 @@ class userController extends Controller
         }
         return $user->id;
     }
+<<<<<<< HEAD
 
     function login_admin(User $user){
 
 
     }
+=======
+>>>>>>> master
 }

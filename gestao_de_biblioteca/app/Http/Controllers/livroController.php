@@ -7,9 +7,10 @@ use App\Models\livro;
 
 class livroController extends Controller
 {
-    public function buscarLivros(livro $livros){
-       
-       echo $livros->all();
+    public function listar (livro $livros){
+
+       $livros = livro::with('categoria')->get();
+       return view('user.catalogo',['livros' => $livros]);
     }
 
     public function inseriLivro(){
@@ -21,6 +22,6 @@ class livroController extends Controller
             'pais'=>'1212',
         ];
 
-        
+
     }
 }
