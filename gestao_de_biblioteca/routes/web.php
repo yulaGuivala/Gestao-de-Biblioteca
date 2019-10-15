@@ -10,17 +10,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Http\Controllers\livroController;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+/*Route::get('/', function () {
+    return view('admin.lista-livro');
 /*
 Route::get('/', function () {
     return view('user.catalogo');
 });*/
 
 //Route::get('/', 'livroController@buscarLivros');
-Route::get('/livro','livroController@listar');
+//Route::get('/livro','livroController@listarAdmin');
 Route::get('/estudantes', 'estudanteController@listar');
 Route::get('/funcionario', 'funcionarioController@listar');
 Route::get('/addfuncionario', 'funcionarioController@create');
@@ -44,6 +49,10 @@ Route::group(['prefix' => 'sgb-admin'], function () {
     Route::group(['prefix' => '/usuarios'], function () {
         Route::get('/estudantes', 'EstudanteController@show'); //lista estudasntes no admin
         //Route::post('/apagar', 'EstudanteController@destroy'); //exclui um estudante na BD
+    });
+
+    Route::group(['prefix' => 'livros'], function () {
+        Route::get('lista','livroController@listarAdmin');
     });
 });
 
