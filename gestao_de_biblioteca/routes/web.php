@@ -17,8 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*Route::get('/', function () {
-    return view('admin.lista-livro');
+Route::get('/', function () {
+    return view('admin.adicionar-livro');
+
+});
 /*
 Route::get('/', function () {
     return view('user.catalogo');
