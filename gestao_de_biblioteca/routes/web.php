@@ -25,7 +25,7 @@ Route::get('/estudantes', 'estudanteController@listar');
 Route::get('/funcionario', 'funcionarioController@listar');
 Route::get('/addfuncionario', 'funcionarioController@create');
 Route::post('/stfuncionario', 'funcionarioController@store');
-
+Route::get('/index', 'userController@login_admin');
 
 //Rotas para viesws dos users
 Route::group(['prefix' => 'inicio'], function () {

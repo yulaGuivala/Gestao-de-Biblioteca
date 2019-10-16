@@ -16,4 +16,9 @@ class userController extends Controller
         }
         return $user->id;
     }
+
+    function login_admin(){
+
+        return view('admin.login');
+    }
 }
