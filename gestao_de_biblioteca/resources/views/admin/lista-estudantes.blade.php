@@ -8,7 +8,7 @@
                     <h4 class="font-weight-bold mb-0">Estudantes</h4>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-danger btn-icon-text btn-rounded">
+                    <button type="button" id="apagar-estudante" class="btn btn-danger btn-icon-text btn-rounded">
                         <i class="ti-trash btn-icon-prepend"></i>Apagar
                     </button>
                 </div>
@@ -44,7 +44,7 @@
                             <td>
                                 <div class="form-check form-check-flat form-check-primary">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input">
+                                    <input type="checkbox" value="{{$est->id}}" class="form-check-input estCheckbox">
                                 </label>
                                 </div>
                             </td>
@@ -70,3 +70,16 @@
     </div>
 @endsection
 
+@push('apagar-js')
+    <script>
+        $('#apagar-estudante').click(function () {
+            //alert('sss');
+            formData = new FormData(); //objecto que envia dados pelo metodo POST
+            cont = 0;
+            $('input.estCheckbox:checkbox:checked').each(function () {
+                formData.append("cb-" + cont, this.value);
+            });
+            $.post('sgb-admin/usuarios/apagar',formData);
+        });
+    </script>
+@endpush

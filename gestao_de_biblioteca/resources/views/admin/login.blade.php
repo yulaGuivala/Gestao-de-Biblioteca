@@ -1,26 +1,7 @@
-<?php include_once("includes/componetes.php"); ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Login|Admin</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="../lib/datatables/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../lib/validate/jquery.validate.css">
-  
-  <!-- endinject -->
-  <?php favicon(); ?>
-</head>
+@extends('admin.template_admin.backlogin')
+    @section('conteudo')
+
 
 <body>
   <div class="container-scroller">
@@ -36,7 +17,8 @@
               </div>
               <h4>Ola! Bem vindo</h4>
               <h6 class="font-weight-light">Introduza os dados de autenticação para continuar.</h6>
-              <form class="pt-3" id="formulario" method="POST">
+
+              <form class="pt-3" id="formulario" method="POST" action="">
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg" id="nome" name="nome" placeholder="Nome de usuário" required>
                 </div>
@@ -64,20 +46,5 @@
     </div>
     <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script src="vendors/base/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-       <!-- End plugin js for this page-->
-    <!-- inject:js -->
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/todolist.js"></script>
-  <!-- endinject -->
-    <script src="../lib/validate/jquery.validate.min.js"></script>
-    <script src="../lib/validate/jquery.validate.pt-br.js"></script>
-    <script src="js/script-admin.js"></script>
-</body>
+  @endsection
 
-</html>

@@ -17,6 +17,7 @@ class CreateEstudantesTables extends Migration
             $table->bigIncrements('id');
             $table->string('nome');
             $table->integer('numero')->unique();
+            $table->boolean('notificar')->default(0);
             $table->enum('faculdade',['Faculdade de Ciências politicas e Administração',
                                        'Faculdade de Direito',
                                         'Faculdade de Ciências Agrárias',
