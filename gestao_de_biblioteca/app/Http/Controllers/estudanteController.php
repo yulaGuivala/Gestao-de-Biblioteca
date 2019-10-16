@@ -60,11 +60,14 @@ class estudanteController extends Controller
 
             $foto = $req->file('foto');
             $extensao = $foto->getClientOriginalExtension();
+
+            //para evitar que ficheiro com mesmo nome entrem em conflito, o nome original do ficheiro e trocado
             Storage::disk('public')->put($foto->getFilename() . '.' . $extensao, \File::get($foto));
             $ficheiro = new ficheiro();
             $ficheiro->nome = $foto->getFilename() . '.' . $extensao;
             $ficheiro->mime = $foto->getClientMimeType();
             $ficheiro->nome_original = $foto->getClientOriginalName();
+
             $fich_id = $this->ficheiro_controller->store($ficheiro);
 
             $user->name = $req->nome;
@@ -93,7 +96,7 @@ class estudanteController extends Controller
                 'user_id' => $user_id
             ]);
         }
-        return redirect('/inicio/minha-conta/registar')->with('mensagem', 'Cadastrado efectuado com sucesso!');
+        return redirect('/inicio/minha-conta/registar')->with('mensagem', 'Cadastro efectuado com sucesso!');
     }
 
     //Retorna dados de todos Estudantes para a view lista-estudantes.blade.php
@@ -119,8 +122,43 @@ class estudanteController extends Controller
     }
 
     public function update(Request $req) {
+        $end = $this->endereco_controller->getEndereco($req->endereco_id);
+        $user = $this->user_controller->getUser($req->user_id);
+        $ficheiro = $this->ficheiro_controller->getFicheiro($req->ficheiro_id);
+
+        $end->distrito = $req->distrito;
+        $end->bairro = $req->bairro;
+        $end->rua = $req->rua;
+        $end->casa = $req->casa;
+        $this->endereco_controller->update($end);
+
+        $user->name = $req->nome;
+        $user->email = $req->email;
+        $user->password = $req->senha;
+        $this->user_controller->update($user);
+
+        $foto = $req->file('foto');
+        if ($foto != null) {
+            $extensao = $foto->getClientOriginalExtension();
+            Storage::disk('public')->put($foto->getFilename() . '.' . $extensao, \File::get($foto));
+            $ficheiro->nome = $foto->getFilename() . '.' . $extensao;
+            $ficheiro->mime = $foto->getClientMimeType();
+            $ficheiro->nome_original = $foto->getClientOriginalName();
+            $this->ficheiro_controller->update($ficheiro);
+        }
+
+        $notificar = 0;
+        if ($req->notificar == 'on') {
+            $notificar = 1;
+        }
+
         $this->estudante = $this->getEstudante($req->id);
-        $this->estudante->update($req->all());
-        return redirect('/')->with('mensagem', 'Dados Salvos!');
+        $this->estudante->nome = $req->nome;
+        $this->estudante->numero = $req->numero;
+        $this->estudante->faculdade = $req->facul;
+        $this->estudante->notificar = $notificar;
+        $this->estudante->update();
+
+        return redirect('/')->with('mensagem', 'Dados de perfil salvos!');
     }
 }

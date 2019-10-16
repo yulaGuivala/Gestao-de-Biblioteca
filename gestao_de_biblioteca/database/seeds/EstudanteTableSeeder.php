@@ -35,10 +35,10 @@ class EstudanteTableSeeder extends Seeder
 
    private function faculdade() {
         $faculdade = [
-            'Faculdade de Ciências politicas e Administração',
+            'Faculdade de Ciências Politicas e Administração',
             'Faculdade de Direito',
-            'Faculdade de Ciências Agrarias',
-            'Faculdade de Economia e Informatica'
+            'Faculdade de Ciências Agrárias',
+            'Faculdade de Economia e Informática'
         ];
         return $faculdade[rand(0,3)];
     }

@@ -36,7 +36,7 @@
                     <div class="form-row my-4 justify-content-center">
 
                             <div class="circle" id="foto-perfil">
-                                <img class=" profile-pic" src="{{asset('user/imgs/perfil.png')}}">
+                                <img class=" profile-pic" src="{{asset('uploads/profile.png')}}">
                             </div>
                             <div class="p-image">
                                 <i class="fa fa-camera upload-button"></i>
@@ -78,7 +78,7 @@
                         <label for="inputEst">Faculdade</label>
                         <select id="inputEst" name="facul" class="form-control" required>
                             <option value=""> Selecione...</option>
-                            <option value="Faculdade de Ciências politicas e Administração">Faculdade de Ciências politicas e Administração</option>
+                            <option value="Faculdade de Ciências Politicas e Administração">Faculdade de Ciências Politicas e Administração</option>
                             <option value="Faculdade de Direito">Faculdade de Direito</option>
                             <option value="Faculdade de Ciências Agrárias">Faculdade de Ciências Agrárias</option>
                             <option value="Faculdade de Economia e Informática">Faculdade de Economia e Informática</option>
