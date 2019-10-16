@@ -10,7 +10,6 @@ class userController extends Controller
     {
         try {
             $user->save();
-           // echo $user->id;
         } catch (\Exception $e) {
             echo "<h3 style='color:red'>ERRO:</h3>" . $e->getMessage();
         }

@@ -13,12 +13,26 @@ class EnderecoTableSeeder extends Seeder
     {
         $data = date('Y-m-d H:i:s');
         DB::table('enderecos')->insert([
-            'distrito' => Str::random(10),
+            'distrito' => $this->distrito(),
             'bairro' => Str::random(10),
             'rua' => Str::random(10),
             'casa' => rand(100,5000),
             'created_at' => $data,
             'updated_at' => $data
         ]);
+    }
+
+    private function distrito() {
+        $arr = [
+            'Nlhamankulu',
+            'KaMpfumo',
+            'KaMaxaquene',
+            'KaMavota',
+            'KaMubukwana',
+            'KaMubukwana',
+            'KaTembe',
+            'KaNyaka'
+        ];
+        return $arr[rand(0,7)];
     }
 }
