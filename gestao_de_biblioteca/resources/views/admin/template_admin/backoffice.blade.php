@@ -138,11 +138,11 @@
             <div class="collapse" id="usuarios">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="/Gestao-de-Biblioteca/gestao_de_biblioteca/public/funcionario">Funcionários</a>
-                  <a class="nav-link d-none" href="adicionar-funcionario.php">Adicionar Funcionário</a>
+                  <a class="nav-link" href="{{url('sgb-admin/usuarios/funcionario')}}">Funcionários</a>
+                  <a class="nav-link d-none" href="{{url('sgb-admin/usuarios/adicionar-funcionario')}}">Adicionar Funcionário</a>
                   <a class="nav-link d-none" href="registo-de-logs.php">Adicionar Funcionário</a>
                 </li>
-                <li class="nav-item"> <a class="nav-link" href="/Gestao-de-Biblioteca/gestao_de_biblioteca/public/estudantes">Estudantes</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('sgb-admin/usuarios/estudantes')}}">Estudantes</a></li>
               </ul>
             </div>
           </li>

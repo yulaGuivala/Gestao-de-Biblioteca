@@ -58,7 +58,7 @@ class funcionarioController extends Controller
             ]);
 
        }
-       return redirect('/funcionario')->with('message', 'Pessoa cadastrada com sucesso!');
+       return redirect('sgb-admin/usuarios/funcionario')->with('message', 'Pessoa cadastrada com sucesso!');
     }
 
     public function listar() {
