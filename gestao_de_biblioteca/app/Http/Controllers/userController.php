@@ -22,6 +22,7 @@ class userController extends Controller
         return $user->id;
     }
 
+
     public function update(User $user)
     {
         try {
@@ -33,5 +34,10 @@ class userController extends Controller
 
     public function getUser($id) {
         return $this->user->find($id);
+    }
+    
+    function login_admin(){
+
+        return view('admin.login');
     }
 }

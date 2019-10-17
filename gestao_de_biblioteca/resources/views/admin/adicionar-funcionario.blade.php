@@ -11,7 +11,7 @@
                   <h4 class="font-weight-bold mb-0">Funcionários</h4>
                 </div>
                 <div>
-                    <a href="/Gestao-de-Biblioteca/gestao_de_biblioteca/public/funcionario" class="btn btn-light btn-icon-text btn-rounded">
+                    <a href="{{url('sgb-admin/usuarios/funcionario')}}" class="btn btn-light btn-icon-text btn-rounded">
                       <i class="ti-back-right btn-icon-prepend"></i>Voltar
                     </a>
                 </div>
@@ -28,7 +28,7 @@
                     Introduza os dados do novo funcionário
                   </p>
 
-                  <form class="forms-sample" method="POST" action= "{{url('/stfuncionario')}}" id="formulario">
+                  <form class="forms-sample" method="POST" action= "{{url('sgb-admin/usuarios/gravar-funcionario')}}" id="formulario">
 
                     <div class="form-row">
                     <input type="hidden" name="_token" value={{csrf_token()}}>

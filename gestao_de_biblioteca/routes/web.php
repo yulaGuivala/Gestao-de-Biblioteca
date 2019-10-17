@@ -17,8 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*Route::get('/', function () {
-    return view('admin.lista-livro');
+Route::get('/', function () {
+    return view('admin.adicionar-livro');
+
+});
 /*
 Route::get('/', function () {
     return view('user.catalogo');
@@ -26,10 +28,8 @@ Route::get('/', function () {
 
 //Route::get('/', 'livroController@buscarLivros');
 //Route::get('/livro','livroController@listarAdmin');
-Route::get('/estudantes', 'estudanteController@listar');
-Route::get('/funcionario', 'funcionarioController@listar');
-Route::get('/addfuncionario', 'funcionarioController@create');
-Route::post('/stfuncionario', 'funcionarioController@store');
+//Route::get('/funcionario', 'funcionarioController@listar');
+//Route::get('/addfuncionario', 'funcionarioController@create');
 
 
 //Rotas para viesws dos users
@@ -55,16 +55,16 @@ Route::group(['prefix' => 'sgb-admin'], function () {
         Route::get('lista','livroController@listarAdmin');
     });
 });
+//Route::get('/funcionario', 'funcionarioController@listar');
+//Route::get('/addfuncionario', 'funcionarioController@create');
 
 Route::group(['prefix' => 'sgb-admin'], function () {
+    Route::post('/stfuncionario', 'funcionarioController@store');
+    Route::get('/index', 'userController@login_admin');
     Route::group(['prefix' => '/usuarios'], function () {
         Route::get('/funcionario', 'funcionarioController@listar');
-        Route::get('/adicionar-funcionarios', 'funcionarioController@adicionar');
-   		Route::group(['prefix' => 'usuarios'], function () {
-               return "Folege";
-            //Route::get('/funcionario', 'FuncionariosController@listar'); //redireciona para lists de funcionarios no admin
-            //Route::get('/adicionar-estudantes', 'EstudanteController@adicionar');
-        });
+        Route::get('/adicionar-funcionario', 'funcionarioController@create');
+        Route::post('/gravar-funcionario', 'funcionarioController@store');
     });
 });
 

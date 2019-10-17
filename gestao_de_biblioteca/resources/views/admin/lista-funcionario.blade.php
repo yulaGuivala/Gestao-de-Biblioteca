@@ -9,7 +9,7 @@
                 <div>
                     <button type="button"  class="btn btn-primary btn-icon-text btn-rounded" >
                         <i class=" btn-icon-prepend" ></i>
-                        <a href="addfuncionario">Adicionar</a>
+                        <a href="{{url('sgb-admin/usuarios/adicionar-funcionario')}}">Adicionar</a>
                     </button>
                     <button type="button" class="btn btn-danger btn-icon-text btn-rounded">
                         <i class="ti-trash btn-icon-prepend"></i>Apagar
