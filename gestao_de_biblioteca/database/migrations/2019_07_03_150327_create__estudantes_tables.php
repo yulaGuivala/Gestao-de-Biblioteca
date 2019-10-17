@@ -18,10 +18,10 @@ class CreateEstudantesTables extends Migration
             $table->string('nome');
             $table->integer('numero')->unique();
             $table->boolean('notificar')->default(0);
-            $table->enum('faculdade',['Faculdade de Ciências politicas e Administração',
+            $table->enum('faculdade',['Faculdade de Ciências Politicas e Administração',
                                        'Faculdade de Direito',
                                         'Faculdade de Ciências Agrárias',
-                                       'Faculdade de Economia e Informatica']);
+                                        'Faculdade de Economia e Informática']);
             $table->unsignedBigInteger('endereco_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('endereco_id')->references('id')->on('enderecos')->onDelete('NO ACTION')->onUpdate('CASCADE');

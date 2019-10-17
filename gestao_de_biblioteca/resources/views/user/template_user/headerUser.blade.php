@@ -26,7 +26,7 @@
         <div class="col-12 ">
 
             <div class="collapse navbar-collapse float-left ml-3">
-                <img src="imgs/logo.jpg">
+                <img src="{{asset('user/imgs/logo.jpg')}}">
                 <a href="index.php" class="text-danger link" style="text-decoration:none">
                     <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
                 </a>
@@ -44,7 +44,7 @@
                         <a href="#" class="link text-danger" data-toggle="modal" data-target="#livros"><i class="fas fa-book mr-1"></i>Caixa de Livros <sup class="badge bg-warning" style="position:relative; right:5px;">3</sup></a>
 
                         <a class="nav-link d-inline dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo">
-                            <img class="perfil-foto d-none d-md-inline" src="imgs/perfil.png">
+                            <img class="perfil-foto d-none d-md-inline" src="{{asset('user/imgs/perfil2.png')}}">
                             Jose Pedro
                         </a>
                         <div class="dropdown-menu bg-danger">

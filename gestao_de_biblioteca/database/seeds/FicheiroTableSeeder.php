@@ -13,7 +13,7 @@ class FicheiroTableSeeder extends Seeder
     {
         $data = date('Y-m-d H:i:s');
         DB::table('ficheiro')->insert([
-            'nome' => Str::random(30),
+            'nome' => "profile.png",
             'mime' => Str::random(10),
             'nome_original' => Str::random(30),
             'created_at' => $data,
