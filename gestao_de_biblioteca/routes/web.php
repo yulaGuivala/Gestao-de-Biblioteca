@@ -49,8 +49,11 @@ Route::group(['prefix' => 'sgb-admin'], function () {
     Route::group(['prefix' => '/usuarios'], function () {
         Route::get('/estudantes', 'EstudanteController@show'); //lista estudasntes no admin
         //Route::post('/apagar', 'EstudanteController@destroy'); //exclui um estudante na BD
+        Route::get('/funcionario', 'funcionarioController@listar');//lista funcionarios no admin
+        Route::get('/adicionar-funcionario', 'funcionarioController@create');//formulario de registo de funcionario no admin
+        Route::post('/gravar-funcionario', 'funcionarioController@store');//gravar funcionario no admin
     });
-
+    Route::get('/index', 'userController@login_admin');
     Route::group(['prefix' => 'livros'], function () {
         Route::get('lista','livroController@listarAdmin');
     });
@@ -58,13 +61,4 @@ Route::group(['prefix' => 'sgb-admin'], function () {
 //Route::get('/funcionario', 'funcionarioController@listar');
 //Route::get('/addfuncionario', 'funcionarioController@create');
 
-Route::group(['prefix' => 'sgb-admin'], function () {
-    Route::post('/stfuncionario', 'funcionarioController@store');
-    Route::get('/index', 'userController@login_admin');
-    Route::group(['prefix' => '/usuarios'], function () {
-        Route::get('/funcionario', 'funcionarioController@listar');
-        Route::get('/adicionar-funcionario', 'funcionarioController@create');
-        Route::post('/gravar-funcionario', 'funcionarioController@store');
-    });
-});
 
