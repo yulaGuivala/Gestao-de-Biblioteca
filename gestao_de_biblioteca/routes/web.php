@@ -16,7 +16,7 @@ use App\Http\Controllers\livroController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+/*
 Route::get('/', function () {
     return view('admin.adicionar-livro');
 
@@ -68,3 +68,7 @@ Route::group(['prefix' => 'sgb-admin'], function () {
     });
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
