@@ -48,7 +48,7 @@ Route::group(['prefix' => 'inicio'], function () {
 Route::group(['prefix' => 'sgb-admin'], function () {
     Route::group(['prefix' => '/usuarios'], function () {
         Route::get('/estudantes', 'EstudanteController@show'); //lista estudasntes no admin
-        //Route::post('/apagar', 'EstudanteController@destroy'); //exclui um estudante na BD
+        Route::get('/apagar/{id}', 'EstudanteController@destroy'); //exclui um estudante na BD
     });
 
     Route::group(['prefix' => 'livros'], function () {

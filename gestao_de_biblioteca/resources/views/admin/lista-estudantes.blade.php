@@ -1,5 +1,10 @@
 
 @extends('admin.template_admin.backoffice')
+
+@section('title')
+    Estudantes
+@endsection
+
 @section('conteudo')
     <div class="row">
         <div class="col-md-12 grid-margin">
@@ -40,7 +45,7 @@
                     </thead>
                     <tbody>
                     @foreach ($estudantes as $est)
-                        <tr>
+                        <tr id="estudante-{{$est->id}}">
                             <td>
                                 <div class="form-check form-check-flat form-check-primary">
                                 <label class="form-check-label">
@@ -70,16 +75,92 @@
     </div>
 @endsection
 
-@push('apagar-js')
+@push('apagar-meta4')
+ <meta name="csrf-token" content="{{csrf_token()}}">
+@endpush
+
+@push('tabelas-css')
+    <link rel="stylesheet" href="{{asset('user/lib/sweetalert2/sweetalert2.min.css')}}">
+@endpush
+
+@push('tabelas-js')
+
+    <script src="{{asset('user/lib/sweetalert2/sweetalert2.all.min.js')}}"></script>
+
     <script>
-        $('#apagar-estudante').click(function () {
-            //alert('sss');
-            formData = new FormData(); //objecto que envia dados pelo metodo POST
-            cont = 0;
-            $('input.estCheckbox:checkbox:checked').each(function () {
-                formData.append("cb-" + cont, this.value);
+        //realisa procedimentos para apagar dados
+        $(document).ready(function() {
+            $('#apagar-estudante').click(function () {
+                var selecionado = 0;
+
+                $('input.estCheckbox:checkbox:checked').each(function () {
+                    selecionado = 1;
+                });
+
+                if(selecionado == 1) {//verifica se existe um check box selecionado
+                    //cria butoes com classes bootstrap
+                    const swalWithBootstrapButtons = Swal.mixin({
+                        customClass: {
+                            confirmButton: 'btn btn-success',
+                            cancelButton: 'btn btn-danger'
+                        },
+                        buttonsStyling: false
+                    });
+
+                    //implementa uma modal amigavel
+                    swalWithBootstrapButtons.fire({
+                        title: 'Tem certeza?',
+                        text: "Se apagar os dados selecionados, o(s) respectivo(s) estudante(s)  perde(m) acesso a plataforma.",
+                        type: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Apagar',
+                        cancelButtonText: 'Cancelar',
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.value) { //caso selecione apagar
+                            $('input.estCheckbox:checkbox:checked').each(function () {
+                                apagarDados(this.value);
+                            });
+                            swalWithBootstrapButtons.fire(
+                            'Apagado!',
+                            'Os dados selecionados foram apagados.',
+                            'success'
+                            );
+                        } else if ( result.dismiss === Swal.DismissReason.cancel) { //caso selecione cancelar
+                            swalWithBootstrapButtons.fire(
+                            'Cancelado',
+                            'Seus dados estão seguros :)',
+                            'error'
+                            )
+                        }
+                    })
+                } else { //caso nao tenha selecionado um checkbox
+                    Swal.fire('Selecione uma opcao!');
+                }
             });
-            $.post('sgb-admin/usuarios/apagar',formData);
+
+            //implementa ajax para apagar dados na bd
+            function apagarDados(id) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: "GET",
+                    url: 'apagar/' + id,
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data);
+                        $("#estudante-" + id).remove();
+                    },
+                    error: function (data) {
+                        console.log('Error:', data);
+
+                    }
+                });
+            }
         });
+
     </script>
 @endpush

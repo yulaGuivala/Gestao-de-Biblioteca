@@ -59,15 +59,17 @@ class estudanteController extends Controller
             $ficheiro = new Ficheiro();
 
             $foto = $req->file('foto');
-            $extensao = $foto->getClientOriginalExtension();
+            $ficheiro->nome = "profile.png"; //caso nao tenha imagem vai guardar a imagem padrao
+            if ($foto != null) {
+                $extensao = $foto->getClientOriginalExtension();
 
-            //para evitar que ficheiro com mesmo nome entrem em conflito, o nome original do ficheiro e trocado
-            Storage::disk('public')->put($foto->getFilename() . '.' . $extensao, \File::get($foto));
-            $ficheiro = new ficheiro();
-            $ficheiro->nome = $foto->getFilename() . '.' . $extensao;
-            $ficheiro->mime = $foto->getClientMimeType();
-            $ficheiro->nome_original = $foto->getClientOriginalName();
-
+                //para evitar que ficheiro com mesmo nome entrem em conflito, o nome original do ficheiro e trocado
+                Storage::disk('public')->put($foto->getFilename() . '.' . $extensao, \File::get($foto));
+                $ficheiro = new ficheiro();
+                $ficheiro->nome = $foto->getFilename() . '.' . $extensao;
+                $ficheiro->mime = $foto->getClientMimeType();
+                $ficheiro->nome_original = $foto->getClientOriginalName();
+            }
             $fich_id = $this->ficheiro_controller->store($ficheiro);
 
             $user->name = $req->nome;
@@ -111,11 +113,11 @@ class estudanteController extends Controller
         return view('user.perfil', ['estudante' => $est]);
     }
 
-   /* public function destroy(Request $req) {
+    public function destroy($id) {
         $this->estudante = $this->getEstudante($id);
-        $this->estudante->delete();
-        return redirect('/sgb-admin/usuarios/estudantes')->with('mensagem', 'Estudante Excluido!');
-    }*/
+        $estudante = $this->estudante->delete();
+        return \Response::json($estudante);
+    }
 
     private function getEstudante($id) {
         return $this->estudante->find($id);

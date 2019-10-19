@@ -15,11 +15,6 @@
 
 @section('conteudo')
     <div class="row mb-3 justify-content-center">
-        @if ($msg = Session::get('mensagem'))
-            <div class="alert alert-success col-md-8">
-                <p>{{$msg}}</p>
-            </div>
-        @endif
         <div class="col-md-8 mr-4">
             <h5>Formulário de Cadastro</h5>
         </div>
@@ -195,6 +190,7 @@
 <!-- css especifico dessa pagina -->
 @push('registar-css')
     <link rel="stylesheet" href="{{asset('user/lib/profile-image/style.css')}}">
+    <link rel="stylesheet" href="{{asset('user/lib/sweetalert2/sweetalert2.min.css')}}">
 @endpush
 
 <!-- js especifico dessa pagina -->
@@ -202,6 +198,22 @@
     <script src="{{asset('user/lib/validate/jquery.validate.min.js')}}"></script>
     <script src="{{asset('user/lib/validate/jquery.validate.pt-br.js')}}"></script>
     <script src="{{asset('user/lib/profile-image/script.js')}}"></script>
+    <script src="{{asset('user/lib/sweetalert2/sweetalert2.all.min.js')}}"></script>
+
+    @if ($msg = Session::get('mensagem'))
+        <?php  echo "
+        <script>
+            Swal.fire({
+                title: 'Feito!',
+                text: $msg,
+                type: 'success',
+                confirmButtonText: 'OK'
+            });
+        </script>
+        ";?>
+    @endif
+
+
 @endpush
 
 

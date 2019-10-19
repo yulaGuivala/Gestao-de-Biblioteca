@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    @stack('apagar-meta')
     <title>@yield('title')|Admin</title>
 
     <link rel="stylesheet" href="{{ asset('admin/vendors/ti-icons/css/themify-icons.css')}}">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('admin/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('user/lib/datatables/dataTables.bootstrap4.min.css')}}">
     <link rel="shortcut icon" href="{{ asset('user/imgs/favicon.png')}}"/>
+    @stack('tabelas-css')
 </head>
 <body>
     <div class="container-scroller">
@@ -95,7 +97,8 @@
 
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="{{asset('user/imgs/perfil.png" alt="perfil')}}" />
+              <img src="{{asset('user/imgs/perfil2.png')}}" alt="foto de Perfil" />
+              <i class="ti-angle-double-down"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="perfil.php">
@@ -202,24 +205,22 @@
 
     <!-- plugins:js -->
     <script src="{{ asset('admin/vendors/base/vendor.bundle.base.js') }}"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
+    <script src="{{asset('user/node_modules/jquery/dist/jquery.min.js')}}"></script>
+
     <script src="{{ asset('admin/vendors/chart.js/Chart.min.js') }}"></script>
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
+
     <script src="{{ asset('admin/js/off-canvas.js') }}"></script>
     <script src="{{ asset('admin/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('admin/js/template.js') }}"></script>
     <script src="{{ asset('admin/js/todolist.js') }}"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
+
     <script src="{{ asset('admin/js/dashboard.js') }}"></script>
-    <!-- End custom js for this page-->
+
     <script src="{{ asset('user/lib/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('user/lib/datatables/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('user/lib/datatables/datatable.pt-br.js') }}"></script>
     <script src="{{ asset('admin/js/script-admin.js') }}"></script>
-    @stack('apagar-js')
+    @stack('tabelas-js')
 </body>
 
 </html>
