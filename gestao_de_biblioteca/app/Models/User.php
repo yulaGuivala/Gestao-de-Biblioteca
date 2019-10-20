@@ -50,4 +50,9 @@ class User extends Authenticatable
     public function ficheiro() {
         return $this->belongsTo(ficheiro::class,'ficheiro_id');
     }
+
+    public function mensagem()
+    {
+        return $this->hasMany(mensagem::class, 'user_id');
+    }
 }
