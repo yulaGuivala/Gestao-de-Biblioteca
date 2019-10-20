@@ -75,7 +75,7 @@
     </div>
 @endsection
 
-@push('apagar-meta4')
+@push('apagar-meta')
  <meta name="csrf-token" content="{{csrf_token()}}">
 @endpush
 

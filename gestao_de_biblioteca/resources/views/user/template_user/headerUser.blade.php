@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
  <head>
-    <title>@yield('title')|SGB</title>
+    <title>@yield('title')| SGB</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">

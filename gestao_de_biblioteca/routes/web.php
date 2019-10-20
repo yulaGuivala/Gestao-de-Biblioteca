@@ -41,6 +41,8 @@ Route::group(['prefix' => 'inicio'], function () {
         Route::post('/update', 'EstudanteController@update'); //Armazena dados de Estudanteu
     });
     Route::get('/catalogo', 'LivroController@listar');
+    Route::get('/contacto', 'MensagemController@index');
+    Route::get('/contacto/store', 'MensagemController@store');
 });
 
 
@@ -54,6 +56,12 @@ Route::group(['prefix' => 'sgb-admin'], function () {
     Route::group(['prefix' => 'livros'], function () {
         Route::get('lista','livroController@listarAdmin');
     });
+    Route::group(['prefix' => 'mensagens'], function () {
+        Route::get('/', 'MensagemController@showAll');
+        Route::get('/show/{id}', 'MensagemController@show');
+        Route::get('/apagar/{id}', 'MensagemController@destroy');
+    });
+
 });
 //Route::get('/funcionario', 'funcionarioController@listar');
 //Route::get('/addfuncionario', 'funcionarioController@create');
