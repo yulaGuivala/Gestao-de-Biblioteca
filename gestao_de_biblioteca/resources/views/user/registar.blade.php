@@ -46,14 +46,14 @@
                     <div class="form-group col-sm-6">
 
                         <label for="inputNome">Nome</label>
-                        <input type="text" class="form-control" id="inputNome" name="nome" placeholder="Nome" max-lenght="30" required>
+                    <input type="text" class="form-control" id="inputNome" name="nome" value="{{old('nome')}}" placeholder="Nome" max-lenght="30" required>
 
                     </div>
 
                     <div class="form-group col-sm-6">
 
                         <label for="inputSobrenome">Sobrenome</label>
-                        <input type="text" class="form-control" id="inputSobrenome" name="sobrenome" placeholder="Sobrenome" max-lenght="30" required>
+                        <input type="text" class="form-control" id="inputSobrenome" name="sobrenome" value="{{old('sobrenome')}}" placeholder="Sobrenome" max-lenght="30" required>
 
                     </div>
 
@@ -61,11 +61,15 @@
 
                 <div class="form-row">
 
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-6 {{$errors->has('email') ? 'my-error-class' : ''}}">
 
                         <label for="inputCidade">E-mail</label>
-                        <input type="email" class="form-control" id="inputMail" name="email" placeholder="xxxxx@xx.com" required>
-
+                        <input type="email" class="form-control" id="inputMail" name="email" value="{{old('email')}}" placeholder="xxxxx@xx.com" required>
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                {{$errors->first('email')}}
+                            </span>
+                        @endif
                     </div>
 
                     <div class="form-group col-sm-6">
@@ -81,11 +85,15 @@
 
                     </div>
 
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-6 {{$errors->has('numero') ? 'my-error-class' : ''}}">
 
                         <label for="inputID">Nr. de Estudante</label>
-                        <input type="number" id="inputID" name="numero" class="form-control" min="20100000" max="99999999" placeholder="Nr. de Estudante" required>
-
+                    <input type="number" id="inputID" name="numero" value="{{old('numero')}}" class="form-control" min="20100000" max="99999999" placeholder="Nr. de Estudante" required>
+                        @if ($errors->has('numero'))
+                            <span class="help-block">
+                                {{$errors->first('numero')}}
+                            </span>
+                        @endif
                     </div>
 
                 </div>
@@ -101,7 +109,7 @@
                     <div class="form-group col-sm-3">
 
                         <label for="distrito">Distrito</label>
-                        <select id="distrito" class="form-control" name="distrito" required="">
+                        <select id="distrito" class="form-control" name="distrito" value="{{old('distrito')}}"  required="">
                             <option value=""> Selecione...</option>
                             <option value="Nlhamankulu">Nlhamankulu</option>
                             <option value="KaMpfumo ">KaMpfumo </option>
@@ -116,19 +124,19 @@
                     <div class="form-group col-sm-3">
 
                         <label for="bairro">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" max-lenght="100" required>
+                        <input type="text" class="form-control" id="bairro" name="bairro" value="{{old('bairro')}}" placeholder="Bairro" max-lenght="100" required>
 
                     </div>
                     <div class="form-group col-sm-3">
 
                         <label for="rua">Rua/Quarteirao</label>
-                        <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua/Quarteirao" max-lenght="100" required>
+                        <input type="text" class="form-control" id="rua" name="rua" value="{{old('rua')}}" placeholder="Rua/Quarteirao" max-lenght="100" required>
 
                     </div>
                     <div class="form-group col-sm-3">
 
                         <label for="rua">Nr. da Casa</label>
-                        <input type="number" class="form-control" id="casa" name="casa" placeholder="Nr. da Casa" min="1" max="10000" required>
+                        <input type="number" class="form-control" id="casa" name="casa" value="{{old('casa')}}" placeholder="Nr. da Casa" min="1" max="10000" required>
 
                     </div>
 
@@ -139,7 +147,7 @@
                     <div class="form-group col-sm-6">
                         <label for="senha">Senha</label>
                         <div class="input-group">
-                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha"  minlength="6" maxlength="15" required>
+                            <input type="password" class="form-control" id="senha" name="senha" value="{{old('senha')}}" placeholder="Senha"  minlength="6" maxlength="15" required>
                             <span class="input-group-btn">
                                 <button class="btn btn-sm btn-secondary" type="button" id="btn-senha"><i class="fa fa-eye"></i></button>
                             </span>
@@ -150,7 +158,7 @@
                       <div class="form-group col-sm-6" id="divcs">
                         <label for="csenha">Confirmar Senha</label>
                         <div class="input-group">
-                            <input type="password" class="form-control" id="csenha" name="csenha" placeholder="Senha"  equalTo="#senha" minlength="6" maxlength="15" required>
+                            <input type="password" class="form-control" id="csenha" name="csenha" value="{{old('csenha')}}" placeholder="Senha"  equalTo="#senha" minlength="6" maxlength="15" required>
                             <span class="input-group-btn">
                                 <button class="btn btn-sm btn-secondary" type="button" id="btn-csenha"><i class="fa fa-eye"></i></button>
                             </span>
@@ -167,7 +175,7 @@
                         <div class="form-check">
 
                             <label class="form-check-label">
-                                <input class="form-check-input" name="notificar" type="checkbox"> Desejo receber novidades por e-mail
+                            <input class="form-check-input" name="notificar" value="{{old('notificar')}}" type="checkbox"> Desejo receber novidades por e-mail
                             </label>
 
                         </div>

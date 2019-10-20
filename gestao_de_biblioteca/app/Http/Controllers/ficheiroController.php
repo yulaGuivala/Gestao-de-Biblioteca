@@ -14,10 +14,6 @@ class ficheiroController extends Controller
     }
 
     public function store(ficheiro $fich) {
-        /*request()->validate([
-            'nome' => 'required',
-        ]);*/
-
         try {
             $fich->save();
         } catch (\Exception $e) {

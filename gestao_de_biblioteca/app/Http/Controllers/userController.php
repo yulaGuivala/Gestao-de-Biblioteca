@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\user;
 
 class userController extends Controller
@@ -17,7 +16,7 @@ class userController extends Controller
         try {
             $user->save();
         } catch (\Exception $e) {
-            echo "<h3 style='color:red'>ERRO (UserController->save):</h3>" . $e->getMessage();
+            echo "<h3 style='color:red'>ERRO (UserController->store):</h3>" . $e->getMessage();
         }
         return $user->id;
     }
@@ -35,9 +34,8 @@ class userController extends Controller
     public function getUser($id) {
         return $this->user->find($id);
     }
-    
-    function login_admin(){
 
+    function login_admin(){
         return view('admin.login');
     }
 }

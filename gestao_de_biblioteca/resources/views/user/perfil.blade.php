@@ -67,9 +67,13 @@
 
                     <div class="form-group col-sm-6">
 
-                        <label for="inputCidade">E-mail</label>
+                        <label for="inputCidade {{$errors->has('email') ? 'my-error-class' : ''}}">E-mail</label>
                         <input type="email" class="form-control" id="inputMail" name="email" value="{{$estudante->user->email}}" placeholder="xxxxx@xx.com" required readonly>
-
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                {{$errors->first('email')}}
+                            </span>
+                        @endif
                     </div>
 
                     <div class="form-group col-sm-6">
@@ -87,9 +91,13 @@
 
                     <div class="form-group col-sm-6">
 
-                        <label for="inputID">Nr. de Estudante</label>
+                        <label for="inputID {{$errors->has('numero') ? 'my-error-class' : ''}}">Nr. de Estudante</label>
                         <input type="number" id="inputID" name="numero" value="{{$estudante->numero}}" class="form-control" min="20100000" max="99999999" required readonly>
-
+                        @if ($errors->has('numero'))
+                            <span class="help-block">
+                                {{$errors->first('numero')}}
+                            </span>
+                        @endif
                     </div>
 
                 </div>

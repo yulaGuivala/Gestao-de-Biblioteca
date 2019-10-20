@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use App\Models\user;
 use App\Models\endereco;
 use App\Models\estudante;
@@ -31,27 +33,10 @@ class estudanteController extends Controller
 
     //Armazena dados do Estudante na BD
     public function store(Request $req) {
-       /* $val = \Validator::make( $req->all(), [
-            'nome.*' => 'required',
-            'sobrenome.*' => 'required',
-            'facul.*' => 'required',
-            'numero.*' => 'numero|unique:estudantes',
-            'email.*' => 'email|unique:users|max:255',
-            /*'password' => 'required|min:4',
-            'distrito' => 'required',
-            'bairro' => 'required',
-            'rua' => 'required',
-            'casa' => 'required'
-        ]);
-        if ($val->fails()) {
-            return back()->withInput()->withErrors($val->errors());
+        $validacao = $this->validar($req->all());
+        if ($validacao->fails()) {
+            return redirect()->back()->withErrors($validacao->errors())->withInput($req->all());
         }
-
-        [
-            'numero.unique' => 'Numero de estudante esta sendo usado por outro estudante!',
-            'email.unique' => 'Email ja cadastrado na base de dados, introduza outro!',
-            'email.max' => 'Quantidade maxima de caracteres 255!'
-        ]);*/
 
         if($req->email && $req->numero && $req->casa) {
             $user = new User();
@@ -124,6 +109,11 @@ class estudanteController extends Controller
     }
 
     public function update(Request $req) {
+        /*$validacao = $this->validarUpdate($req->all());
+        if ($validacao->fails()) {
+            return redirect()->back()->withErrors($validacao->errors())->withInput($req->all());
+        }*/
+
         $end = $this->endereco_controller->getEndereco($req->endereco_id);
         $user = $this->user_controller->getUser($req->user_id);
         $ficheiro = $this->ficheiro_controller->getFicheiro($req->ficheiro_id);
@@ -162,5 +152,38 @@ class estudanteController extends Controller
         $this->estudante->update();
 
         return redirect('/')->with('mensagem', 'Dados de perfil salvos!');
+    }
+
+    //valida campos Unique na BD (numero de estudante e email)
+    public function validar($dados)
+    {
+        if (\array_key_exists('numero', $dados) && \array_key_exists('email', $dados)) {
+            $regras = [
+                'email' => 'email|unique:users|max:255',
+                'numero' => 'unique:estudantes'
+            ];
+        }
+        $msg = [
+            'email.unique' => 'Email está associado a uma conta, introduza outro!',
+            'email.max' => 'No máximo 255 caracteres.',
+            'numero.unique' => 'Numero associado a um estudante, introduza outro!'
+        ];
+        return Validator::make($dados, $regras, $msg);
+    }
+
+    public function validarUpdate($dados)
+    {
+        if (\array_key_exists('numero', $dados) && \array_key_exists('email', $dados)) {
+            $regras = [
+                'email' => ['email|unique:users|max:255', Rule::unique('users')->ignore($dados['user_id'])],
+                'numero' => ['unique:estudantes', Rule::unique('estudantes')->ignore($dados['id'])]
+            ];
+        }
+        $msg = [
+            'email.unique' => 'Email está associado a uma conta, introduza outro!',
+            'email.max' => 'No máximo 255 caracteres.',
+            'numero.unique' => 'Numero associado a um estudante, introduza outro!'
+        ];
+        return Validator::make($dados, $regras, $msg);
     }
 }

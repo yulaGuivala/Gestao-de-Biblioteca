@@ -16,8 +16,8 @@ class CreateFicheiroTable extends Migration
         Schema::create('ficheiro', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome')->nullable();
-            $table->string('mime')->nullabble();
-            $table->string('nome_original')->nullabble();
+            $table->string('mime')->nullable();
+            $table->string('nome_original')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
