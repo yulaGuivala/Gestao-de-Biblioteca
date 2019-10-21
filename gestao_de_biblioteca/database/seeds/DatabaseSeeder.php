@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         for ($i = 1; $i <= 10; $i++)
+
             $this->call([
                 LivroTableSeeder::class,
                 EstudanteTableSeeder::class,

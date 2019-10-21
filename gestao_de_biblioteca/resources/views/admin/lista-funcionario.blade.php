@@ -43,9 +43,9 @@
                         <tr>
                             <td>
                                 <div class="form-check form-check-flat form-check-primary">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input">
-                                </label>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input">
+                                    </label>
                                 </div>
                             </td>
                             <td>{{$func->nome}}</td>
@@ -56,6 +56,7 @@
                                 Rua: {{$func->endereco->rua}}<br>
                                 N. da casa: {{$func->endereco->casa}}
                             </td>
+
                         </tr>
                     @endforeach
 
