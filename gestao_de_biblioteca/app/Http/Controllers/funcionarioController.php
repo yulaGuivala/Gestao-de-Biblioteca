@@ -12,11 +12,13 @@ class funcionarioController extends Controller
 {
     private $user_controller;
     private $endereco_controller;
+    private $funcionario;
 
     public function __construct(UserController $user_controller,
                         EnderecoController $endereco_controller) {
         $this->user_controller = $user_controller;
         $this->endereco_controller = $endereco_controller;
+        $this->funcionario = new Funcionario(); 
     }
 
 
@@ -30,26 +32,26 @@ class funcionarioController extends Controller
     public function store(Request $req){
         // $dataForm = $request->all();
 
-        // $insert = $this->funcionario->create($dataForm);
+        
 
        if($req->mail && $req->usuario) {
             $user = new User();
             $end = new Endereco();
-            //var_dump($request->all());
+            
 
             $user->name = $req->usuario;
             $user->foto = $req->img;
             $user->email = $req->mail;
             $user->password = $req->senha;
             $user_id = $this->user_controller->store($user);
-            //echo $user_id;
+            
 
             $end->distrito = 'Kamubukhana';//$req->distrito;
             $end->bairro = 'Bagamoyo';//$req->bairro;
             $end->rua ='5538'; //$req->rua;
             $end->casa = '38';//$req->casa;
             $end_id = $this->endereco_controller->store($end);
-            //echo $end_id;
+            
 
             funcionario::create([
                 'nome'=> $req->nome." ".$req->apelido,
@@ -66,5 +68,15 @@ class funcionarioController extends Controller
         $listaFunc = funcionario::all();
         return view('admin.lista-funcionario',['funcionario' => $listaFunc]);
 
+    }
+
+    public function destroy($id) {
+        $this->funcionario = $this->getFuncionario($id);
+        $funcionario = $this->funcionario->delete();
+        return \Response::json($funcionario);
+    }
+
+    private function getFuncionario($id) {
+        return $this->funcionario->find($id);
     }
 }

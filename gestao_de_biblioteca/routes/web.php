@@ -57,7 +57,7 @@ Route::group(['prefix' => 'sgb-admin'], function () {
         Route::get('/funcionario', 'funcionarioController@listar');//lista funcionarios no admin
         Route::get('/adicionar-funcionario', 'funcionarioController@create');//formulario de registo de funcionario no admin
         Route::post('/gravar-funcionario', 'funcionarioController@store');//gravar funcionario no admin
-
+        Route::get('/apagar/{id}', 'funcionarioController@destroy'); //exclui um funcionario na BD
     });
     Route::get('/index', 'userController@login_admin');
     Route::group(['prefix' => 'livros'], function () {
