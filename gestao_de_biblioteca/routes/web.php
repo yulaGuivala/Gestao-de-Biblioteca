@@ -14,7 +14,7 @@
 use App\Http\Controllers\livroController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.index');
 });
 /*
 Route::get('/', function () {
@@ -57,7 +57,9 @@ Route::group(['prefix' => 'sgb-admin'], function () {
         Route::get('/funcionario', 'funcionarioController@listar');//lista funcionarios no admin
         Route::get('/adicionar-funcionario', 'funcionarioController@create');//formulario de registo de funcionario no admin
         Route::post('/gravar-funcionario', 'funcionarioController@store');//gravar funcionario no admin
-        Route::get('/apagar/{id}', 'funcionarioController@destroy'); //exclui um funcionario na BD
+        Route::get('/apagar-func/{id}', 'funcionarioController@destroy'); //exclui um funcionario na BD
+        Route::get('/login','funcionarioController@login');
+        Route::post('/entrar','funcionarioController@entrar');
     });
     Route::get('/index', 'userController@login_admin');
     Route::group(['prefix' => 'livros'], function () {

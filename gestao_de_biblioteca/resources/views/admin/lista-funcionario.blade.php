@@ -44,7 +44,7 @@
                             <td>
                                 <div class="form-check form-check-flat form-check-primary">
                                     <label class="form-check-label">
-                                        <input type="checkbox" value="{{$func->id}}" class="estCheckbox form-check-input">
+                                        <input type="checkbox" value="{{$func->id}}" class="form-check-input estCheckbox">
                                     </label>
                                 </div>
                             </td>
@@ -143,7 +143,7 @@
                 });
                 $.ajax({
                     type: "GET",
-                    url: 'apagar/' + id,
+                    url: 'apagar-func/' + id,
                     dataType: 'json',
                     success: function (data) {
                         console.log(data);

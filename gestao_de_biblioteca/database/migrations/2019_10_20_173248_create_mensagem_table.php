@@ -18,8 +18,6 @@ class CreateMensagemTable extends Migration
             $table->string('email',50);
             $table->string('assunto',80);
             $table->text('texto');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('NO ACTION')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

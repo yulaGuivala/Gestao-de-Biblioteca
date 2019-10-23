@@ -24,7 +24,7 @@ class CreateLivrosTables extends Migration
             $table->string('co-autor')->nullable();
             $table->unsignedBigInteger('funcionario_id');
             $table->unsignedBigInteger('categoria_id');
-            $table->foreign('funcionario_id')->references('id')->on('funcionario')->onDelete('NO ACTION')->onUpdate('CASCADE');
+            $table->foreign('funcionario_id')->references('id')->on('funcionario')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('categoria_id')->references('id')->on('categoria')->onDelete('NO ACTION')->onUpdate('CASCADE');
             $table->timestamps();
         });
