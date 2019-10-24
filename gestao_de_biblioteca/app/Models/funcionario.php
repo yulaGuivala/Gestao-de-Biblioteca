@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class funcionario extends Model
 {
-    protected $filable = [];
+    
     protected $table="funcionario";
     protected $fillable = ['id','nome','endereco_id','user_id'];
 

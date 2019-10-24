@@ -18,12 +18,13 @@
               <h4>Ola! Bem vindo</h4>
               <h6 class="font-weight-light">Introduza os dados de autenticação para continuar.</h6>
 
-              <form class="pt-3" id="formulario" method="POST" action="">
+              <form class="pt-3" id="formulario" method="POST" action="{{url('sgb-admin/usuarios/entrar')}}">
+                <input type="hidden" name="_token" value={{csrf_token()}}>
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg" id="nome" name="nome" placeholder="Nome de usuário" required>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="asenha" name="asenha" placeholder="Senha" required>
+                  <input type="password" class="form-control form-control-lg" id="senha" name="senha" placeholder="Senha" required>
                 </div>
                 <div class="mt-3">
                   <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Enviar</button>

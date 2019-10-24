@@ -10,7 +10,7 @@
                     <a href="{{url('sgb-admin/usuarios/adicionar-funcionario')}}"  class="btn btn-primary btn-icon-text btn-rounded" >
                         <i class="ti-plus btn-icon-prepend" ></i>Adicionar
                     </a>
-                    <button type="button" class="btn btn-danger btn-icon-text btn-rounded">
+                    <button type="button" id="apagar-funcionario" class="btn btn-danger btn-icon-text btn-rounded">
                         <i class="ti-trash btn-icon-prepend"></i>Apagar
                     </button>
                 </div>
@@ -40,11 +40,11 @@
                     </thead>
                     <tbody>
                     @foreach ($funcionario as $func)
-                        <tr>
+                        <tr id="funcionario-{{$func->id}}">
                             <td>
                                 <div class="form-check form-check-flat form-check-primary">
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input">
+                                        <input type="checkbox" value="{{$func->id}}" class="form-check-input estCheckbox">
                                     </label>
                                 </div>
                             </td>
@@ -68,4 +68,95 @@
         </div>
     </div>
 @endsection
+
+
+@push('apagar-meta')
+ <meta name="csrf-token" content="{{csrf_token()}}">
+@endpush
+
+@push('tabelas-css')
+    <link rel="stylesheet" href="{{asset('user/lib/sweetalert2/sweetalert2.min.css')}}">
+@endpush
+
+@push('tabelas-js')
+
+    <script src="{{asset('user/lib/sweetalert2/sweetalert2.all.min.js')}}"></script>
+
+    <script>
+        //realisa procedimentos para apagar dados
+        $(document).ready(function() {
+            $('#apagar-funcionario').click(function () {
+                var selecionado = 0;
+
+                $('input.estCheckbox:checkbox:checked').each(function () {
+                    selecionado = 1;
+                });
+
+                if(selecionado == 1) {//verifica se existe um check box selecionado
+                    //cria butoes com classes bootstrap
+                    const swalWithBootstrapButtons = Swal.mixin({
+                        customClass: {
+                            confirmButton: 'btn btn-success',
+                            cancelButton: 'btn btn-danger'
+                        },
+                        buttonsStyling: false
+                    });
+
+                    //implementa uma modal amigavel
+                    swalWithBootstrapButtons.fire({
+                        title: 'Tem certeza?',
+                        text: "Se apagar os dados selecionados, o(s) respectivo(s) funcionario(s)  perde(m) acesso a plataforma.",
+                        type: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Apagar',
+                        cancelButtonText: 'Cancelar',
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.value) { //caso selecione apagar
+                            $('input.estCheckbox:checkbox:checked').each(function () {
+                                apagarDados(this.value);
+                            });
+                            swalWithBootstrapButtons.fire(
+                            'Apagado!',
+                            'Os dados selecionados foram apagados.',
+                            'success'
+                            );
+                        } else if ( result.dismiss === Swal.DismissReason.cancel) { //caso selecione cancelar
+                            swalWithBootstrapButtons.fire(
+                            'Cancelado',
+                            'Seus dados estão seguros :)',
+                            'error'
+                            )
+                        }
+                    })
+                } else { //caso nao tenha selecionado um checkbox
+                    Swal.fire('Selecione uma opcao!');
+                }
+            });
+
+            //implementa ajax para apagar dados na bd
+            function apagarDados(id) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: "GET",
+                    url: 'apagar-func/' + id,
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data);
+                        $("#funcionario-" + id).remove();
+                    },
+                    error: function (data) {
+                        console.log('Error:', data);
+
+                    }
+                });
+            }
+        });
+
+    </script>
+@endpush
 

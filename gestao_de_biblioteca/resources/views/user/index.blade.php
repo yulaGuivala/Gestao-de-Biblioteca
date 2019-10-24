@@ -1,4 +1,4 @@
-@extends('user.templates.headerUser')
+@extends('user.template_user.headerUser')
 
 @section('conteudo')
     <!-- Slider -->
@@ -14,7 +14,7 @@
 
             <div class="carousel-item active">
 
-                <img src="imgs/slide-01.jpg" class="img-fluid d-block" >
+                <img src="{{asset('user/imgs/slide-01.jpg')}}" class="img-fluid d-block" >
 
                 <div class="carousel-caption d-none d-md-block text-dark">
 
@@ -27,7 +27,7 @@
 
             <div class="carousel-item">
 
-                <img src="imgs/slide-02.jpg" class="img-fluid d-block">
+                <img src="{{asset('user/imgs/slide-02.jpg')}}" class="img-fluid d-block">
 
                 <div class="carousel-caption d-none d-md-block text-dark">
 
@@ -40,7 +40,7 @@
 
             <div class="carousel-item">
 
-                <img src="imgs/slide-03.jpg" class="img-fluid d-block">
+                <img src="{{asset('user/imgs/slide-03.jpg')}}" class="img-fluid d-block">
 
                 <div class="carousel-caption d-none d-md-block text-dark">
 
@@ -549,7 +549,8 @@
 </div> -->
 
 <!-- Modal caixa de livros-->
-<?php modalLivros(); ?>
+<?php # modalLivros(); 
+?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

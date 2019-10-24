@@ -16,7 +16,6 @@ class MensagemTableSeeder extends Seeder
             'email' => Str::random(10) . '@gmail.com',
             'assunto' => Str::random(30),
             'texto' => Str::random(200),
-            'user_id' => rand(1,10),
             'created_at' => $data,
             'updated_at' => $data
         ]);
