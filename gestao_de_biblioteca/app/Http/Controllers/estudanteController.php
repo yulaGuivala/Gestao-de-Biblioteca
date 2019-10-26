@@ -83,7 +83,7 @@ class estudanteController extends Controller
                 'user_id' => $user_id
             ]);
         }
-        return redirect('/inicio/minha-conta/registar')->with('mensagem', 'Cadastro efectuado com sucesso!');
+        return redirect('/inicio/minha-conta/registar')->with('mensagem', "'Cadastro efectuado com sucesso!'");
     }
 
     //Retorna dados de todos Estudantes para a view lista-estudantes.blade.php

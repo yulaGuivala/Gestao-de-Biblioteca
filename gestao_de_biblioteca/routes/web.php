@@ -42,7 +42,7 @@ Route::group(['prefix' => 'inicio'], function () {
     });
     Route::get('/catalogo', 'LivroController@listar');
     Route::get('/contacto', 'MensagemController@index');
-    Route::get('/contacto/store', 'MensagemController@store');
+    Route::post('/adicionar-contacto', 'MensagemController@store')->name('storeMensagem');
 });
 
 
