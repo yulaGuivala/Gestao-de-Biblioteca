@@ -23,6 +23,10 @@ class livroController extends Controller
        return view('user.catalogo',['livros' => $livros]);
     }
 
+    public function create(){
+
+        return view('admin.adicionar-livro');
+    }
     public function listarAdmin (livro $livros){
 
         $livros = livro::with('categoria')->get();
