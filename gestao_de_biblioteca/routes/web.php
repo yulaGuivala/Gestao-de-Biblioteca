@@ -73,6 +73,7 @@ Route::group(['prefix' => 'sgb-admin'],function () {
     Route::group(['prefix' => 'livros'], function () {
         Route::get('lista','livroController@listarAdmin');
         Route::post('store', 'livroController@store');
+        Route::get('adicionar-livro','livroController@create');
     });
     Route::group(['prefix' => 'mensagens'], function () {
         Route::get('/', 'MensagemController@showAll');
