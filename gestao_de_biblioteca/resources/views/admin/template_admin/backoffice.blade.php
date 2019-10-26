@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php
+	session_start();
+	if(!isset($_SESSION['nomeAdmin'])){
+    //return view('admin.login'); 
+    
+	}
+?>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     @stack('apagar-meta')
     <title>@yield('title')| Admin</title>
 
+    <link rel="stylesheet" href="{{asset('user/node_modules/bootstrap/compiler/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('user/style/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('user/lib/fontawesome/css/all.css')}}">
+    <link rel="shortcut icon" href="{{asset('user/imags/favicon.png')}}" />
     <link rel="stylesheet" href="{{ asset('admin/vendors/ti-icons/css/themify-icons.css')}}">
     <link rel="stylesheet" href="{{ asset('admin/vendors/base/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{ asset('admin/css/style.css')}}">
@@ -96,16 +107,16 @@
           </li>
 
           <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+            <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" id="profileDropdown">
               <img src="{{asset('user/imgs/perfil2.png')}}" alt="foto de Perfil" />
               <i class="ti-angle-double-down"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="perfil.php">
+              <a class="dropdown-item" href="{{url('sgb-admin/usuarios/perfil')}}">
                 <i class="ti-user text-primary"></i>
                 Perfil
               </a>
-              <a class="dropdown-item" href="login.php">
+              <a class="dropdown-item" href="{{url('sgb-admin/usuarios/sair')}}">
                 <i class="ti-power-off text-primary"></i>
                 Sair
               </a>

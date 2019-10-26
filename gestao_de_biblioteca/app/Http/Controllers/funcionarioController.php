@@ -7,10 +7,13 @@ Use App\Models\funcionario;
 use App\Models\user;
 use App\Models\endereco;
 use App\Models\ficheiro;
+use Request as Requisicao;
+use Symfony\Component\HttpFoundation\Cookie;
 
 
 class funcionarioController extends Controller
 {
+    
     private $user_controller;
     private $endereco_controller;
     private $funcionario;
@@ -22,6 +25,7 @@ class funcionarioController extends Controller
         $this->user_controller = $user_controller;
         $this->endereco_controller = $endereco_controller;
         $this->funcionario = new Funcionario(); 
+       // $this->cookie = new Cookie('Admin');
     }
 
 
@@ -106,17 +110,57 @@ class funcionarioController extends Controller
 
     public function entrar(Request $req) {
 
-        $lista = funcionario::all()->user();
+        $lista = user::all();
+        $lista2 = funcionario::all();
+        
+        
+        foreach ($lista2 as $ft) {
+           
 
-        foreach ($lista as $fun){
-
-            if ($req->nome == $func->name && $req->senha == $func->password) {
-                echo "Folege";
-            } 
+            foreach ($lista as $func){
+               
+                // $func = $this->funcionario->user();
+                //echo decrypt($func->password);
+                //echo $func->password;&& $req->senha == decrypt($func->password)
+                if ($func->id == $ft->user_id) {
+                    
+                    if ($req->nome == $func->name || $req->nome == $func->email){
+                    
+                        if ($req->senha == $func->password) {
+                            return redirect('/sgb-admin/usuarios/funcionario')
+                            ->with('mensagem', 'Login efectuado com sucesso!')
+                            ->cookie('Admin','Folege',60)
+                            ->cookie('Id',$ft->id,60);
+                            break;
+                        } else {
+                            # code...
+                            return redirect('/sgb-admin/login');
+                        }
+         
+                    }
+                } 
+                
+            }
+            
         }
         
-        
-        return view();
+        return; 
+    }
+
+    function sair(){
+        return redirect('/sgb-admin/login')
+        ->cookie(cookie()->forget('Admin'))
+        ->cookie(cookie()->forget('Id'));
+    }
+
+    function perfil(){
+         
+        //Retorna a view do perfil de um funcionario (registar.blade.php)
+        $func = Requisicao::cookie('Id');
+        $this->funcionario = $this->getFuncionario($func);
+        $funcionario = $this->funcionario;
+        //echo $funcionario;
+        return view('admin.perfil', ['funcionario' => $funcionario]);
 
     }
 }
