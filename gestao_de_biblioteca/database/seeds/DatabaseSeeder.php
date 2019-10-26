@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
                 LivroTableSeeder::class,
                 EstudanteTableSeeder::class,
                 FuncionarioTableSeeder::class,
-                MensagemTableSeeder::class
+                //MensagemTableSeeder::class
             ]);
     }
 }
