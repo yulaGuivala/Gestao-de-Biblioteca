@@ -109,6 +109,8 @@ function navbar() {
 
 function sidebar() {
 ?>
+  <link rel="stylesheet" href="css/Untitled-1.css">
+  <div id="barraMenu">
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           
@@ -164,6 +166,7 @@ function sidebar() {
 
         </ul>
     </nav>
+</div>
 <?php
 }
 
