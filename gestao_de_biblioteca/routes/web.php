@@ -44,9 +44,12 @@ Route::group(['prefix' => 'inicio'], function () {
         Route::post('/store', 'EstudanteController@store'); //Armazena dados de Estudanteu
         Route::post('/update', 'EstudanteController@update'); //Armazena dados de Estudanteu
     });
-    Route::get('/catalogo', 'LivroController@listar');
     Route::get('/contacto', 'MensagemController@index');
     Route::get('/contacto/store', 'MensagemController@store');
+    Route::group(['prefix' => '/livros'], function () {
+        Route::get('/catalogo', 'LivroController@listar');
+        Route::get('/requisicao/{id}/{id2}', 'LivroController@requisitar')->name('requisicao');
+    });
 });
 
 
@@ -67,9 +70,9 @@ Route::group(['prefix' => 'sgb-admin'], function () {
     });
     Route::get('/index', 'userController@login_admin');
     Route::group(['prefix' => 'livros'], function () {
-        Route::get('lista','livroController@listarAdmin');
-        Route::post('store', 'livroController@store');
-        Route::get('adicionar-livro','livroController@create');
+        Route::get('/lista','livroController@listarAdmin');
+        Route::post('/store', 'livroController@store');
+        Route::get('/adicionar-livro','livroController@create');
     });
     Route::group(['prefix' => 'mensagens'], function () {
         Route::get('/', 'MensagemController@showAll');
