@@ -11,6 +11,9 @@ class LivroTableSeeder extends Seeder
      */
     public function run()
     {
+        $ficheiro = new FicheiroTableSeeder();
+        $ficheiro->run();
+        $idFicheiro = DB::getPdo()->lastInsertId();
 
         $funcionario = new FuncionarioTableSeeder();
         $funcionario->run();
@@ -31,6 +34,7 @@ class LivroTableSeeder extends Seeder
             'editora' => Str::random(10),
             'ano'=>rand(4,4),
             'funcionario_id'=>$idFun,
+            'ficheiro_id'=>$idFicheiro,
             'categoria_id'=>$idCat,
         ]);
     }
