@@ -10,12 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-use App\Http\Controllers\livroController;
+//use Symfony\Component\Routing\Route;
+//use Illuminate\Support\Facades\Route;
 
 /*Route::get('/', function () {
     return view('welcome');
-});*/
+});
 
 Route::get('/', function () {
     return view('user.index');
@@ -70,13 +70,14 @@ Route::group(['prefix' => 'sgb-admin'],function () {
             Route::get('/perfil','funcionarioController@perfil');
             Route::get('/sair','funcionarioController@sair');
         });
-        
+
     });
     Route::get('/index', 'userController@login_admin');
     Route::group(['prefix' => 'livros'], function () {
         Route::get('/lista','livroController@listarAdmin');
         Route::post('/store', 'livroController@store');
         Route::get('/adicionar-livro','livroController@create');
+        Route::get('/requisicao','livroController@listaRequisicao');
     });
     Route::group(['prefix' => 'mensagens'], function () {
         Route::get('/', 'MensagemController@showAll');

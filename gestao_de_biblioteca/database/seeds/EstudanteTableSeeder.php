@@ -31,6 +31,7 @@ class EstudanteTableSeeder extends Seeder
             'created_at' => $data,
             'updated_at' => $data
         ]);
+
     }
 
    private function faculdade() {

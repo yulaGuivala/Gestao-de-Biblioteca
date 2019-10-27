@@ -27,7 +27,7 @@
                         Introduza os dados do novo livro
                         </p>
 
-                        <form class="forms-sample" action="{{url('index.php/sgb-admin/livros/store')}}" method="POST" id="formulario" enctype="multipart/form-data">
+                        <form class="forms-sample" action="{{url('sgb-admin/livros/store')}}" method="POST" id="formulario" enctype="multipart/form-data">
                             @csrf
                             <div class="form-row">
                                 <div class="form-group col-sm-6">
@@ -63,7 +63,11 @@
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-sm-6">
+                                <div class="form-group col-sm-4">
+                                    <label for="Qtd">Quantidade</label>
+                                    <input type="number" class="form-control" id="Qtd" name="quantidade" placeholder="Numero de exemplares" min="1" max="1000" required>
+                                </div>
+                                <div class="form-group col-sm-4">
                                     <label for="categoria">Categoria</label>
                                     <select id="categoria" name="categoria" class="form-control" required>
                                         <option value=""> Selecione...</option>
@@ -73,9 +77,9 @@
                                         <option value="Faculdade de Economia e Informática">Faculdade de Economia e Informática</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-sm-6">
+                                <div class="form-group col-sm-4">
                                     <label>Foto do Livro</label>
-                                    <input type="file" id="foto-livro" name="img[]" accept="image/*" class="file-upload-default" required>
+                                    <input type="file" id="foto-livro" name="img" accept="image/*" class="file-upload-default">
                                     <div class="input-group col-xs-12">
                                       <input type="text" class="form-control file-upload-info" disabled placeholder="Foto do Livro">
                                       <span class="input-group-append">
@@ -94,6 +98,21 @@
         </div>
     </div>
 @endsection
+
+@push('adicionar-livro')
+    @if ($msg = Session::get('mensagem'))
+    <?php  echo "
+    <script>
+        Swal.fire({
+            title: 'Feito!',
+            text: $msg,
+            type: 'success',
+            confirmButtonText: 'OK'
+        });
+    </script>
+    ";?>
+    @endif
+@endpush
 
 
 

@@ -4,8 +4,8 @@
 <?php
 	session_start();
 	if(!isset($_SESSION['nomeAdmin'])){
-    //return view('admin.login'); 
-    
+    //return view('admin.login');
+
 	}
 ?>
     <!-- Required meta tags -->
@@ -220,6 +220,7 @@
     <script src="{{asset('user/node_modules/jquery/dist/jquery.min.js')}}"></script>
 
     <script src="{{ asset('admin/vendors/chart.js/Chart.min.js') }}"></script>
+    <script src="{{asset('js/file-upload.js')}}"></script>
 
     <script src="{{ asset('admin/js/off-canvas.js') }}"></script>
     <script src="{{ asset('admin/js/hoverable-collapse.js') }}"></script>
