@@ -13,11 +13,9 @@ class MensagemController extends Controller
      * @return \Illuminate\Http\Response
      */
     private $mensagem;
-    private $user_controller;
 
-    public function __construct(UserController $user_controller) {
+    public function __construct() {
         $this->mensagem = new Mensagem();
-        $this->user_controller = $user_controller;
     }
 
     public function index()
@@ -43,7 +41,15 @@ class MensagemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(!($request->email && $request->assunto && $request->texto)){
+            return redirect()->back()->with('msgErro', 'Erro, dados invalidos!');
+        }
+        $this->mensagem->email = $request->email;
+        $this->mensagem->assunto = $request->assunto;
+        $this->mensagem->texto = $request->texto;
+        $this->mensagem->save();
+        return redirect()->back()->with('msgSucesso', "'Sua mensagem foi enviada!'");
+
     }
 
     /**

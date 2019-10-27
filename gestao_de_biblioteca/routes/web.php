@@ -45,11 +45,15 @@ Route::group(['prefix' => 'inicio'], function () {
         Route::post('/update', 'EstudanteController@update'); //Armazena dados de Estudanteu
     });
     Route::get('/contacto', 'MensagemController@index');
+
+    Route::post('/adicionar-contacto', 'MensagemController@store')->name('storeMensagem');
+
     Route::get('/contacto/store', 'MensagemController@store');
     Route::group(['prefix' => '/livros'], function () {
         Route::get('/catalogo', 'LivroController@listar');
         Route::get('/requisicao/{id}/{id2}', 'LivroController@requisitar')->name('requisicao');
     });
+
 });
 
 
