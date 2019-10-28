@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Models\estudante;
 
 class CreateEstudantesTables extends Migration
 {
@@ -29,6 +30,15 @@ class CreateEstudantesTables extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        estudante::create([
+            'nome' => 'super user',
+            'numero' => 20150000,
+            'faculdade' => 'Faculdade de Economia e Informática',
+            'endereco_id' => 1,
+            'user_id' => 2,
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
     }
 
     /**

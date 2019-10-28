@@ -16,4 +16,16 @@ class livro extends Model
     public function categoria(){
         return $this->belongsTo(categoria::class,'categoria_id');
     }
+
+    public function estudantes(){
+        return $this->belongsToMany(estudante::class,'estudate_as_livro')
+                    ->withPivot('estado')
+                    ->withTimestamps();
+    }
+
+    public function ficheiro() {
+        return $this->belongsTo(ficheiro::class,'ficheiro_id');
+    }
+
+
 }

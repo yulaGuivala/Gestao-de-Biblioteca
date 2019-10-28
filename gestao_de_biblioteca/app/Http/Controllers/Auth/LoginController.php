@@ -44,20 +44,20 @@ class LoginController extends Controller
 
         $lista = user::all();
         $lista2 = funcionario::all();
-        
-        
+
+
         foreach ($lista2 as $ft) {
-           
+
 
             foreach ($lista as $func){
-               
+
                 // $func = $this->funcionario->user();
                 //echo decrypt($func->password);
                 //echo $func->password;&& $req->senha == decrypt($func->password)
                 if ($func->id == $ft->user_id) {
-                    
+
                     if ($req->nome == $func->name || $req->nome == $func->email){
-                    
+
                         if ($req->senha == $func->password) {
                             return redirect('/sgb-admin/usuarios/funcionario')->with('mensagem', 'Login efectuado com sucesso!');
                             break;
@@ -65,17 +65,17 @@ class LoginController extends Controller
                             # code...
                             return redirect('/sgb-admin/usuarios/login');
                         }
-         
+
                     }
-                } 
-                
+                }
+
             }
 
-            
+
         }
-        
-        return; 
-     
+
+        return;
+
 
     }
 }

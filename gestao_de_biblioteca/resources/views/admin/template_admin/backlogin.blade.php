@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="../lib/datatables/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../lib/validate/jquery.validate.css">
 
+  @stack('adicionar-livro')
+
   <!-- endinject -->
 </head>
 

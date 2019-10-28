@@ -1,5 +1,9 @@
 @extends('user.template_user.headerUser')
 
+@section('title')
+    Catalogo
+@endsection
+
 @section('titulo')
     Catalogo de Livos
 @endsection
@@ -46,7 +50,7 @@
                                         @if ($livro->categoria->nome=="Faculdade de Ciências politicas e Administração")
                                             <div class="col-sm-6 col-md-4">
                                                 <div class="card mb-5">
-                                                    <img class="card-img-top" src="imgs/book1.jpg">
+                                                    <img class="card-img-top" src="{{asset('uploads/'.$livro->ficheiro->nome)}}">
                                                     <div class="card-body">
                                                         <h4 class="card-title">{{$livro->titulo}}</h4>
                                                     </div>
@@ -57,7 +61,7 @@
                                                     </uL>
                                                     <div class="card-body">
                                                         <div class="row justify-content-center" >
-                                                            <a href="#" class="card-link">
+                                                        <a href="{{route('requisicao',['id'=>$livro->id,'id2'=>2])}}" class="card-link" id={{$livro->id}}>
                                                                 <button class="btn cor-vermelho text-light">
                                                                     Requisitar
                                                                 </button>
@@ -130,7 +134,7 @@
                                             <div class="col-sm-6 col-md-4">
                                                 <div class="card mb-5">
 
-                                                    <img class="card-img-top" src="imgs/book1.jpg">
+                                                    <img class="card-img-top" src="{{asset('uploads/'.$livro->ficheiro->nome)}}">
                                                     <div class="card-body">
                                                         <h4 class="card-title">{{$livro->titulo}}</h4>
                                                     </div>
@@ -169,7 +173,7 @@
                                             <div class="col-sm-6 col-md-4">
                                                 <div class="card mb-5">
 
-                                                    <img class="card-img-top" src="imgs/book1.jpg">
+                                                    <img class="card-img-top" src="{{asset('uploads/'.$livro->ficheiro->nome)}}">
                                                     <div class="card-body">
                                                         <h4 class="card-title">{{$livro->titulo}}</h4>
                                                     </div>

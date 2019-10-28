@@ -15,7 +15,7 @@ class CreateExemplarTables extends Migration
     {
         Schema::create('exemplar', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('codExemplar');
+            $table->Integer('quantidade');
             $table->unsignedBigInteger('livro_id');
             $table->foreign('livro_id')->references('id')->on('livros')->onDelete('no action')->onUpdate('cascade');
             $table->timestamps();

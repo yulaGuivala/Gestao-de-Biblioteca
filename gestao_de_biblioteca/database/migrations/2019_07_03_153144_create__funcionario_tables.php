@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Models\funcionario;
 
 class CreateFuncionarioTables extends Migration
 {
@@ -22,6 +23,12 @@ class CreateFuncionarioTables extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('no action')->onUpdate('cascade');
             $table->timestamps();
         });
+
+        funcionario::create([
+            'nome' => 'super admim',
+            'endereco_id' => 1,
+            'user_id' => 1
+        ]);
     }
 
     /**

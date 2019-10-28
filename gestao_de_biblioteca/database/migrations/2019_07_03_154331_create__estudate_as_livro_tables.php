@@ -16,6 +16,7 @@ class CreateEstudateAsLivroTables extends Migration
         Schema::create('estudate_as_livro', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamp('data');
+            $table->string('estado');
             $table->unsignedBigInteger('estudante_id');
             $table->unsignedBigInteger('livro_id');
             $table->foreign('estudante_id')->references('id')->on('estudantes')->onDelete('no action')->onUpdate('cascade');
