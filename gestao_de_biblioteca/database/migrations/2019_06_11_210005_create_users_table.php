@@ -27,11 +27,19 @@ class CreateUsersTable extends Migration
             $table->softDeletes();
         });
 
-        //usuario padrao
+        //admin padrao
         User::create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => 'admin123',
+            'ficheiro_id' => 1,
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
+
+        User::create([
+            'name' => 'user',
+            'email' => 'user@gmail.com',
+            'password' => 'user123',
             'ficheiro_id' => 1,
             'created_at' => date('Y-m-d H:i:s')
         ]);

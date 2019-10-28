@@ -485,6 +485,41 @@
     </div>
 @endsection
 
+@push('registar-css')
+    <link rel="stylesheet" href="{{asset('user/lib/sweetalert2/sweetalert2.min.css')}}">
+@endpush
+
+<!-- js especifico dessa pagina -->
+@push('registar-js')
+    <script src="{{asset('user/lib/sweetalert2/sweetalert2.all.min.js')}}"></script>
+
+    <?php $msg = Session::get('msgE') ?>
+    @if (isset($msg))
+        <?php  echo "
+        <script>
+            Swal.fire({
+                title: 'Login!',
+                text:'Login efectuado com sucesso!',
+                type: 'success',
+                confirmButtonText: 'OK'
+            });
+        </script>
+        ";?>
+    @endif
+    @if (isset($sair))
+        <?php  echo "
+        <script>
+            Swal.fire({
+                title: 'Logout!',
+                text:'Sessao terminada!',
+                type: 'warning',
+                confirmButtonText: 'OK'
+            });
+        </script>
+        ";?>
+    @endif
+@endpush
+
 @push('sobre-nos')
     @if (isset($sobre))
         <script>

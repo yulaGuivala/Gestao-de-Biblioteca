@@ -22,7 +22,11 @@
 
     <header class="container-fluid navbar-expand-md">
         <div class="row ">
-            @if (isset($autenticado))
+            <?php
+                $user = Cookie::get('user');
+                $id = Cookie::get('id');
+            ?>
+            @if (isset($user) && isset($id))
                 <!-- Cavecalho Autenticado -->
                 <div class="col-12 ">
 
@@ -46,11 +50,11 @@
 
                                 <a class="nav-link d-inline dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo">
                                     <img class="perfil-foto d-none d-md-inline" src="{{asset('user/imgs/perfil2.png')}}">
-                                    Jose Pedro
+                                    {{$user}}
                                 </a>
                                 <div class="dropdown-menu bg-danger">
-                                    <a class="dropdown-item" href="{{route('perfilE')}}">Perfil</a>
-                                    <a class="dropdown-item" href="{{route('SairE')}}">Sair</a>
+                                    <a class="dropdown-item" href="{{url("inicio/minha-conta/$id/perfil")}}">Perfil</a>
+                                    <a class="dropdown-item" href="{{route('sairE')}}">Sair</a>
                                 </div>
 
                             </li>

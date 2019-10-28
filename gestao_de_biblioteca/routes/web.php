@@ -46,7 +46,9 @@ Route::group(['prefix' => 'inicio'], function () {
     Route::group(['prefix' => 'minha-conta'], function () {
         Route::get('/registar', 'EstudanteController@registar')->name('registrarE'); //redireciona para formulario de cadastro
         Route::get('/login', 'EstudanteController@index')->name('loginE');
+        Route::get('/logout', 'EstudanteController@sair')->name('sairE');
         Route::get('/{id}/perfil', 'EstudanteController@showPerfil'); //Vizualiza perfil de umestudante
+        Route::post('/entrar', 'EstudanteController@entrar')->name('entrarE');
         Route::post('/store', 'EstudanteController@store'); //Armazena dados de Estudanteu
         Route::post('/update', 'EstudanteController@update'); //Armazena dados de Estudanteu
     });

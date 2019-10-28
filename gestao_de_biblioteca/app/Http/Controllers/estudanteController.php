@@ -30,6 +30,43 @@ class estudanteController extends Controller
         return view('user.login');
     }
 
+    public function entrar(Request $req) {
+        $usuarios = $this->user_controller->getAll();;
+        $estudantes = $this->estudante->all();
+
+        foreach ($estudantes as $est) {
+            foreach ($usuarios as $user) {
+
+                // $user = $this->funcionario->user();
+                //echo decrypt($user->password);
+                //echo $user->password;&& $req->senha == decrypt($user->password)
+                if ($user->id == $est->user_id) {
+
+                    if ($req->nome == $user->name || $req->nome == $user->email) {
+
+                        if ($req->senha == $user->password) {
+                            return redirect('/')
+                                ->with('msgE', 'Login efectuado com sucesso!')
+                                ->cookie('user', $est->nome, 60)
+                                ->cookie('id', $est->id, 60);
+                            break;
+                        } else {
+                            # code...
+                            return redirect()->back()->with('mensagem1', 'Senha incorrecta!')->withInput($req->all());
+                        }
+                    }
+                }
+            }
+        }
+        return redirect()->back()->with('mensagem2', 'Usuario invalido!')->withInput($req->all());
+    }
+
+    public function sair() {
+        \Cookie::queue(\Cookie::forget('user'));
+        \Cookie::queue(\Cookie::forget('id'));
+        return view('user.index',['sair' => true]);
+    }
+
     //Retorna a view de cadastro de estudantes (registar.blade.php)
     public function registar() {
         return view('user.registar');
