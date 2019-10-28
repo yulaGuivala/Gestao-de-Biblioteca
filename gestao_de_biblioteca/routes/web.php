@@ -80,45 +80,29 @@ Route::group(['prefix' => 'sgb-admin'],function () {
             Route::get('/adicionar-funcionario', 'funcionarioController@create');//formulario de registo de funcionario no admin
             Route::post('/gravar-funcionario', 'funcionarioController@store');//gravar funcionario no admin
             Route::get('/apagar-func/{id}', 'funcionarioController@destroy'); //exclui um funcionario na BD
-<<<<<<< HEAD
+
             Route::get('/perfil','funcionarioController@perfil');//Mostra perfil do usuario que esta autenticado
             Route::get('/sair','funcionarioController@sair');//Destroy os cookies de autenticacao 
             Route::post('/update','funcionarioController@update');
-            });
-            
-        
-        
-        Route::group(['prefix' => 'livros'], function () {
-            Route::get('lista','livroController@listarAdmin');
-            Route::post('store', 'livroController@store');
-            Route::get('adicionar-livro','livroController@create');
         });
+            
+        Route::group(['prefix' => 'livros'], function () {
+            Route::get('/lista','livroController@listarAdmin');
+            Route::post('/store', 'livroController@store');
+            Route::get('/adicionar-livro','livroController@create');
+            Route::get('/requisicao','livroController@listaRequisicao');
+        });
+
         Route::group(['prefix' => 'mensagens'], function () {
             Route::get('/', 'MensagemController@showAll');
             Route::get('/show/{id}', 'MensagemController@show');
             Route::get('/apagar/{id}', 'MensagemController@destroy');
         });
     });
-=======
-            Route::get('/perfil','funcionarioController@perfil');
-            Route::get('/sair','funcionarioController@sair');
-        });
-
-    });
     Route::get('/index', 'userController@login_admin');
-    Route::group(['prefix' => 'livros'], function () {
-        Route::get('/lista','livroController@listarAdmin');
-        Route::post('/store', 'livroController@store');
-        Route::get('/adicionar-livro','livroController@create');
-        Route::get('/requisicao','livroController@listaRequisicao');
-    });
-    Route::group(['prefix' => 'mensagens'], function () {
-        Route::get('/', 'MensagemController@showAll');
-        Route::get('/show/{id}', 'MensagemController@show');
-        Route::get('/apagar/{id}', 'MensagemController@destroy');
-    });
+   
+    
 
->>>>>>> 470bf2b8367797b366fc5a0c863477f8344463ec
 });
 //Route::get('/funcionario', 'funcionarioController@listar');
 //Route::get('/addfuncionario', 'funcionarioController@create');
