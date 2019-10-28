@@ -32,8 +32,8 @@
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
 
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.php"><b class="ml-4 text-danger" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b></a>
-        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="{{ asset('user/imgs/favicon.png')}}" alt="logo"/></a>
+      <a class="navbar-brand brand-logo mr-5" href="{{url('/')}}"><b class="ml-4 text-danger" style="font-size:30px; font-family: 'Playfair Display', serif;">BDUNA</b></a>
+        <a class="navbar-brand brand-logo-mini" href="{{url('/')}}"><img src="{{ asset('user/imgs/mini-logo.jpg')}}" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">

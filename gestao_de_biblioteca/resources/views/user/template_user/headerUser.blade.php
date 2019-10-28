@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
  <head>
-    <title>@yield('title')| SGB</title>
+    <title>@yield('title')| BDUNA</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -34,13 +34,13 @@
                     <div class="collapse navbar-collapse float-left ml-3">
                         <img src="{{asset('user/imgs/logo.jpg')}}">
                         <a href="{{url('/')}}" class="text-danger link" style="text-decoration:none">
-                            <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
+                            <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">BDUNA</b> <sub>Biblioteca Digital UNA</sub>
                         </a>
                     </div>
 
                     <div class="navbar-toggler float-left mt-3 mr-3">
                         <a href="{{url('/')}}" class="text-danger link text-center" style="text-decoration:none">
-                            <b style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
+                            <b style="font-size:30px; font-family: 'Playfair Display', serif;">BDUNA</b>
                         </a>
                     </div>
 
@@ -70,13 +70,13 @@
                     <div class="collapse navbar-collapse float-left ml-3">
                         <img src="{{asset('user/imgs/logo.jpg')}}">
                         <a href="{{url('/')}}" class="text-danger link" style="text-decoration:none">
-                            <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
+                            <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">BDUNA</b> <sub>Biblioteca Digital UNA</sub>
                         </a>
                     </div>
 
                     <div class="navbar-toggler float-left mt-3 mr-3">
                         <a href="{{url('/')}}" class="text-danger link text-center" style="text-decoration:none">
-                            <b style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
+                            <b style="font-size:30px; font-family: 'Playfair Display', serif;">BDUNA</b>
                         </a>
                     </div>
 
