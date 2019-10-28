@@ -47,7 +47,9 @@ Route::group(['prefix' => 'inicio'], function () {
         Route::get('/registar', 'EstudanteController@registar')->name('registrarE'); //redireciona para formulario de cadastro
         Route::get('/login', 'EstudanteController@index')->name('loginE');
         Route::get('/logout', 'EstudanteController@sair')->name('sairE');
-        Route::get('/{id}/perfil', 'EstudanteController@showPerfil'); //Vizualiza perfil de umestudante
+        Route::middleware(['auth.user'])->group(function () {
+            Route::get('/{id}/perfil', 'EstudanteController@showPerfil'); //Vizualiza perfil de umestudante
+        });
         Route::post('/entrar', 'EstudanteController@entrar')->name('entrarE');
         Route::post('/store', 'EstudanteController@store'); //Armazena dados de Estudanteu
         Route::post('/update', 'EstudanteController@update'); //Armazena dados de Estudanteu
@@ -71,7 +73,7 @@ Route::group(['prefix' => 'sgb-admin'],function () {
     Route::post('/entrar','funcionarioController@entrar');//Verifica se usuario existe
     Route::middleware(['auth.role'])->group( function () {//middleware de login redireciona ususrios nao autenticados ao login
         Route::group(['prefix' => '/usuarios'], function () {
-            
+
             Route::get('/estudantes', 'EstudanteController@show'); //lista estudasntes no admin
 
             Route::get('/apagar/{id}', 'EstudanteController@destroy'); //exclui um estudante na BD
@@ -82,17 +84,17 @@ Route::group(['prefix' => 'sgb-admin'],function () {
             Route::get('/apagar-func/{id}', 'funcionarioController@destroy'); //exclui um funcionario na BD
 
             Route::get('/perfil','funcionarioController@perfil');//Mostra perfil do usuario que esta autenticado
-            Route::get('/sair','funcionarioController@sair');//Destroy os cookies de autenticacao 
+            Route::get('/sair','funcionarioController@sair');//Destroy os cookies de autenticacao
             Route::post('/update','funcionarioController@update');
         });
-            
+
         Route::group(['prefix' => 'livros'], function () {
             Route::get('/lista','livroController@listarAdmin');
             Route::post('/store', 'livroController@store');
             Route::get('/adicionar-livro','livroController@create');
             Route::get('/requisicoes','livroController@listaRequisicao');
             Route::get('/confirmar-requisicao/{id}','livroController@confirma');
-    
+
         });
 
         Route::group(['prefix' => 'mensagens'], function () {
@@ -102,8 +104,8 @@ Route::group(['prefix' => 'sgb-admin'],function () {
         });
     });
     Route::get('/index', 'userController@login_admin');
-    
-    
+
+
 });
 
 //Route::get('/funcionario', 'funcionarioController@listar');

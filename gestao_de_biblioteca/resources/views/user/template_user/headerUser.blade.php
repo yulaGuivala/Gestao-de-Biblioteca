@@ -24,7 +24,7 @@
         <div class="row ">
             <?php
                 $user = Cookie::get('user');
-                $id = Cookie::get('id');
+                $id = Cookie::get('idE');
                 $foto = Cookie::get('foto');
             ?>
             @if (isset($user) && isset($id))

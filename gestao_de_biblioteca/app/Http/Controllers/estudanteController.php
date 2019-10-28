@@ -48,7 +48,7 @@ class estudanteController extends Controller
                             return redirect('/')
                                 ->with('msgE', 'Login efectuado com sucesso!')
                                 ->cookie('user', $est->nome, 60)
-                                ->cookie('id', $est->id, 60)
+                                ->cookie('idE', $est->id, 60)
                                 ->cookie('foto', $user->ficheiro->nome, 60);
                             break;
                         } else {
@@ -63,10 +63,16 @@ class estudanteController extends Controller
     }
 
     public function sair() {
-        \Cookie::queue(\Cookie::forget('user'));
-        \Cookie::queue(\Cookie::forget('id'));
+        /*\Cookie::queue(\Cookie::forget('user'));
+        \Cookie::queue(\Cookie::forget('idE'));
         \Cookie::queue(\Cookie::forget('foto'));
-        return view('user.index',['sair' => true]);
+        return view('user.index',['sair' => true]);*/
+
+        return redirect('/')
+            ->with('sair',true)
+            ->cookie(cookie()->forget('user'))
+            ->cookie(cookie()->forget('idE'))
+            ->cookie(cookie()->forget('foto'));
     }
 
     //Retorna a view de cadastro de estudantes (registar.blade.php)
