@@ -25,22 +25,17 @@ class funcionarioController extends Controller
         $this->user_controller = $user_controller;
         $this->endereco_controller = $endereco_controller;
         $this->funcionario = new Funcionario(); 
-       // $this->cookie = new Cookie('Admin');
     }
 
 
     public function create() {
 
         return view('admin.adicionar-funcionario');
-
     }
 
 
     public function store(Request $req){
-        // $dataForm = $request->all();
-
         
-
        if($req->mail && $req->usuario) {
             $user = new User();
             $end = new Endereco();
@@ -59,21 +54,18 @@ class funcionarioController extends Controller
                 $ficheiro->nome_original = $foto->getClientOriginalName();
             }
             $fich_id = $this->ficheiro_controller->store($ficheiro);
-            
 
             $user->name = $req->usuario;
             $user->email = $req->mail;
             $user->password = $req->senha;
             $user->ficheiro_id = $fich_id;
             $user_id = $this->user_controller->store($user);
-            
 
             $end->distrito = 'Kamubukhana';//$req->distrito;
             $end->bairro = 'Bagamoyo';//$req->bairro;
             $end->rua ='5538'; //$req->rua;
             $end->casa = '38';//$req->casa;
             $end_id = $this->endereco_controller->store($end);
-            
 
             funcionario::create([
                 'nome'=> $req->nome." ".$req->apelido,
@@ -89,23 +81,23 @@ class funcionarioController extends Controller
 
         $listaFunc = funcionario::all();
         return view('admin.lista-funcionario',['funcionario' => $listaFunc]);
-
     }
 
     public function destroy($id) {
+
         $this->funcionario = $this->getFuncionario($id);
         $funcionario = $this->funcionario->delete();
         return \Response::json($funcionario);
     }
 
     private function getFuncionario($id) {
+
         return $this->funcionario->find($id);
     }
 
     public function login() {
 
         return view('admin.login');
-
     }
 
     public function entrar(Request $req) {
@@ -113,28 +105,24 @@ class funcionarioController extends Controller
         $lista = user::all();
         $lista2 = funcionario::all();
         
-        
         foreach ($lista2 as $ft) {
-           
 
             foreach ($lista as $func){
                
-                // $func = $this->funcionario->user();
-                //echo decrypt($func->password);
-                //echo $func->password;&& $req->senha == decrypt($func->password)
                 if ($func->id == $ft->user_id) {
                     
                     if ($req->nome == $func->name || $req->nome == $func->email){
                     
                         if ($req->senha == $func->password) {
+
                             return redirect('/sgb-admin/usuarios/funcionario')
                             ->with('mensagem', 'Login efectuado com sucesso!')
                             ->cookie('Admin','Folege',60)
                             ->cookie('Id',$ft->id,60);
                             break;
                         } else {
-                            # code...
-                            return redirect('/sgb-admin/login');
+
+                            return redirect('/sgb-admin/login')->with('mensagem', 'Senha Ou Nome de Usuario Incorrecto');;
                         }
          
                     }
@@ -148,6 +136,7 @@ class funcionarioController extends Controller
     }
 
     function sair(){
+
         return redirect('/sgb-admin/login')
         ->cookie(cookie()->forget('Admin'))
         ->cookie(cookie()->forget('Id'));
@@ -159,8 +148,47 @@ class funcionarioController extends Controller
         $func = Requisicao::cookie('Id');
         $this->funcionario = $this->getFuncionario($func);
         $funcionario = $this->funcionario;
-        //echo $funcionario;
         return view('admin.perfil', ['funcionario' => $funcionario]);
+
+    }
+
+    function update(Request $req){
+
+        $func_id = Requisicao::cookie('Id');
+        $this->funcionario = $this->getFuncionario($func_id);
+        $func = $this->funcionario;
+        
+        $end = $this->endereco_controller->getEndereco($func->endereco_id);
+        $user = $this->user_controller->getUser($func->user_id);
+        $ficheiro = $this->ficheiro_controller->getFicheiro($req->ficheiro_id);
+
+        $foto = $req->file('foto');
+        if ($foto != null) {
+            
+            $extensao = $foto->getClientOriginalExtension();
+            Storage::disk('public')->put($foto->getFilename() . '.' . $extensao, \File::get($foto));
+            $ficheiro->nome = $foto->getFilename() . '.' . $extensao;
+            $ficheiro->mime = $foto->getClientMimeType();
+            $ficheiro->nome_original = $foto->getClientOriginalName();
+            $this->ficheiro_controller->update($ficheiro);
+        }
+
+        $user->name = $req->usuario;
+        $user->email = $req->email;
+        $user->password = $req->senha;
+        $this->user_controller->update($user); 
+
+        $end->distrito = 'Kamubukhana';//$req->distrito;
+        $end->bairro = 'Bagamoyo';//$req->bairro;
+        $end->rua ='5538'; //$req->rua;
+        $end->casa = '38';//$req->casa;
+        $this->endereco_controller->update($end);
+        
+        $this->funcionario = $this->getFuncionario($func_id);
+        $this->funcionario->nome = $req->nome;
+        $this->funcionario->update();
+
+        return redirect('/sgb-admin/usuarios/perfil')->with('mensagem', 'Dados de perfil salvos!');
 
     }
 }

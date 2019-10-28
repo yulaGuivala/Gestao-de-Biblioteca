@@ -11,9 +11,6 @@
                     <p>{{$msg}}</p>
                 </div>
             @endif
-            <div class="col-md-8 mr-4">
-                <h5>Meus Dados</h5>
-            </div>
         </div>
         <div class="row">
             <div class="col-md-12 grid-margin">
@@ -45,27 +42,7 @@
                   </p>
                   
                   <form class="forms-sample" method="POST" action="{{url("sgb-admin/usuarios/update")}}" id="formulario" enctype="multipart/form-data">
-                 
-
-                    <div class="form-row mt-3">
-                        <label for="foto-perfil">Foto de Perfil</label>
-                    </div>
-                    <div class="form-row my-4 justify-content-center">
-
-                            <div class="circle" id="foto-perfil">
-                            <img class=" profile-pic" src="{{url('uploads/'.$funcionario->user->ficheiro->nome)}}">
-                            </div>
-                            <div class="p-image">
-                                <i class="fa fa-camera upload-button"></i>
-                            <input name="foto" class="file-upload d-none" type="file" accept="image/*" value="{{url('uploads/'.$funcionario->user->ficheiro->nome)}}"/>
-                                
-                                @csrf
-                            </div>
-
-                    </div>
-
-
-                  
+        
                     <div class="form-row">
                       <div class="form-group col-sm-6">
                         <label for="nome">Nome Sobrenome</label>
@@ -135,4 +112,25 @@
           </div>
 
 @endsection
+@push('registar-js')
+    <script src="{{asset('user/lib/validate/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('user/lib/validate/jquery.validate.pt-br.js')}}"></script>
+    <script src="{{asset('user/lib/profile-image/script.js')}}"></script>
+    <script src="{{asset('user/lib/sweetalert2/sweetalert2.all.min.js')}}"></script>
+
+    @if ($msg = Session::get('mensagem'))
+        <?php  echo "
+        <script>
+            Swal.fire({
+                title: 'Feito!',
+                text: $msg,
+                type: 'success',
+                confirmButtonText: 'OK'
+            });
+        </script>
+        ";?>
+    @endif
+
+
+@endpush
 
