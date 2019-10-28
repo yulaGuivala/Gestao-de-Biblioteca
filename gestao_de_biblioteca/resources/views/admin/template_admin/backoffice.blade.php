@@ -180,7 +180,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="lista-requisicoes.php">
+            <a class="nav-link" href="{{url('sgb-admin/livros/requisicoes')}}">
               <i class="ti-write menu-icon"></i>
               <span class="menu-title">Requisições</span>
             </a>
