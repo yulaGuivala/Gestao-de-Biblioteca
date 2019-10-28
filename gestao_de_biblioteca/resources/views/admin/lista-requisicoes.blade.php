@@ -39,7 +39,7 @@
 
                             <div class="tab-pane fade show active" id="tipo1" role="tabpanel">
                                 <div class="table-responsive pb-0">
-                                    <table class="table table-hover col-12 mt-2" id="tb1">
+                                    <table class="table table-hover col-12 mt-2" id="tabela-dados2">
                                         <thead>
                                             <tr>
                                                 <th>Nr. de Estudante</th>
@@ -49,34 +49,24 @@
                                             </tr>
                                         </thead>
                                         <tbody id="tabela-corpo1">
-                                        <tr>
-                                            <td>20161865</td>
-                                            <td>Folege Ricardo</td>
-                                            <td>Analise matetica, B. Demidovitch</td>
-                                            <td>
-                                                <input type="button" class="btn btn-rounded btn-outline-primary" id="conf" value="Confirmar">
-                                                <input type="button" class="btn btn-rounded btn-outline-danger" id="canc" value="Cancelar">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>20161865</td>
-                                            <td>Folege Ricardo</td>
-                                            <td>Analise matetica, B. Demidovitch</td>
-                                            <td>
-                                                <input type="button" class="btn btn-rounded btn-outline-primary" id="conf" value="Confirmar">
-                                                <input type="button" class="btn btn-rounded btn-outline-danger" id="canc" value="Cancelar">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>20161865</td>
-                                            <td>Folege Ricardo</td>
-                                            <td>Analise matetica, B. Demidovitch</td>
-                                            <td>
-                                                <input type="button" class="btn btn-rounded btn-outline-primary" id="conf" value="Confirmar">
-                                                <input type="button" class="btn btn-rounded btn-outline-danger" id="canc" value="Cancelar">
-                                            </td>
-                                        </tr>
+                                            @foreach ($requisicoes as $requisicao)
+                                                @if ($requisicao->estado=='Pendente')
+                                                    <tr>
+                                                        <td>{{$requisicao->numero}}</td>
+                                                        <td>{{$requisicao->nome}}</td>
+                                                        <td>{{$requisicao->titulo}}</td>
+                                                        <td>
+                                                        <a href="{{route('confirmar',['idLivro'=>$requisicao->id,'idEst'=>$requisicao->idEst])}}">
+                                                                <input type="button" class="btn btn-rounded btn-outline-primary" id="conf" value="Confirmar">
+                                                            </a>
+                                                            <a href="http://">
+                                                                <input type="button" class="btn btn-rounded btn-outline-danger" id="canc" value="Cancelar">
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endif
 
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -84,8 +74,9 @@
 
                             <div class="tab-pane fade" id="tipo2" role="tabpanel">
                                 <div class="table-responsive pb-0">
-                                    <table class="table table-hover col-12 mt-2" id="tb2">
+                                    <table class="table table-hover col-12 mt-2" id="tabela-dados">
                                         <thead>
+
                                             <tr>
                                             <th>Nr. de Estudante</th>
                                             <th>Nome</th>
@@ -95,35 +86,19 @@
                                         </tr>
                                     </thead>
                                     <tbody id="tabela-corpo2">
-                                    <tr>
-                                        <td>20161865</td>
-                                        <td>Folege Ricardo</td>
-                                        <td>Analise matetica, B. Demidovitch</td>
-                                        <td>02/03/2019</td>
-                                        <td>
-                                            <input type="button" class="btn btn-rounded btn-outline-success" id="dev" value="Devolver">
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>20161865</td>
-                                        <td>Folege Ricardo</td>
-                                        <td>Analise matetica, B. Demidovitch</i></td>
-                                            <td>02/03/2019</td>
-                                        <td>
-                                            <input type="button" class="btn btn-rounded btn-outline-success" id="dev" value="Devolver">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>20161865</td>
-                                        <td>Folege Ricardo</td>
-                                        <td>Analise matetica, B. Demidovitch</i></td>
-                                            <td>02/03/2019</td>
-                                        <td>
-                                            <input type="button" class="btn btn-rounded btn-outline-success" id="dev" value="Devolver">
-                                        </td>
-                                    </tr>
-
+                                        @foreach ($requisicoes as $requisicao)
+                                            @if ($requisicao->estado=='Confirmado')
+                                                <tr>
+                                                    <td>{{$requisicao->numero}}</td>
+                                                    <td>{{$requisicao->nome}}</td>
+                                                    <td>{{$requisicao->titulo}}</td>
+                                                    <td>{{$requisicao->data}}</td>
+                                                    <td>
+                                                        <input type="button" class="btn btn-rounded btn-outline-success" id="dev" value="Devolver">
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
                                     </tbody>
                                     </table>
                                 </div>
@@ -140,9 +115,10 @@
     <!-- content-wrapper ends -->
 @endsection
 
+@push('tabelas-js')
+    <script>
+        //cria datatable em pt
+        dataTablePt('#tabela-dados2');
+    </script>
+@endpush
 
-<script>
-    //cria datatable em pt
-    dataTablePt('#tb1');
-    dataTablePt('#tb2');
-</script>

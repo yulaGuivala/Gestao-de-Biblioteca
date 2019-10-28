@@ -10,28 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//use Symfony\Component\Routing\Route;
-//use Illuminate\Support\Facades\Route;
-
-/*Route::get('/', function () {
-    return view('welcome');
-});
-*/
-
-/*
-Route::get('/', function () {
-    return view('admin.adicionar-livro');
-
-});
-/*
-Route::get('/', function () {
-    return view('user.catalogo');
-});*/
-
-//Route::get('/', 'livroController@buscarLivros');
-//Route::get('/livro','livroController@listarAdmin');
-//Route::get('/funcionario', 'funcionarioController@listar');
-//Route::get('/addfuncionario', 'funcionarioController@create');
 
 Route::get('/', function () {
     return view('user.index');
@@ -93,8 +71,9 @@ Route::group(['prefix' => 'sgb-admin'],function () {
             Route::post('/store', 'livroController@store');
             Route::get('/adicionar-livro','livroController@create');
             Route::get('/requisicoes','livroController@listaRequisicao');
-            Route::get('/confirmar-requisicao/{id}','livroController@confirma');
 
+            Route::get('/confirmar-requisicao/{id}','livroController@confirma');
+            Route::get('/confirmar-requisicao/{idLivro}/{idEst}','livroController@confirma')->name('confirmar');
         });
 
         Route::group(['prefix' => 'mensagens'], function () {
@@ -102,14 +81,11 @@ Route::group(['prefix' => 'sgb-admin'],function () {
             Route::get('/show/{id}', 'MensagemController@show');
             Route::get('/apagar/{id}', 'MensagemController@destroy');
         });
+        Route::get('/index', 'funcionarioController@index');
     });
-    Route::get('/index', 'userController@login_admin');
-
 
 });
 
-//Route::get('/funcionario', 'funcionarioController@listar');
-//Route::get('/addfuncionario', 'funcionarioController@create');
 
 
 
