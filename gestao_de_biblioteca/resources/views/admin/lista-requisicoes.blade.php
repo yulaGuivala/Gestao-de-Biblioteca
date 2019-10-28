@@ -59,7 +59,7 @@
                                                         <a href="{{route('confirmar',['idLivro'=>$requisicao->id,'idEst'=>$requisicao->idEst])}}">
                                                                 <input type="button" class="btn btn-rounded btn-outline-primary" id="conf" value="Confirmar">
                                                             </a>
-                                                            <a href="http://">
+                                                            <a href="{{route('cancelar',['idLivro'=>$requisicao->id,'idEst'=>$requisicao->idEst])}}">
                                                                 <input type="button" class="btn btn-rounded btn-outline-danger" id="canc" value="Cancelar">
                                                             </a>
                                                         </td>
@@ -94,7 +94,9 @@
                                                     <td>{{$requisicao->titulo}}</td>
                                                     <td>{{$requisicao->data}}</td>
                                                     <td>
-                                                        <input type="button" class="btn btn-rounded btn-outline-success" id="dev" value="Devolver">
+                                                        <a href="{{route('devolver',['idLivro'=>$requisicao->id,'idEst'=>$requisicao->idEst])}}">
+                                                            <input type="button" class="btn btn-rounded btn-outline-success" id="dev" value="Devolver">
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             @endif
@@ -115,10 +117,39 @@
     <!-- content-wrapper ends -->
 @endsection
 
+@push('tabelas-css')
+    <link rel="stylesheet" href="{{asset('user/lib/sweetalert2/sweetalert2.min.css')}}">
+@endpush
+
 @push('tabelas-js')
     <script>
         //cria datatable em pt
         dataTablePt('#tabela-dados2');
+
     </script>
+    <script src="{{asset('user/lib/sweetalert2/sweetalert2.all.min.js')}}"></script>
+    @if ($msg = Session::get('msgSucesso'))
+    <?php  echo "
+    <script>
+        Swal.fire({
+            title: 'Enviado!',
+            text: $msg,
+            type: 'success',
+            confirmButtonText: 'OK'
+        });
+    </script>
+    ";?>
+    @elseif($msg = Session::get('msgErro'))
+    <?php  echo "
+    <script>
+        Swal.fire({
+            title: 'Erro!',
+            text: $msg,
+            type: 'error',
+            confirmButtonText: 'OK'
+        });
+    </script>
+    ";?>
+@endif
 @endpush
 

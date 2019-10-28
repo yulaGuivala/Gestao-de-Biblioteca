@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="pt-br">
  <head>
@@ -227,75 +228,81 @@
 
     </footer>
 
-    <!-- Modal Detalhes-->
+    <!-- Modal caixa de livros-->
+    <?php// modalLivros(); ?>
 
-    <div class="modal fade" id="siteModal" tabindex="-1" role="dialog">
+    <div class="modal fade" id="livros" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title">Detalhes do Livro</h5>
+                    <h5 class="modal-title">Caixa de Livros</h5>
                     <button type="button" class="close" data-dismiss="modal">
                         <span>&times;</span>
                     </button>
                 </div>
 
                 <div class="modal-body">
-
                     <div class="container-fluid">
+                    <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive cor-borda3 pb-0">
+                        <table class="table table-bordered table-hove mb-0" id="tabela-doencas">
+                            <thead >
+                                <tr class="cor-creme">
+                                    <td class="titulo-tabela" colspan="5"><i class="fa fa-list mr-2"></i>Lista de livros selecionados</td>
 
-                        <div class="row">
-
-                            <div class="col-6">
-
-                                <h5>Redes de Computadores</h5>
-
-                                <img class="card-img-top" src="imgs/item-01.jpg">
-
+                                </tr>
+                                <tr>
+                                <tr>
+                                    <th class=" text-center" style="width:2px;">
+                                        <input type="checkbox" id="checklivros">
+                                    </th>
+                                    <th class="text-danger">Titulo</th>
+                                    <th class="text-danger">Autor</th>
+                                    <th class="text-danger">Edição</th>
+                                    <th class="text-danger">Ano</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tbody id="tabela-corpo">
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>sfsfdfs</td>
+                                    <td>sfsfdfs</td>
+                                        <td>sfsfdfs</td>
+                                    <td>sfsfdfs</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>sfsfdfs</td>
+                                    <td>sfsfdfs</td>
+                                        <td>sfsfdfs</td>
+                                    <td>sfsfdfs</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>sfsfdfs</td>
+                                    <td>sfsfdfs</td>
+                                        <td>sfsfdfs</td>
+                                    <td>sfsfdfs</td>
+                                </tr>
+                            </tbody>
+                            </table>
                             </div>
-
-                            <div class="col-6">
-
-                                <h5>Informacoes adicionais</h5>
-
-                                <p>Donec semper maximus ipsum in feugiat.
-                                   Sed blandit, magna nec maximus venenatis,
-                                   nunc odio porttitor tellus, ac pulvinar mi
-                                   velit vel erat. Vestibulum ante ipsum
-                                   primis in faucibus orci luctus et ultrices
-                                   posuere cubilia Curae; Mauris sapien tellus,
-                                   mattis nec tempus id, consequat non tortor.
-                                   Nunc molestie orci purus, quis malesuada enim
-                                   ullamcorper condimentum. Nullam vitae ultrices
-                                   tortor. Pellentesque at felis eget nulla
-                                   condimentum euismod. Nulla tortor nulla,
-                                   suscipit at consectetur in, imperdiet eu tellus.
-                                   Ut semper lorem orci, a malesuada ligula molestie
-                                   non. Morbi lobortis erat eget ipsum iaculis, at
-                                   sagittis est laoreet. Suspendisse pulvinar enim
-                                   eu nunc cursus pharetra. Nam porttitor porttitor
-                                   imperdiet. Duis gravida diam ultrices finibus
-                                   interdum. Vestibulum at elementum eros. Proin in
-                                   enim non lorem bibendum consectetur at vitae enim.
-                                    Nam vel dolor ac velit pharetra pharetra.</p>
-
-                            </div>
-
-                        </div>
-
                     </div>
-
+                    </div>
+                    </div>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn cor-vermelho text-light" data-dismiss="modal">Voltar</button>
+                    <button type="button" class="btn btn-primary text-light">Comfirmar Requisição</button>
+                    <button type="button" class="btn btn-danger text-light">Eliminar</button>
                 </div>
 
             </div>
         </div>
     </div>
-    <!-- Modal caixa de livros-->
-    <?php// modalLivros(); ?>
 
     <script src="{{asset('user/node_modules/jquery/dist/jquery.js')}}"></script>
     <script src="{{asset('user/node_modules/popper.js/dist/umd/popper.js')}}"></script>

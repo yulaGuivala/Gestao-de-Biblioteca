@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Cookie;
 
 class funcionarioController extends Controller
 {
-    
+
     private $user_controller;
     private $endereco_controller;
     private $funcionario;
@@ -24,7 +24,7 @@ class funcionarioController extends Controller
         $this->ficheiro_controller = $ficheiro_controller;
         $this->user_controller = $user_controller;
         $this->endereco_controller = $endereco_controller;
-        $this->funcionario = new Funcionario(); 
+        $this->funcionario = new Funcionario();
     }
 
 
@@ -35,7 +35,7 @@ class funcionarioController extends Controller
 
 
     public function store(Request $req){
-        
+
        if($req->mail && $req->usuario) {
             $user = new User();
             $end = new Endereco();
@@ -109,15 +109,15 @@ class funcionarioController extends Controller
 
         $lista = user::all();
         $lista2 = funcionario::all();
-        
+
         foreach ($lista2 as $ft) {
 
             foreach ($lista as $func){
-               
+
                 if ($func->id == $ft->user_id) {
-                    
+
                     if ($req->nome == $func->name || $req->nome == $func->email){
-                    
+
                         if ($req->senha == $func->password) {
 
                             return redirect('/sgb-admin/index')
@@ -129,15 +129,15 @@ class funcionarioController extends Controller
 
                             return redirect('/sgb-admin/login')->with('mensagem', 'Senha Ou Nome de Usuario Incorrecto');;
                         }
-         
+
                     }
-                } 
-                
+                }
+
             }
-            
+
         }
-        
-        return; 
+
+        return;
     }
 
     function sair(){
@@ -148,7 +148,7 @@ class funcionarioController extends Controller
     }
 
     function perfil(){
-         
+
         //Retorna a view do perfil de um funcionario (registar.blade.php)
         $func = Requisicao::cookie('Id');
         $this->funcionario = $this->getFuncionario($func);
@@ -162,14 +162,14 @@ class funcionarioController extends Controller
         $func_id = Requisicao::cookie('Id');
         $this->funcionario = $this->getFuncionario($func_id);
         $func = $this->funcionario;
-        
+
         $end = $this->endereco_controller->getEndereco($func->endereco_id);
         $user = $this->user_controller->getUser($func->user_id);
         $ficheiro = $this->ficheiro_controller->getFicheiro($req->ficheiro_id);
 
         $foto = $req->file('foto');
         if ($foto != null) {
-            
+
             $extensao = $foto->getClientOriginalExtension();
             Storage::disk('public')->put($foto->getFilename() . '.' . $extensao, \File::get($foto));
             $ficheiro->nome = $foto->getFilename() . '.' . $extensao;
@@ -181,14 +181,14 @@ class funcionarioController extends Controller
         $user->name = $req->usuario;
         $user->email = $req->email;
         $user->password = $req->senha;
-        $this->user_controller->update($user); 
+        $this->user_controller->update($user);
 
         $end->distrito = 'Kamubukhana';//$req->distrito;
         $end->bairro = 'Bagamoyo';//$req->bairro;
         $end->rua ='5538'; //$req->rua;
         $end->casa = '38';//$req->casa;
         $this->endereco_controller->update($end);
-        
+
         $this->funcionario = $this->getFuncionario($func_id);
         $this->funcionario->nome = $req->nome;
         $this->funcionario->update();

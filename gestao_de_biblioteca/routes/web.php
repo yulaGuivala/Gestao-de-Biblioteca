@@ -39,7 +39,9 @@ Route::group(['prefix' => 'inicio'], function () {
     Route::get('/contacto/store', 'MensagemController@store');
     Route::group(['prefix' => '/livros'], function () {
         Route::get('/catalogo', 'LivroController@listar')->name('catalogo');
-        Route::get('/requisicao/{id}/{id2}', 'LivroController@requisitar')->name('requisicao');
+        Route::middleware(['auth.user'])->group(function () {
+            Route::get('/requisicao/{id}/{id2}', 'LivroController@requisitar')->name('requisicao');
+        });
     });
 
 });
@@ -74,6 +76,8 @@ Route::group(['prefix' => 'sgb-admin'],function () {
 
             Route::get('/confirmar-requisicao/{id}','livroController@confirma');
             Route::get('/confirmar-requisicao/{idLivro}/{idEst}','livroController@confirma')->name('confirmar');
+            Route::get('/devolver/{idLivro}/{idEst}','livroController@devolver')->name('devolver');
+            Route::get('/cancelar/{idLivro}/{idEst}','livroController@cancelar')->name('cancelar');
         });
 
         Route::group(['prefix' => 'mensagens'], function () {

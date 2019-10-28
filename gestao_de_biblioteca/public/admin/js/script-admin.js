@@ -53,7 +53,6 @@ $("#btn-csenha").mouseout(function () {
 
 //cria datatable em pt
 dataTablePt('#tabela-dados');
-dataTablePt('#tabela-dados2');
 
 //seleciona todos checkboxes da tabela
 $("#selecionar").click(function () {

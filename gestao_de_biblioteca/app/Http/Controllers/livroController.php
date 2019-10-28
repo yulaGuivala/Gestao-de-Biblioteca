@@ -105,6 +105,20 @@ class livroController extends Controller
     public function confirma($id, $idEst){
         $livro=Livro::where('id',$id)->with('estudantes')->get()->first();
         $livro->estudantes()->updateExistingPivot($idEst,array('estado'=>'Confirmado'),false);
-        return redirect()->back();
+        return redirect()->back()->with('msgSucesso', "'Livro levantado com sucesso'");;
+    }
+
+    //confirmacao da devolucao do livrofuncionarios()
+    public function devolver($id, $idEst){
+        $livro=Livro::where('id',$id)->with('estudantes')->get()->first();
+        $livro->estudantes()->updateExistingPivot($idEst,array('estado'=>'Devolvido'),false);
+        return redirect()->back()->with('msgSucesso', "'Livro devolvido com sucesso'");
+    }
+
+    //cancelar requisicao do livrofuncionarios()
+    public function cancelar($id, $idEst){
+        $livro=Livro::where('id',$id)->with('estudantes')->get()->first();
+        $livro->estudantes()->updateExistingPivot($idEst,array('estado'=>'Cancelado'),false);
+        return redirect()->back()->with('msgSucesso', "'Requisicao cancelada com sucesso'");;
     }
 }
