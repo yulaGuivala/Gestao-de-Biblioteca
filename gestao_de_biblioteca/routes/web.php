@@ -98,6 +98,7 @@ Route::group(['prefix' => 'sgb-admin'],function () {
     });
 
 });
+
 //Route::get('/funcionario', 'funcionarioController@listar');
 //Route::get('/addfuncionario', 'funcionarioController@create');
 
