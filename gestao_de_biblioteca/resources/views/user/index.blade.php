@@ -506,7 +506,7 @@
         </script>
         ";?>
     @endif
-
+    <?php $sair = Session::get('sair');?>
     @if (isset($sair))
         <?php
             echo "
