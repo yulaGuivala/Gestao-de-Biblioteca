@@ -90,7 +90,9 @@ Route::group(['prefix' => 'sgb-admin'],function () {
             Route::get('/lista','livroController@listarAdmin');
             Route::post('/store', 'livroController@store');
             Route::get('/adicionar-livro','livroController@create');
-            Route::get('/requisicao','livroController@listaRequisicao');
+            Route::get('/requisicoes','livroController@listaRequisicao');
+            Route::get('/confirmar-requisicao/{id}','livroController@confirma');
+    
         });
 
         Route::group(['prefix' => 'mensagens'], function () {
@@ -100,9 +102,8 @@ Route::group(['prefix' => 'sgb-admin'],function () {
         });
     });
     Route::get('/index', 'userController@login_admin');
-   
     
-
+    
 });
 //Route::get('/funcionario', 'funcionarioController@listar');
 //Route::get('/addfuncionario', 'funcionarioController@create');

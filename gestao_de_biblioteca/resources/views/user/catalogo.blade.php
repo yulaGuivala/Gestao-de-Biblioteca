@@ -214,6 +214,37 @@
 
 @endsection
 
+@push('registar-js')
+    <script src="{{asset('user/lib/validate/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('user/lib/validate/jquery.validate.pt-br.js')}}"></script>
+    <script src="{{asset('user/lib/profile-image/script.js')}}"></script>
+    <script src="{{asset('user/lib/sweetalert2/sweetalert2.all.min.js')}}"></script>
+
+    @if ($msg = Session::get('msgSucesso'))
+        <?php  echo "
+        <script>
+            Swal.fire({
+                title: 'Enviado!',
+                text: $msg,
+                type: 'success',
+                confirmButtonText: 'OK'
+            });
+        </script>
+        ";?>
+    @elseif($msg = Session::get('msgErro'))
+        <?php  echo "
+        <script>
+            Swal.fire({
+                title: 'Erro!',
+                text: $msg,
+                type: 'error',
+                confirmButtonText: 'OK'
+            });
+        </script>
+        ";?>
+    @endif
+@endpush
+
 
 
 @push('paginacao')
