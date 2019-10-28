@@ -26,6 +26,10 @@ class estudanteController extends Controller
         $this->estudante = new Estudante();
     }
 
+    public  function index() {
+        return view('user.login');
+    }
+
     //Retorna a view de cadastro de estudantes (registar.blade.php)
     public function registar() {
         return view('user.registar');

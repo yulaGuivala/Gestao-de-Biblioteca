@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Models\ficheiro;
 
 class CreateFicheiroTable extends Migration
 {
@@ -21,6 +22,13 @@ class CreateFicheiroTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        ficheiro::create([
+            'nome' => "profile.png",
+            'mime' => Str::random(10),
+            'nome_original' => Str::random(30),
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
     }
 
     /**

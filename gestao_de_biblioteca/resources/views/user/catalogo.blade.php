@@ -1,5 +1,9 @@
 @extends('user.template_user.headerUser')
 
+@section('title')
+    Catalogo
+@endsection
+
 @section('titulo')
     Catalogo de Livos
 @endsection

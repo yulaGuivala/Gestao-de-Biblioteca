@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Models\User;
 
 class CreateUsersTable extends Migration
 {
@@ -25,6 +26,15 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        //usuario padrao
+        User::create([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => 'admin123',
+            'ficheiro_id' => 1,
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
     }
 
     /**

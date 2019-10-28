@@ -16,10 +16,8 @@
 /*Route::get('/', function () {
     return view('welcome');
 });
+*/
 
-Route::get('/', function () {
-    return view('user.index');
-});
 /*
 Route::get('/', function () {
     return view('admin.adicionar-livro');
@@ -35,22 +33,30 @@ Route::get('/', function () {
 //Route::get('/funcionario', 'funcionarioController@listar');
 //Route::get('/addfuncionario', 'funcionarioController@create');
 
+Route::get('/', function () {
+    return view('user.index');
+});
+
+Route::get('/inicio', function () {
+    return view('user.index',['sobre' => true]);
+});
 
 //Rotas para viesws dos users
 Route::group(['prefix' => 'inicio'], function () {
     Route::group(['prefix' => 'minha-conta'], function () {
-        Route::get('/registar', 'EstudanteController@registar'); //redireciona para formulario de cadastro
+        Route::get('/registar', 'EstudanteController@registar')->name('registrarE'); //redireciona para formulario de cadastro
+        Route::get('/login', 'EstudanteController@index')->name('loginE');
         Route::get('/{id}/perfil', 'EstudanteController@showPerfil'); //Vizualiza perfil de umestudante
         Route::post('/store', 'EstudanteController@store'); //Armazena dados de Estudanteu
         Route::post('/update', 'EstudanteController@update'); //Armazena dados de Estudanteu
     });
-    Route::get('/contacto', 'MensagemController@index');
+    Route::get('/contacto', 'MensagemController@index')->name('contacto');
 
     Route::post('/adicionar-contacto', 'MensagemController@store')->name('storeMensagem');
 
     Route::get('/contacto/store', 'MensagemController@store');
     Route::group(['prefix' => '/livros'], function () {
-        Route::get('/catalogo', 'LivroController@listar');
+        Route::get('/catalogo', 'LivroController@listar')->name('catalogo');
         Route::get('/requisicao/{id}/{id2}', 'LivroController@requisitar')->name('requisicao');
     });
 
