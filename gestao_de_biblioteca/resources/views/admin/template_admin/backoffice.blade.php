@@ -137,7 +137,7 @@
         <ul class="nav">
 
           <li class="nav-item">
-            <a class="nav-link" href="index.php">
+            <a class="nav-link" href="{{url('sgb-admin/index')}}">
               <i class="ti-shield menu-icon"></i>
               <span class="menu-title">Painel de Controle</span>
             </a>

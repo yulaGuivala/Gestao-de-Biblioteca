@@ -100,6 +100,11 @@ class funcionarioController extends Controller
         return view('admin.login');
     }
 
+    public function index() {
+
+        return view('admin.index');
+    }
+
     public function entrar(Request $req) {
 
         $lista = user::all();
@@ -115,7 +120,7 @@ class funcionarioController extends Controller
                     
                         if ($req->senha == $func->password) {
 
-                            return redirect('/sgb-admin/usuarios/funcionario')
+                            return redirect('/sgb-admin/index')
                             ->with('mensagem', 'Login efectuado com sucesso!')
                             ->cookie('Admin','Folege',60)
                             ->cookie('Id',$ft->id,60);

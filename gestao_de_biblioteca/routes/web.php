@@ -100,8 +100,9 @@ Route::group(['prefix' => 'sgb-admin'],function () {
             Route::get('/show/{id}', 'MensagemController@show');
             Route::get('/apagar/{id}', 'MensagemController@destroy');
         });
+        Route::get('/index', 'funcionarioController@index');
     });
-    Route::get('/index', 'userController@login_admin');
+    
     
     
 });
