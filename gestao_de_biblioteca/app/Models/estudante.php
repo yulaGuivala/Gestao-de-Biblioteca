@@ -16,4 +16,8 @@ class estudante extends Model
     public function endereco() {
         return $this->belongsTo(endereco::class, 'endereco_id');
     }
+
+    public function livros() {
+        return $this->belongsToMany(livro::class,'estudate_as_livro');
+    }
 }
