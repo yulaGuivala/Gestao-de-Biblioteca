@@ -84,9 +84,9 @@
                         <label>Foto de Perfil</label>
                         <input type="file" name="img" class="file-upload-default" accept="image/*">
                         <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info" disabled placeholder="Foto de perfil">
+                          <input type="file-upload d-none" type="file" accept="image/*" class="form-control" disabled placeholder="Foto de perfil">
                           <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button">Carregar</button>
+                            <button class="upload-button btn btn-primary" type="button">Carregar</button>
                           </span>
                         </div>
                       </div>
@@ -102,3 +102,25 @@
         </div>
         <!-- content-wrapper ends -->
     @endsection
+
+    @push('registar-js')
+    <script src="{{asset('user/lib/validate/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('user/lib/validate/jquery.validate.pt-br.js')}}"></script>
+    <script src="{{asset('user/lib/profile-image/script.js')}}"></script>
+    <script src="{{asset('user/lib/sweetalert2/sweetalert2.all.min.js')}}"></script>
+
+    @if ($msg = Session::get('mensagem'))
+        <?php  echo "
+        <script>
+            Swal.fire({
+                title: 'Feito!',
+                text: $msg,
+                type: 'success',
+                confirmButtonText: 'OK'
+            });
+        </script>
+        ";?>
+    @endif
+
+
+@endpush

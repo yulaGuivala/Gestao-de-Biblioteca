@@ -20,42 +20,81 @@
 </head>
  <body>
 
-    <header class="container-fluid navbar-expand-md mb-2">
-    <div class="row ">
-        <!-- Cavecalho -->
-        <div class="col-12 ">
+    <header class="container-fluid navbar-expand-md">
+        <div class="row ">
+            <?php
+                $user = Cookie::get('user');
+                $id = Cookie::get('id');
+                $foto = Cookie::get('foto');
+            ?>
+            @if (isset($user) && isset($id))
+                <!-- Cavecalho Autenticado -->
+                <div class="col-12 ">
 
-            <div class="collapse navbar-collapse float-left ml-3">
-                <img src="{{asset('user/imgs/logo.jpg')}}">
-                <a href="index.php" class="text-danger link" style="text-decoration:none">
-                    <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
-                </a>
-            </div>
-
-            <div class="navbar-toggler float-left mt-3 mr-3">
-                <a href="index.php" class="text-danger link text-center" style="text-decoration:none">
-                    <b style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
-                </a>
-            </div>
-
-            <div class="float-right mr-3">
-                <ul class="navbar-nav list-group-horizontal float-right mt-2">
-                    <li class="nav-item ">
-                        <a href="#" class="link text-danger" data-toggle="modal" data-target="#livros"><i class="fas fa-book mr-1"></i>Caixa de Livros <sup class="badge bg-warning" style="position:relative; right:5px;">3</sup></a>
-
-                        <a class="nav-link d-inline dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo">
-                            <img class="perfil-foto d-none d-md-inline" src="{{asset('user/imgs/perfil2.png')}}">
-                            Jose Pedro
+                    <div class="collapse navbar-collapse float-left ml-3">
+                        <img src="{{asset('user/imgs/logo.jpg')}}">
+                        <a href="{{url('/')}}" class="text-danger link" style="text-decoration:none">
+                            <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
                         </a>
-                        <div class="dropdown-menu bg-danger">
-                            <a class="dropdown-item" href="perfil.php">Perfil</a>
-                            <a class="dropdown-item" href="#">Sair</a>
-                        </div>
+                    </div>
 
-                    </li>
-                </ul>
-            </div>
-            </div>
+                    <div class="navbar-toggler float-left mt-3 mr-3">
+                        <a href="{{url('/')}}" class="text-danger link text-center" style="text-decoration:none">
+                            <b style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
+                        </a>
+                    </div>
+
+                    <div class="float-right mr-3">
+                        <ul class="navbar-nav list-group-horizontal float-right mt-2">
+                            <li class="nav-item ">
+                                <a href="#" class="link text-danger" data-toggle="modal" data-target="#livros"><i class="fas fa-book mr-1"></i>Caixa de Livros <sup class="badge bg-warning" style="position:relative; right:5px;">3</sup></a>
+
+                                <a class="nav-link d-inline dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo">
+                                    <img class="perfil-foto d-none d-md-inline" src="{{asset("uploads/$foto")}}">
+                                    {{$user}}
+                                </a>
+                                <div class="dropdown-menu bg-danger">
+                                    <a class="dropdown-item" href="{{url("inicio/minha-conta/$id/perfil")}}">Perfil</a>
+                                    <a class="dropdown-item" href="{{route('sairE')}}">Sair</a>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            @else
+                <!-- Cabecalho -->
+                <div class="col-12 ">
+
+                    <div class="collapse navbar-collapse float-left ml-3">
+                        <img src="{{asset('user/imgs/logo.jpg')}}">
+                        <a href="{{url('/')}}" class="text-danger link" style="text-decoration:none">
+                            <b class="ml-4" style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b> <sub>Sistema de Gestão da Biblioteca</sub>
+                        </a>
+                    </div>
+
+                    <div class="navbar-toggler float-left mt-3 mr-3">
+                        <a href="{{url('/')}}" class="text-danger link text-center" style="text-decoration:none">
+                            <b style="font-size:30px; font-family: 'Playfair Display', serif;">SGB</b>
+                        </a>
+                    </div>
+
+                    <div class="float-right mr-3">
+                        <ul class="navbar-nav list-group-horizontal float-right mt-2">
+                            <li class="nav-item dropdown ml-3">
+                                <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo"><i
+                                        class="fas fa-user mr-1"></i>Minha conta</a>
+                                <div class="dropdown-menu bg-danger">
+                                    <a class="dropdown-item" href="{{route('loginE')}}">Entrar</a>
+                                    <a class="dropdown-item" href="{{route('registrarE')}}">Registar</a>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            @endif
         </div>
 
         <!-- Navbar -->
@@ -71,16 +110,16 @@
 
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php"><i class="fa fa-home"></i> Inicio</a>
+                            <a class="nav-link" href="{{url('/')}}"><i class="fa fa-home"></i> Inicio</a>
                         </li>
                         <li class="nav-item dropdown cor-vermelho dropdown-dark">
-                            <a class="nav-link" href="catalogo.php">Catálogo de Livros</a>
+                            <a class="nav-link" href="{{route('catalogo')}}">Catálogo de Livros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php#about" data-target="">Sobre Nós</a>
+                            <a class="nav-link" href="{{url('/inicio')}}" data-target="">Sobre Nós</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contacto.php">Conctate-nos</a>
+                            <a class="nav-link" href="{{route('contacto')}}">Conctate-nos</a>
                         </li>
 
                     </ul>
@@ -101,8 +140,8 @@
             </div>
 
         </nav>
-
-        <div class="container">
+        @if (!isset($titulo))
+           <div class="container">
             <div class="row mt-3">
                 <div class="col-sm-12">
                     <p id="dir">
@@ -118,6 +157,8 @@
                 </div>
             </div>
         </div>
+        @endif
+
     </div>
     </header>
 
@@ -138,9 +179,9 @@
                     <div class="col-md-3 d-none d-md-none d-lg-block">
                         <h4>Categorias</h4>
                         <ul>
-                            <li><a href="index.php">Inicio</a></li>
-                            <li><a href="catalogo.php">Catálogo de Livros</a></li>
-                            <li><a href="index.php#about">Sobre nós</a></li>
+                            <li><a href="{{url('/')}}">Inicio</a></li>
+                            <li><a href="{{route('catalogo')}}">Catálogo de Livros</a></li>
+                            <li><a href="{{url('/inicio')}}">Sobre nós</a></li>
                         </ul>
                     </div>
 
@@ -170,7 +211,7 @@
                         <h5> Contactacte-nos</h5>
                         <ul class="list-unstyled footer-icone" style="font-size: 40px;">
 
-                            <li class="list-inline-item"><a href="contacto.php"><i class="fas fa-envelope"></i></a></li>
+                            <li class="list-inline-item"><a href="{{route('contacto')}}"><i class="fas fa-envelope"></i></a></li>
                         </ul>
                         <h4>Site da Universidade</h4>
                         <a href="http://www.una.ac.mz" class="link" target="blank">www.una.ac.mz</a>
@@ -261,6 +302,6 @@
     <script src="{{asset('user/node_modules/bootstrap/dist/js/bootstrap.js')}}"></script>
     <script src="{{asset('user/js/script.js')}}"></script>
     @stack('registar-js')
-
+    @stack('sobre-nos')
   </body>
 </html>

@@ -35,6 +35,10 @@ class userController extends Controller
         return $this->user->find($id);
     }
 
+    public function getAll() {
+        return $this->user->all();
+    }
+
     function login_admin(){
         return view('admin.login');
     }

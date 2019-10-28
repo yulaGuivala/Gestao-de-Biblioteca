@@ -1,4 +1,8 @@
-@extends('user.template_user.headerUser')
+@extends('user.template_user.headerUser', ['titulo' => true])
+
+@section('title')
+    Inicio
+@endsection
 
 @section('conteudo')
     <!-- Slider -->
@@ -68,11 +72,11 @@
 
     </div>
 
-    <div class="jumbotron jumbotron-fluid mb-3">
+    <div class="jumbotron jumbotron-fluid mb-3" tabindex="0" id="sobre-nos">
         <div class="container">
             <div class="row">
 
-            <div class="col-12 text-center my-5">
+            <div class="col-12 text-center my-5" >
 
                 <h1 class="display-3"><i class="fa fa-cogs text-dark" aria-hidden="true"><a name="about"> Sobre Nós</a></i></h1>
                 <p>Praesent erat magna, tristique ac mauris ut, iaculis tincidunt velit.</p>
@@ -481,6 +485,54 @@
     </div>
 @endsection
 
+@push('registar-css')
+    <link rel="stylesheet" href="{{asset('user/lib/sweetalert2/sweetalert2.min.css')}}">
+@endpush
+
+<!-- js especifico dessa pagina -->
+@push('registar-js')
+    <script src="{{asset('user/lib/sweetalert2/sweetalert2.all.min.js')}}"></script>
+
+    <?php $msg = Session::get('msgE') ?>
+    @if (isset($msg))
+        <?php  echo "
+        <script>
+            Swal.fire({
+                title: 'Login!',
+                text:'Login efectuado com sucesso!',
+                type: 'success',
+                confirmButtonText: 'OK'
+            });
+        </script>
+        ";?>
+    @endif
+
+    @if (isset($sair))
+        <?php
+            echo "
+            <script>
+                Swal.fire({
+                    title: 'Logout!',
+                    text:'Sessao terminada!',
+                    type: 'warning',
+                    confirmButtonText: 'OK'
+                });
+            </script>
+            ";
+        ?>
+    @endif
+@endpush
+
+@push('sobre-nos')
+    @if (isset($sobre))
+        <script>
+            $(document).ready(function () {
+                 $('#sobre-nos').focus();
+            })
+        </script>
+    @endif
+@endpush
+
 <!-- Modal Detalhes
 <div class="modal fade" id="siteModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
@@ -549,12 +601,7 @@
 </div> -->
 
 <!-- Modal caixa de livros-->
-<?php # modalLivros(); 
+<?php # modalLivros();
 ?>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 

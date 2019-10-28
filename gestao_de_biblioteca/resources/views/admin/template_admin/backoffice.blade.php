@@ -170,10 +170,10 @@
             <div class="collapse" id="livros">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="lista-livro.php">Catalogo de Livros</a>
+                  <a class="nav-link" href="{{url('sgb-admin/livros/lista')}}">Catalogo de Livros</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="adicionar-livro.php">Adicionar Livro</a>
+                  <a class="nav-link" href="{{url('sgb-admin/livros/adicionar-livro')}}">Adicionar Livro</a>
                 </li>
               </ul>
             </div>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Models\endereco;
 
 class CreateEnderecosTables extends Migration
 {
@@ -22,6 +23,14 @@ class CreateEnderecosTables extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        endereco::create([
+            'distrito' => 'KaMpfumo',
+            'bairro' => 'Urbanizacao',
+            'rua' => 'joaquim chissano',
+            'casa' =>'125',
+            'created_at' => date('Y-m-d H:i:s'),
+        ]);
     }
 
     /**
