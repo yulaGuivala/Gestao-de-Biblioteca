@@ -25,6 +25,7 @@
             <?php
                 $user = Cookie::get('user');
                 $id = Cookie::get('id');
+                $foto = Cookie::get('foto');
             ?>
             @if (isset($user) && isset($id))
                 <!-- Cavecalho Autenticado -->
@@ -49,7 +50,7 @@
                                 <a href="#" class="link text-danger" data-toggle="modal" data-target="#livros"><i class="fas fa-book mr-1"></i>Caixa de Livros <sup class="badge bg-warning" style="position:relative; right:5px;">3</sup></a>
 
                                 <a class="nav-link d-inline dropdown-toggle text-danger" href="#" data-toggle="dropdown"  id="logo">
-                                    <img class="perfil-foto d-none d-md-inline" src="{{asset('user/imgs/perfil2.png')}}">
+                                    <img class="perfil-foto d-none d-md-inline" src="{{asset("uploads/$foto")}}">
                                     {{$user}}
                                 </a>
                                 <div class="dropdown-menu bg-danger">

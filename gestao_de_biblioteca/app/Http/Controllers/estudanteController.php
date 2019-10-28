@@ -48,7 +48,8 @@ class estudanteController extends Controller
                             return redirect('/')
                                 ->with('msgE', 'Login efectuado com sucesso!')
                                 ->cookie('user', $est->nome, 60)
-                                ->cookie('id', $est->id, 60);
+                                ->cookie('id', $est->id, 60)
+                                ->cookie('foto', $user->ficheiro->nome, 60);
                             break;
                         } else {
                             # code...
@@ -64,6 +65,7 @@ class estudanteController extends Controller
     public function sair() {
         \Cookie::queue(\Cookie::forget('user'));
         \Cookie::queue(\Cookie::forget('id'));
+        \Cookie::queue(\Cookie::forget('foto'));
         return view('user.index',['sair' => true]);
     }
 

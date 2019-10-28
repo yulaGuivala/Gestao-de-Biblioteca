@@ -506,17 +506,20 @@
         </script>
         ";?>
     @endif
+
     @if (isset($sair))
-        <?php  echo "
-        <script>
-            Swal.fire({
-                title: 'Logout!',
-                text:'Sessao terminada!',
-                type: 'warning',
-                confirmButtonText: 'OK'
-            });
-        </script>
-        ";?>
+        <?php
+            echo "
+            <script>
+                Swal.fire({
+                    title: 'Logout!',
+                    text:'Sessao terminada!',
+                    type: 'warning',
+                    confirmButtonText: 'OK'
+                });
+            </script>
+            ";
+        ?>
     @endif
 @endpush
 
