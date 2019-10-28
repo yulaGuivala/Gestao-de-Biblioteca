@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\livro;
 use App\Models\ficheiro;
 use App\Models\categoria;
-
+use App\Models\estudante;
 use Request as Requisicao;
 use DB;
 class livroController extends Controller
@@ -81,21 +81,30 @@ class livroController extends Controller
 
     }
 
+    //Requisitar livros(estudantes)
     public function requisitar($livro_id ,$estudante_id){
         $livro=livro::find($livro_id);
         $livro->estudantes()->attach($estudante_id,['estado'=>'Pendente']);
 
-        return redirect('/inicio/livros/catalogo')->with('mensagem', 'Livro requisitado com sucesso!');
+        return redirect()->back()->with('msgSucesso', "'Requisicao feita com sucesso'");
     }
 
+    //retorna uma lista de requisicoes de livros
     public function listaRequisicao(){
 
-        $livros = DB::table('livros','estudantes','estudante_as_livro')
-                ->select('livros.id','livros.titulo','E.nome','E.numero','p.data')
+        $livros = DB::table('livros','estudantes','estudate_as_livro')
+                ->select('livros.id','livros.titulo','E.nome','E.numero','p.data','p.estado','E.id as idEst')
                 ->join('estudate_as_livro as p', 'livros.id', '=', 'p.livro_id')
                 ->join('estudantes as E', 'E.id', '=', 'p.estudante_id')
                 ->get();
 
-        return view('admin.lista-requisicoes',['requisicao'=>$livros]);
+        return view('admin.lista-requisicoes',['requisicoes'=>$livros]);
+    }
+
+    //confirmacao da requisicao do livrofuncionarios()
+    public function confirma($id, $idEst){
+        $livro=Livro::where('id',$id)->with('estudantes')->get()->first();
+        $livro->estudantes()->updateExistingPivot($idEst,array('estado'=>'Confirmado'),false);
+        return redirect()->back();
     }
 }
