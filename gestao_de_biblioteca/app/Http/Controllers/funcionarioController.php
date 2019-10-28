@@ -131,6 +131,9 @@ class funcionarioController extends Controller
                         }
          
                     }
+                } else {
+
+                    return redirect('/sgb-admin/login')->with('mensagem', 'Senha Ou Nome de Usuario Incorrecto');;
                 } 
                 
             }
