@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
         for ($i = 1; $i <= 10; $i++)
 
             $this->call([
-                LivroTableSeeder::class,
-                EstudanteTableSeeder::class,
-                FuncionarioTableSeeder::class,
-                //MensagemTableSeeder::class
+                //LivroTableSeeder::class,
+                //EstudanteTableSeeder::class,
+                //FuncionarioTableSeeder::class,
+                CategoriaTableSeeder::class
             ]);
     }
 }

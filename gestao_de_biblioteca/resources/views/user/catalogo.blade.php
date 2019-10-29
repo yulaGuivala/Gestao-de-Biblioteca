@@ -61,7 +61,7 @@
                                                     </uL>
                                                     <div class="card-body">
                                                         <div class="row justify-content-center" >
-                                                        <a href="{{route('requisicao',['id'=>$livro->id,'id2'=>2])}}" class="card-link" id={{$livro->id}}>
+                                                        <a href="{{route('requisicao',['id'=>$livro->id])}}" class="card-link" id={{$livro->id}}>
                                                                 <button class="btn cor-vermelho text-light">
                                                                     Requisitar
                                                                 </button>
@@ -85,11 +85,11 @@
 
                                 <div class="row" >
                                     @foreach ($livros as $livro)
-                                        @if ($livro->categoria->nome=="Faculdade de direicto")
+                                        @if ($livro->categoria->nome=="Faculdade de Direito")
                                             <div class="col-sm-6 col-md-4">
                                                 <div class="card mb-5">
 
-                                                    <img class="card-img-top" src="imgs/book1.jpg">
+                                                    <img class="card-img-top" src="{{asset('uploads/'.$livro->ficheiro->nome)}}">
                                                     <div class="card-body">
                                                         <h4 class="card-title">Aprendendo HTML com Plain HTML 7 para iniciantes</h4>
                                                         <h6 class="card-subtitle mb-2 text-muted">Vestibulum nec mollis</h6>
@@ -101,16 +101,11 @@
                                                     </uL>
                                                     <div class="card-body">
                                                             <div class="row justify-content-center" >
-                                                                <a href="#" class="card-link">
+                                                                <a href="{{route('requisicao',['id'=>$livro->id])}}" class="card-link">
                                                                     <button class="btn cor-vermelho text-light">
-                                                                        Detalhes
+                                                                        Requisitar
                                                                     </button>
                                                                 </a>
-                                                                <a href="#" class="card-link">
-                                                                        <button class="btn cor-vermelho text-light">
-                                                                            Requisitar
-                                                                        </button>
-                                                                    </a>
                                                             </div>
                                                     </div>
                                                     <div class="card-footer text-muted">
@@ -145,7 +140,7 @@
                                                     </uL>
                                                     <div class="card-body">
                                                         <div class="row justify-content-center" >
-                                                            <a href="#" class="card-link">
+                                                            <a href="{{route('requisicao',['id'=>$livro->id])}}" class="card-link">
                                                                 <button class="btn cor-vermelho text-light">
                                                                     Requisitar
                                                                 </button>
@@ -184,7 +179,7 @@
                                                     </uL>
                                                     <div class="card-body">
                                                         <div class="row justify-content-center" >
-                                                            <a href="#" class="card-link">
+                                                            <a href="{{route('requisicao',['id'=>$livro->id])}}" class="card-link">
                                                                 <button class="btn cor-vermelho text-light">
                                                                     Requisitar
                                                                 </button>

@@ -19,6 +19,7 @@ Route::get('/inicio', function () {
     return view('user.index',['sobre' => true]);
 });
 
+
 //Rotas para viesws dos users
 Route::group(['prefix' => 'inicio'], function () {
     Route::group(['prefix' => 'minha-conta'], function () {
@@ -40,7 +41,7 @@ Route::group(['prefix' => 'inicio'], function () {
     Route::group(['prefix' => '/livros'], function () {
         Route::get('/catalogo', 'LivroController@listar')->name('catalogo');
         Route::middleware(['auth.user'])->group(function () {
-            Route::get('/requisicao/{id}/{id2}', 'LivroController@requisitar')->name('requisicao');
+            Route::get('/requisicao/{id}', 'LivroController@requisitar')->name('requisicao');
         });
     });
 

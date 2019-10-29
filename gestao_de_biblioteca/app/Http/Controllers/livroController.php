@@ -82,7 +82,9 @@ class livroController extends Controller
     }
 
     //Requisitar livros(estudantes)
-    public function requisitar($livro_id ,$estudante_id){
+    public function requisitar($livro_id){
+
+        $estudante_id = Requisicao::cookie('idE');
         $livro=livro::find($livro_id);
         $livro->estudantes()->attach($estudante_id,['estado'=>'Pendente']);
 
@@ -116,9 +118,16 @@ class livroController extends Controller
     }
 
     //cancelar requisicao do livrofuncionarios()
-    public function cancelar($id, $idEst){
+    public function cancelar($id){
+        $estudante_id = Requisicao::cookie('idE');
         $livro=Livro::where('id',$id)->with('estudantes')->get()->first();
-        $livro->estudantes()->updateExistingPivot($idEst,array('estado'=>'Cancelado'),false);
+        $livro->estudantes()->detach($estudante_id);
         return redirect()->back()->with('msgSucesso', "'Requisicao cancelada com sucesso'");;
+    }
+
+    public function dadosSessao(){
+        $estudante_id = Requisicao::cookie('idE');
+        $livros = livro::with('estudantes')->wherePivot('estudante_id',$estudante_id)->withPivotTableData()->get();
+        echo dd($livros);
     }
 }

@@ -16,7 +16,7 @@ class Categoria extends Migration
         Schema::create('categoria', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->enum('nome',['Faculdade de Ciências politicas e Administração',
-                                        'Faculdade de direicto',
+                                        'Faculdade de direito',
                                         'Faculdade de Ciências Agrarias',
                                         'Faculdade de Economia e Informatica']);
 
